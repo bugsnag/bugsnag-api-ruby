@@ -24,14 +24,22 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-# Create a Bugsnag API client
-client = Bugsnag::Api::Client.new(:api_token => "your-api-token")
+# Configure a Bugsnag API client
+Bugsnag::Api.configure do |config|
+  config.api_token = "your-account-api-token"
+end
 
-# Get information about the authenticated account
-account = client.account
+# Fetch information about the authenticated account
+account = Bugsnag::Api.account
 
-# Get a list of users on the account, by following the users hyperlink
-users = client.last_response.rels[:users].get.data
+# Get a list of users on this account
+users = Bugsnag::Api.users(account.id)
+
+# Get a list of the projects on this account
+projects = Bugsnag::Api.projects(account.id)
+
+# Get a list of errors on a project
+errors = Bugsnag::Api.errors(projects.first.id)
 ```
 
 
