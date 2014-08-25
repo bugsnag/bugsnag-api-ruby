@@ -7,10 +7,10 @@ Gem::Specification.new do |spec|
   spec.name          = "bugsnag-api"
   spec.version       = Bugsnag::Api::VERSION
   spec.authors       = ["James Smith"]
-  spec.email         = ["james@loopj.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.email         = ["james@bugsnag.com"]
+  spec.description   = %q{Bugsnag API toolkit for ruby}
+  spec.summary       = %q{Bugsnag API toolkit for ruby}
+  spec.homepage      = "https://github.com/bugsnag/bugsnag-api-ruby"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
