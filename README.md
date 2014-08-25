@@ -43,6 +43,12 @@ errors = Bugsnag::Api.errors(projects.first.id)
 ```
 
 
+## Documentation
+
+Full documentation of available methods can be found here:
+<http://rubydoc.info/github/bugsnag/bugsnag-api-ruby>
+
+
 ## Contributing
 
 1. Fork it
