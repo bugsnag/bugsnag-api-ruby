@@ -1,0 +1,4 @@
+--no-private
+--title=""
+--markup=markdown
+--exclude lib/bugsnag/api/response
