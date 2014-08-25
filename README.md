@@ -1,7 +1,9 @@
-Bugsnag API Ruby Toolkit
-========================
+Bugsnag API Toolkit for Ruby
+============================
 
-The library allows for quick read-write access to the [Bugsnag API](https://bugsnag.com/docs/api) from Ruby applications. Use this library if you want to build your own applications which leverage data found in your Bugsnag dashboard. If you are looking to automatically detect crashes in your Ruby apps, you should take a look at the [Bugsnag Ruby Detection Library](https://bugsnag.com/docs/notifiers/ruby) instead.
+The library allows for quick read/write access to the [Bugsnag API](https://bugsnag.com/docs/api) from your Ruby applications. You can use this library to build your own applications which leverage data found in your Bugsnag dashboard.
+
+If you are looking to automatically detect crashes in your Ruby apps, you should take a look at the [Bugsnag Ruby Detection Library](https://bugsnag.com/docs/notifiers/ruby) instead.
 
 This library shares code and philosophies with the fantastic [Octokit](https://github.com/octokit/octokit.rb) library.
 
