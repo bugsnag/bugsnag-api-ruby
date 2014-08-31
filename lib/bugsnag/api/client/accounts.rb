@@ -26,6 +26,11 @@ module Bugsnag
         #   Bugsnag::Api.account("515fb9337c1074f6fd000009")
         def account(account=nil, options = {})
           if account.nil?
+            raise Bugsnag::Api::AccountCredentialsRequired.new(
+              "Fetching account without an id is only possible when using "\
+              "an account auth token."
+            ) unless token_authenticated?
+
             get "account", options
           else
             get "accounts/#{account}", options

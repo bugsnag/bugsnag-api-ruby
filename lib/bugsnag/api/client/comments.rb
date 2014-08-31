@@ -56,7 +56,7 @@ module Bugsnag
         # @return [Boolean] `true` if comment was deleted
         # @see https://bugsnag.com/docs/api/comments#delete-a-comment
         def delete_comment(comment, options = {})
-          delete "comments/#{comment}", options
+          boolean_from_response :delete, "comments/#{comment}", options
         end
       end
     end

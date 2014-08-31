@@ -35,6 +35,11 @@ module Bugsnag
         #   Bugsnag::Api.user("515fb9337c1074f6fd000007")
         def user(user=nil, options = {})
           if user.nil?
+            raise Bugsnag::Api::AccountCredentialsRequired.new(
+              "Fetching user without an id is only possible when using "\
+              "user auth credentials."
+            ) unless basic_authenticated?
+
             get "user", options
           else
             get "users/#{user}", options
@@ -73,7 +78,7 @@ module Bugsnag
         # @example
         #   Bugsnag::Api.remove_user("515fb9337c1074f6fd000009", "515fb9337c1074f6fd000007")
         def remove_user(account, user, options = {})
-          delete "accounts/#{account}/users/#{user}", options
+          boolean_from_response :delete, "accounts/#{account}/users/#{user}", options
         end
       end
     end

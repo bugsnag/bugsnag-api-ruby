@@ -25,13 +25,18 @@ module Bugsnag
       CONVENIENCE_HEADERS = Set.new([:accept, :content_type])
 
       def initialize(options = {})
-        if options.is_a?(Bugsnag::Api::Configuration)
-          @configuration = options
-        else
-          configuration.load(options)
-        end
+        configuration.load(options)
       end
 
+      # Set configuration options using a block
+      def configure
+        yield(configuration) if block_given?
+        reset_agent
+      end
+
+      # Get client's configuration options
+      #
+      # @return [Bugsnag::Api::Configuration] configuration wrapper
       def configuration
         @configuration ||= Configuration.new
       end
@@ -54,15 +59,6 @@ module Bugsnag
         request :post, url, options
       end
 
-      # Make a HTTP PUT request
-      #
-      # @param url [String] The path, relative to {#endpoint}
-      # @param options [Hash] Body and header params for request
-      # @return [Sawyer::Resource]
-      def put(url, options = {})
-        request :put, url, options
-      end
-
       # Make a HTTP PATCH request
       #
       # @param url [String] The path, relative to {#endpoint}
@@ -79,15 +75,6 @@ module Bugsnag
       # @return [Sawyer::Resource]
       def delete(url, options = {})
         request :delete, url, options
-      end
-
-      # Make a HTTP HEAD request
-      #
-      # @param url [String] The path, relative to {#endpoint}
-      # @param options [Hash] Query and header params for request
-      # @return [Sawyer::Resource]
-      def head(url, options = {})
-        request :head, url, parse_query_and_convenience_headers(options)
       end
 
       # Make one or more HTTP GET requests, optionally fetching
@@ -123,9 +110,32 @@ module Bugsnag
         data
       end
 
-      # Hypermedia agent for the Bugsnag API
+      # Response for last HTTP request
       #
-      # @return [Sawyer::Agent]
+      # @return [Sawyer::Response]
+      def last_response
+        @last_response if defined? @last_response
+      end
+
+      # Indicates if the client was supplied Basic Auth
+      # username and password
+      #
+      # @see https://bugsnag.com/docs/api#user-authentication
+      # @return [Boolean]
+      def basic_authenticated?
+        !!(configuration.email && configuration.password)
+      end
+
+      # Indicates if the client was supplied an auth token
+      #
+      # @see https://bugsnag.com/docs/api#account-authentication
+      # @return [Boolean]
+      def token_authenticated?
+        !!configuration.auth_token
+      end
+
+
+      private
       def agent
         @agent ||= Sawyer::Agent.new(configuration.endpoint, sawyer_options) do |http|
           http.headers[:content_type] = "application/json"
@@ -134,28 +144,15 @@ module Bugsnag
           if basic_authenticated?
             http.basic_auth configuration.email, configuration.password
           elsif token_authenticated?
-            http.authorization "token", configuration.api_token
+            http.authorization "token", configuration.auth_token
           end
         end
       end
 
-      # Response for last HTTP request
-      #
-      # @return [Sawyer::Response]
-      def last_response
-        @last_response if defined? @last_response
+      def reset_agent
+        @agent = nil
       end
 
-      def basic_authenticated?
-        !!(configuration.email && configuration.password)
-      end
-
-      def token_authenticated?
-        !!configuration.api_token
-      end
-
-
-      private
       def request(method, path, data, options = {})
         if data.is_a?(Hash)
           options[:query]   = data.delete(:query) || {}
@@ -167,6 +164,13 @@ module Bugsnag
 
         @last_response = response = agent.call(method, URI::Parser.new.escape(path.to_s), data, options)
         response.data
+      end
+
+      def boolean_from_response(method, path, options = {})
+        request(method, path, options)
+        @last_response.status == 204
+      rescue Bugsnag::Api::NotFound
+        false
       end
 
       def sawyer_options

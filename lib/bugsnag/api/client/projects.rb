@@ -69,7 +69,7 @@ module Bugsnag
         # @return [Boolean] `true` if project was deleted
         # @see https://bugsnag.com/docs/api/projects#delete-a-project
         def delete_project(project, options = {})
-          delete "projects/#{project}", options
+          boolean_from_response :delete, "projects/#{project}", options
         end
       end
     end

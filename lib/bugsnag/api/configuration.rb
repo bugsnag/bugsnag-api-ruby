@@ -5,7 +5,6 @@ module Bugsnag
 
     # Configuration storage and defaults for {Client}
     class Configuration
-
       # Default API endpoint
       DEFAULT_ENDPOINT = "https://api.bugsnag.com"
 
@@ -22,12 +21,14 @@ module Bugsnag
       end
 
       # Configuration options
-      attr_accessor :email, :password, :api_token, :endpoint, :user_agent,
-                    :proxy, :middleware, :connection_options, :auto_paginate,
-                    :per_page
+      KEYS = [:email, :password, :auth_token, :endpoint, :user_agent,
+              :proxy, :middleware, :connection_options, :auto_paginate,
+              :per_page]
+
+      attr_accessor *KEYS
 
       # Set up configuration defaults
-      def initialize
+      def initialize(options = {})
         @endpoint = DEFAULT_ENDPOINT
         @user_agent = DEFAULT_USER_AGENT
         @middleware = DEFAULT_MIDDLEWARE
@@ -37,11 +38,13 @@ module Bugsnag
             :user_agent => DEFAULT_USER_AGENT
           }
         }
+
+        load(options)
       end
 
       # Load configuration from hash
       def load(options = {})
-        options.each {|k,v| self.send("#{k}=", v) if self.respond_to?("#{k}=")}
+        options.each {|k,v| self.send("#{k}=", v) if self.respond_to?("#{k}=") && !v.nil?}
       end
     end
   end

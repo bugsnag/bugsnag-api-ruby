@@ -36,7 +36,7 @@ module Bugsnag
 
       def initialize(response=nil)
         @response = response
-        super(response_error)
+        super(build_error_message)
       end
 
       private
@@ -59,6 +59,16 @@ module Bugsnag
 
       def response_error
         "Error: #{data[:error]}" if data.is_a?(Hash) && data[:error]
+      end
+
+      def build_error_message
+        return nil if @response.nil?
+
+        message =  "#{@response[:method].to_s.upcase} "
+        message << @response[:url].to_s + ": "
+        message << "#{@response[:status]} - "
+        message << "#{response_error}" unless response_error.nil?
+        message
       end
     end
 
