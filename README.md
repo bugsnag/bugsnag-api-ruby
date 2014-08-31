@@ -26,7 +26,7 @@ Or install it yourself as:
 ```ruby
 # Configure a Bugsnag API client
 Bugsnag::Api.configure do |config|
-  config.api_token = "your-account-api-token"
+  config.auth_token = "your-account-api-token"
 end
 
 # Fetch information about the authenticated account
