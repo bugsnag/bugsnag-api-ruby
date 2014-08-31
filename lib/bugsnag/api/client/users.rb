@@ -11,8 +11,19 @@ module Bugsnag
         # @param account [String] Bugsnag account for which to list users
         # @return [Array<Sawyer::Resource>] List of users
         # @see https://bugsnag.com/docs/api/users#list-an-account-s-users
-        def users(account, options = {})
-          paginate "accounts/#{account}/users", options
+        def users(account=nil, options = {})
+          if account.nil? || account.is_a?(Hash)
+            options = account || {}
+
+            raise Bugsnag::Api::AccountCredentialsRequired.new(
+              "Fetching users without an account id is only possible when "\
+              "using an account auth token."
+            ) unless token_authenticated?
+
+            paginate "account/users", options
+          else
+            paginate "accounts/#{account}/users", options
+          end
         end
         alias :account_users :users
 
@@ -34,7 +45,9 @@ module Bugsnag
         # @example
         #   Bugsnag::Api.user("515fb9337c1074f6fd000007")
         def user(user=nil, options = {})
-          if user.nil?
+          if user.nil? || user.is_a?(Hash)
+            options = user || {}
+
             raise Bugsnag::Api::AccountCredentialsRequired.new(
               "Fetching user without an id is only possible when using "\
               "user auth credentials."
