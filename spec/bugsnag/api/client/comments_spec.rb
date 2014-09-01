@@ -52,7 +52,7 @@ describe Bugsnag::Api::Client::Comments do
     describe ".delete_comment" do
       it "deletes an existing comment" do
         response = @client.delete_comment(@comment.id)
-        expect(response).to be_true
+        expect(response).to be true
         assert_requested :delete, bugsnag_url("/comments/#{@comment.id}")
       end
     end

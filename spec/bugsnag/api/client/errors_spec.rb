@@ -31,7 +31,7 @@ describe Bugsnag::Api::Client::Errors do
     describe ".resolve_error" do
       it "resolves the error" do
         error = @client.resolve_error(test_bugsnag_error)
-        expect(error.resolved).to be_true
+        expect(error.resolved).to be true
 
         assert_requested :patch, error_url
       end
@@ -40,7 +40,7 @@ describe Bugsnag::Api::Client::Errors do
     describe ".reopen_error" do
       it "reopens the error" do
         error = @client.reopen_error(test_bugsnag_error)
-        expect(error.resolved).to be_false
+        expect(error.resolved).to be false
 
         assert_requested :patch, error_url
       end
@@ -49,7 +49,7 @@ describe Bugsnag::Api::Client::Errors do
     describe ".update_error" do
       it "updates the error" do
         error = @client.update_error(test_bugsnag_error, :resolved => true)
-        expect(error.resolved).to be_true
+        expect(error.resolved).to be true
 
         assert_requested :patch, error_url
       end
@@ -60,7 +60,7 @@ describe Bugsnag::Api::Client::Errors do
         stub_request(:delete, error_url).to_return(:status => [204, "No Content"])
 
         response = @client.delete_error(test_bugsnag_error)
-        expect(response).to be_true
+        expect(response).to be true
 
         assert_requested :delete, error_url
       end

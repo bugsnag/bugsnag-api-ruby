@@ -70,14 +70,14 @@ describe Bugsnag::Api::Client do
   describe ".basic_authenticated?" do
     it "knows when basic auth is being used" do
       client = Bugsnag::Api::Client.new(:email => "example@example.com", :password => "123456")
-      expect(client.basic_authenticated?).to be_true
+      expect(client.basic_authenticated?).to be true
     end
   end
 
   describe ".token_authenticated?" do
     it "knows when token auth is being used" do
       client = Bugsnag::Api::Client.new(:auth_token => "example")
-      expect(client.token_authenticated?).to be_true
+      expect(client.token_authenticated?).to be true
     end
   end
 

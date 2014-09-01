@@ -75,7 +75,7 @@ describe Bugsnag::Api::Client::Users do
     describe ".remove_user" do
       it "removes a user from an account" do
         response = @client.remove_user(test_bugsnag_account, @user.id)
-        expect(response).to be_true
+        expect(response).to be true
         assert_requested :delete, bugsnag_url("/accounts/#{test_bugsnag_account}/users/#{@user.id}")
       end
     end

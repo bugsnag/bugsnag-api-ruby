@@ -43,7 +43,7 @@ describe Bugsnag::Api::Client::Events do
         stub_request(:delete, event_url).to_return(:status => [204, "No Content"])
 
         response = @client.delete_event(test_bugsnag_event)
-        expect(response).to be_true
+        expect(response).to be true
 
         assert_requested :delete, event_url
       end

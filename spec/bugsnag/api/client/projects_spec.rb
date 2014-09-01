@@ -84,7 +84,7 @@ describe Bugsnag::Api::Client::Projects do
     describe ".delete_project" do
       it "deletes an existing project" do
         response = @client.delete_project(@project.id)
-        expect(response).to be_true
+        expect(response).to be true
         assert_requested :delete, bugsnag_url("/projects/#{@project.id}")
       end
     end

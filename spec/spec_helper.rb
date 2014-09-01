@@ -9,12 +9,12 @@ require "faker"
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
-  config.treat_symbols_as_metadata_keys_with_true_values = true
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
 end
 
+# Webmock
 WebMock.allow_net_connect!
 
 def auth_token_client
