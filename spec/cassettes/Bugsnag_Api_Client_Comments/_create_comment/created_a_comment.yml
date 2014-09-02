@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://<BUGSNAG_LOGIN>:<BUGSNAG_PASSWORD>@api.bugsnag.com/errors/<BUGSNAG_ERROR_ID>/comments
+    body:
+      encoding: UTF-8
+      string: '{"message":"Comment message"}'
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Location:
+      - https://api.bugsnag.com/comments/5405303a646573a559000016
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"81ebadc591d63e55f5cd4964608e3bf0"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 85afb627-64ca-4eb7-9f28-b5afb1f2b5da
+      X-Runtime:
+      - '0.138914'
+      Date:
+      - Tue, 02 Sep 2014 02:49:30 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"id":"5405303a646573a559000016","message":"Comment message","created_at":"2014-09-02T02:49:30.000Z","user":{"id":"<BUGSNAG_USER_ID>","email":"<BUGSNAG_EMAIL>","name":"James
+        Smith","gravatar_id":"8cbca651e77dc253a98e545590ed3387","gravatar_url":"https://secure.gravatar.com/avatar/8cbca651e77dc253a98e545590ed3387","url":"https://api.bugsnag.com/users/<BUGSNAG_USER_ID>","projects_url":"https://api.bugsnag.com/users/<BUGSNAG_USER_ID>/projects"},"url":"https://api.bugsnag.com/comments/5405303a646573a559000016"}'
+    http_version: 
+  recorded_at: Tue, 02 Sep 2014 02:49:30 GMT
+recorded_with: VCR 2.9.2

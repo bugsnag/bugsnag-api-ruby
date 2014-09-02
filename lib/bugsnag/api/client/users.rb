@@ -48,7 +48,7 @@ module Bugsnag
           if user.nil? || user.is_a?(Hash)
             options = user || {}
 
-            raise Bugsnag::Api::AccountCredentialsRequired.new(
+            raise Bugsnag::Api::UserCredentialsRequired.new(
               "Fetching user without an id is only possible when using "\
               "user auth credentials."
             ) unless basic_authenticated?

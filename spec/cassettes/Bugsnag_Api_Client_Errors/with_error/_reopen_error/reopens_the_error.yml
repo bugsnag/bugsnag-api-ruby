@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: http://<BUGSNAG_LOGIN>:<BUGSNAG_PASSWORD>@api.bugsnag.com/errors/<BUGSNAG_ERROR_ID>
+    body:
+      encoding: UTF-8
+      string: '{"resolved":false}'
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"0e9b93dc377b1f3a4337ec15f34e75c5"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - f7601022-9a87-4db3-b2b6-a75bd90686be
+      X-Runtime:
+      - '0.126378'
+      Date:
+      - Tue, 02 Sep 2014 02:49:27 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"id":"<BUGSNAG_ERROR_ID>","last_message":"Bugsnag test exception","class":"RuntimeError","occurrences":2,"release_stages":{"development":2},"last_context":"rake#test_exception","resolved":false,"first_received":"2014-09-01T21:10:28.000Z","last_received":"2014-09-01T21:10:44.625Z","severity":"warning","comments":27,"app_versions":{},"url":"https://api.bugsnag.com/errors/<BUGSNAG_ERROR_ID>","events_url":"https://api.bugsnag.com/errors/<BUGSNAG_ERROR_ID>/events","html_url":"http://bugsnag.dev/test-account/example-dot-com/errors/<BUGSNAG_ERROR_ID>","comments_url":"https://api.bugsnag.com/errors/<BUGSNAG_ERROR_ID>/comments"}'
+    http_version: 
+  recorded_at: Tue, 02 Sep 2014 02:49:27 GMT
+recorded_with: VCR 2.9.2

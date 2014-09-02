@@ -59,19 +59,8 @@ module Bugsnag
         # @see https://bugsnag.com/docs/api/projects#create-a-project
         # @example
         #   Bugsnag::Api.create_project("515fb9337c1074f6fd000009", name: "Website")
-        def create_project(account=nil, options = {})
-          if account.nil? || account.is_a?(Hash)
-            options = account || {}
-
-            raise Bugsnag::Api::AccountCredentialsRequired.new(
-              "Fetching projects without an account id is only possible when "\
-              "using an account auth token."
-            ) unless token_authenticated?
-
-            post "account/projects", options
-          else
-            post "accounts/#{account}/projects", options
-          end
+        def create_project(account, options = {})
+          post "accounts/#{account}/projects", options
         end
 
         # Update a project

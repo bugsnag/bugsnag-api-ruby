@@ -24,8 +24,9 @@ module Bugsnag
       # Header keys that can be passed in options hash to {#get},{#head}
       CONVENIENCE_HEADERS = Set.new([:accept, :content_type])
 
-      def initialize(options = {})
+      def initialize(options = {}, &block)
         configuration.load(options)
+        yield(configuration) if block_given?
       end
 
       # Set configuration options using a block

@@ -3,21 +3,21 @@ require "spec_helper"
 describe Bugsnag::Api::Client::Errors do
   before do
     Bugsnag::Api.reset!
-    @client = auth_token_client
+    @client = basic_auth_client
   end
 
-  describe ".errors" do
+  describe ".errors", :vcr do
     it "returns all errors on an project" do
       errors = @client.errors(test_bugsnag_project)
       expect(errors).to be_kind_of(Array)
       expect(errors.first.class).not_to be_nil
 
-      assert_requested :get, bugsnag_url("/projects/#{test_bugsnag_project}/errors")
+      assert_requested :get, basic_bugsnag_url("/projects/#{test_bugsnag_project}/errors")
     end
   end
 
-  context "with error" do
-    let(:error_url) { bugsnag_url("/errors/#{test_bugsnag_error}") }
+  context "with error", :vcr do
+    let(:error_url) { basic_bugsnag_url("/errors/#{test_bugsnag_error}") }
 
     describe ".error" do
       it "returns an error" do
@@ -28,7 +28,7 @@ describe Bugsnag::Api::Client::Errors do
       end
     end
 
-    describe ".resolve_error" do
+    describe ".resolve_error", :vcr do
       it "resolves the error" do
         error = @client.resolve_error(test_bugsnag_error)
         expect(error.resolved).to be true
@@ -37,7 +37,7 @@ describe Bugsnag::Api::Client::Errors do
       end
     end
 
-    describe ".reopen_error" do
+    describe ".reopen_error", :vcr do
       it "reopens the error" do
         error = @client.reopen_error(test_bugsnag_error)
         expect(error.resolved).to be false
@@ -46,7 +46,7 @@ describe Bugsnag::Api::Client::Errors do
       end
     end
 
-    describe ".update_error" do
+    describe ".update_error", :vcr do
       it "updates the error" do
         error = @client.update_error(test_bugsnag_error, :resolved => true)
         expect(error.resolved).to be true
@@ -55,7 +55,7 @@ describe Bugsnag::Api::Client::Errors do
       end
     end
 
-    describe ".delete_error" do
+    describe ".delete_error", :vcr do
       it "deletes the error" do
         stub_request(:delete, error_url).to_return(:status => [204, "No Content"])
 

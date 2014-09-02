@@ -43,7 +43,7 @@ describe Bugsnag::Api::Client do
       Bugsnag::Api.reset!
     end
 
-    it "handles query params" do
+    it "handles query params", :vcr do
       Bugsnag::Api.get "/", :foo => "bar"
       assert_requested :get, "https://api.bugsnag.com?foo=bar"
     end
@@ -56,7 +56,7 @@ describe Bugsnag::Api::Client do
     end
   end
 
-  describe ".last_response" do
+  describe ".last_response", :vcr do
     it "caches the last agent response" do
       Bugsnag::Api.reset!
       client = Bugsnag::Api.client
@@ -78,28 +78,6 @@ describe Bugsnag::Api::Client do
     it "knows when token auth is being used" do
       client = Bugsnag::Api::Client.new(:auth_token => "example")
       expect(client.token_authenticated?).to be true
-    end
-  end
-
-  describe "auto pagination" do
-    before do
-      Bugsnag::Api.reset!
-      auth_token_client
-      Bugsnag::Api.configure do |config|
-        config.auto_paginate = true
-        config.per_page = 1
-      end
-    end
-
-    after do
-      Bugsnag::Api.reset!
-    end
-
-    it "fetches all the pages" do
-      url = '/account/users'
-      records = Bugsnag::Api.client.paginate(url)
-      assert_requested(:get, bugsnag_url("#{url}?per_page=1"))
-      assert_requested(:get, Regexp.new(bugsnag_url(url) + "\\?.*offset=#{records.first.id}.*"))
     end
   end
 

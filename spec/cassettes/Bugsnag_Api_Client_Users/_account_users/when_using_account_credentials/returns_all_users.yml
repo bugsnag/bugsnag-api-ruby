@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bugsnag.com/account/users
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.0
+      Content-Type:
+      - application/json
+      Authorization:
+      - token <BUGSNAG_AUTH_TOKEN>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"a6733c0e281e0fab08dc9d26c5152440"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7514ca8a-4050-4acf-b7b9-357679b328fd
+      X-Runtime:
+      - '0.070611'
+      Date:
+      - Tue, 02 Sep 2014 02:49:28 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '[{"id":"5404dc9c64657377ae000009","email":"example@example.com","name":null,"gravatar_id":"23463b99b62a72f26ed677cc556c44e8","gravatar_url":"https://secure.gravatar.com/avatar/23463b99b62a72f26ed677cc556c44e8","account_admin":true,"url":"https://api.bugsnag.com/users/5404dc9c64657377ae000009","projects_url":"https://api.bugsnag.com/users/5404dc9c64657377ae000009/projects","html_url":"http://bugsnag.dev/accounts/test-account/collaborators/5404dc9c64657377ae000009/edit"},{"id":"<BUGSNAG_USER_ID>","email":"<BUGSNAG_EMAIL>","name":"James
+        Smith","gravatar_id":"8cbca651e77dc253a98e545590ed3387","gravatar_url":"https://secure.gravatar.com/avatar/8cbca651e77dc253a98e545590ed3387","account_admin":true,"url":"https://api.bugsnag.com/users/<BUGSNAG_USER_ID>","projects_url":"https://api.bugsnag.com/users/<BUGSNAG_USER_ID>/projects","html_url":"http://bugsnag.dev/accounts/test-account/collaborators/<BUGSNAG_USER_ID>/edit"}]'
+    http_version: 
+  recorded_at: Tue, 02 Sep 2014 02:49:28 GMT
+recorded_with: VCR 2.9.2
