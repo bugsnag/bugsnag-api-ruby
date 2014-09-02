@@ -21,7 +21,8 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.configure_rspec_metadata!
   c.default_cassette_options = {
-    :record => ENV['TRAVIS'] ? :none : :once
+    :record => ENV['TRAVIS'] ? :none : :once,
+    :match_requests_on => [:method, :path]
   }
 
   c.filter_sensitive_data("https://api.bugsnag.com") { Bugsnag::Api.configuration.endpoint }
@@ -84,37 +85,37 @@ def test_bugsnag_endpoint
 end
 
 def test_bugsnag_auth_token
-  ENV["BUGSNAG_TEST_AUTH_TOKEN"]
+  ENV["BUGSNAG_TEST_AUTH_TOKEN"] || "x" * 32
 end
 
 def test_bugsnag_email
-  ENV["BUGSNAG_TEST_EMAIL"]
+  ENV["BUGSNAG_TEST_EMAIL"] || "example@bugsnag.com"
 end
 
 def test_bugsnag_password
-  ENV["BUGSNAG_TEST_PASSWORD"]
+  ENV["BUGSNAG_TEST_PASSWORD"] || "password"
 end
 
 def test_bugsnag_account
-  ENV["BUGSNAG_TEST_ACCOUNT"]
+  ENV["BUGSNAG_TEST_ACCOUNT"] || "5404dc9064657377ae000002"
 end
 
 def test_bugsnag_comment
-  ENV["BUGSNAG_TEST_COMMENT"]
+  ENV["BUGSNAG_TEST_COMMENT"] || "5404e0ea64657377ae00000b"
 end
 
 def test_bugsnag_error
-  ENV["BUGSNAG_TEST_ERROR"]
+  ENV["BUGSNAG_TEST_ERROR"] || "5404e0c435ec9cb116b13603"
 end
 
 def test_bugsnag_event
-  ENV["BUGSNAG_TEST_EVENT"]
+  ENV["BUGSNAG_TEST_EVENT"] || "5404e0c4fd9c7c077b000001"
 end
 
 def test_bugsnag_project
-  ENV["BUGSNAG_TEST_PROJECT"]
+  ENV["BUGSNAG_TEST_PROJECT"] || "5404dc9c64657377ae000007"
 end
 
 def test_bugsnag_user
-  ENV["BUGSNAG_TEST_USER"]
+  ENV["BUGSNAG_TEST_USER"] || "5404dc9064657377ae000001"
 end
