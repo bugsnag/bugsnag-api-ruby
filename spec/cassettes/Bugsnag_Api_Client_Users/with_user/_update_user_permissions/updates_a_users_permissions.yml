@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://<BUGSNAG_LOGIN>:<BUGSNAG_PASSWORD>@api.bugsnag.com/accounts/<BUGSNAG_ACCOUNT_ID>/users
+    body:
+      encoding: UTF-8
+      string: '{"admin":false,"email":"example@example.com"}'
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"9f7d538242c32229fd4e5e0c9f176a4f"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 47aadee0-c6c5-4d8f-9255-57a2765c40f6
+      X-Runtime:
+      - '0.136265'
+      Date:
+      - Tue, 02 Sep 2014 02:49:28 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"id":"5404dc9c64657377ae000009","email":"example@example.com","name":null,"gravatar_id":"23463b99b62a72f26ed677cc556c44e8","gravatar_url":"https://secure.gravatar.com/avatar/23463b99b62a72f26ed677cc556c44e8","url":"https://api.bugsnag.com/users/5404dc9c64657377ae000009","projects_url":"https://api.bugsnag.com/users/5404dc9c64657377ae000009/projects","account_admin":false,"html_url":"http://bugsnag.dev/accounts/test-account/collaborators/5404dc9c64657377ae000009/edit"}'
+    http_version: 
+  recorded_at: Tue, 02 Sep 2014 02:49:28 GMT
+- request:
+    method: patch
+    uri: http://<BUGSNAG_LOGIN>:<BUGSNAG_PASSWORD>@api.bugsnag.com/accounts/<BUGSNAG_ACCOUNT_ID>/users/5404dc9c64657377ae000009
+    body:
+      encoding: UTF-8
+      string: '{"admin":true}'
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"196dacb6c6f0811ea84b72ac7a09e47c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2a642fff-de2f-4912-b791-dd35cec9a8b5
+      X-Runtime:
+      - '0.139348'
+      Date:
+      - Tue, 02 Sep 2014 02:49:28 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"id":"5404dc9c64657377ae000009","email":"example@example.com","name":null,"gravatar_id":"23463b99b62a72f26ed677cc556c44e8","gravatar_url":"https://secure.gravatar.com/avatar/23463b99b62a72f26ed677cc556c44e8","url":"https://api.bugsnag.com/users/5404dc9c64657377ae000009","projects_url":"https://api.bugsnag.com/users/5404dc9c64657377ae000009/projects","account_admin":true,"html_url":"http://bugsnag.dev/accounts/test-account/collaborators/5404dc9c64657377ae000009/edit"}'
+    http_version: 
+  recorded_at: Tue, 02 Sep 2014 02:49:28 GMT
+recorded_with: VCR 2.9.2

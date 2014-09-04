@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://<BUGSNAG_LOGIN>:<BUGSNAG_PASSWORD>@api.bugsnag.com/events/<BUGSNAG_EVENT_ID>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - '"72ad1efa31954277f4601c0c28085b43"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - d45b4eaa-5911-4b09-9bfc-cd78c8038c3c
+      X-Runtime:
+      - '0.120034'
+      Date:
+      - Tue, 02 Sep 2014 02:49:30 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"id":"<BUGSNAG_EVENT_ID>","received_at":"2014-09-01T21:10:28.000Z","context":"rake#test_exception","meta_data":{"App":{"releaseStage":"development","type":"rake"},"Device":{"hostname":"destroyer.local"},"Rake
+        Task":{"arguments":null,"description":"Send a test exception to Bugsnag.","name":"bugsnag:test_exception"}},"severity":"warning","url":"https://api.bugsnag.com/events/<BUGSNAG_EVENT_ID>","html_url":"http://bugsnag.dev/test-account/example-dot-com/errors/<BUGSNAG_ERROR_ID>?event_id=<BUGSNAG_EVENT_ID>","exceptions":[{"class":"RuntimeError","message":"Bugsnag
+        test exception","stacktrace":[{"file":"gems/rake-10.3.2/lib/rake/task.rb","line":240,"method":"call"},{"file":"gems/rake-10.3.2/lib/rake/task.rb","line":240,"method":"block
+        in execute"},{"file":"gems/rake-10.3.2/lib/rake/task.rb","line":235,"method":"each"},{"file":"gems/rake-10.3.2/lib/rake/task.rb","line":235,"method":"execute"},{"file":"gems/rake-10.3.2/lib/rake/task.rb","line":179,"method":"block
+        in invoke_with_call_chain"},{"file":"/Users/james/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/monitor.rb","line":211,"method":"mon_synchronize"},{"file":"gems/rake-10.3.2/lib/rake/task.rb","line":172,"method":"invoke_with_call_chain"},{"file":"gems/rake-10.3.2/lib/rake/task.rb","line":165,"method":"invoke"},{"file":"gems/rake-10.3.2/lib/rake/application.rb","line":150,"method":"invoke_task"},{"file":"gems/rake-10.3.2/lib/rake/application.rb","line":106,"method":"block
+        (2 levels) in top_level"},{"file":"gems/rake-10.3.2/lib/rake/application.rb","line":106,"method":"each"},{"file":"gems/rake-10.3.2/lib/rake/application.rb","line":106,"method":"block
+        in top_level"},{"file":"gems/rake-10.3.2/lib/rake/application.rb","line":115,"method":"run_with_threads"},{"file":"gems/rake-10.3.2/lib/rake/application.rb","line":100,"method":"top_level"},{"file":"gems/rake-10.3.2/lib/rake/application.rb","line":78,"method":"block
+        in run"},{"file":"gems/rake-10.3.2/lib/rake/application.rb","line":176,"method":"standard_exception_handling"},{"file":"gems/rake-10.3.2/lib/rake/application.rb","line":75,"method":"run"},{"file":"gems/rake-10.3.2/bin/rake","line":33,"method":"<top
+        (required)>"},{"file":"/Users/james/.rbenv/versions/2.0.0-p353/bin/rake","line":23,"method":"load"},{"file":"/Users/james/.rbenv/versions/2.0.0-p353/bin/rake","line":23,"method":"<main>"}]}]}'
+    http_version: 
+  recorded_at: Tue, 02 Sep 2014 02:49:30 GMT
+recorded_with: VCR 2.9.2

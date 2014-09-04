@@ -13,8 +13,19 @@ module Bugsnag
         # @see https://bugsnag.com/docs/api/projects#list-an-account-s-projects
         # @example
         #   Bugsnag::Api.projects("515fb9337c1074f6fd000009")
-        def projects(account, options = {})
-          paginate "accounts/#{account}/projects", options
+        def projects(account=nil, options = {})
+          if account.nil? || account.is_a?(Hash)
+            options = account || {}
+
+            raise Bugsnag::Api::AccountCredentialsRequired.new(
+              "Fetching projects without an account id is only possible when "\
+              "using an account auth token."
+            ) unless token_authenticated?
+
+            paginate "account/projects", options
+          else
+            paginate "accounts/#{account}/projects", options
+          end
         end
         alias :account_projects :projects
 
@@ -26,7 +37,7 @@ module Bugsnag
         # @example
         #   Bugsnag::Api.user_projects("515fb9337c1074f6fd000007")
         def user_projects(user, options = {})
-          paginate "user/#{user}/projects", options
+          paginate "users/#{user}/projects", options
         end
 
         # Get a single project
@@ -69,7 +80,7 @@ module Bugsnag
         # @return [Boolean] `true` if project was deleted
         # @see https://bugsnag.com/docs/api/projects#delete-a-project
         def delete_project(project, options = {})
-          delete "projects/#{project}", options
+          boolean_from_response :delete, "projects/#{project}", options
         end
       end
     end

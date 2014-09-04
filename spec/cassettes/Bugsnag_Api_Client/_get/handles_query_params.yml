@@ -1,0 +1,56 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bugsnag.com/?foo=bar
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.0
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Tue, 02 Sep 2014 02:49:29 GMT
+      Server:
+      - nginx + Phusion Passenger
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Powered-By:
+      - Phusion Passenger
+      X-Request-Id:
+      - d5805f6d-7f5f-4513-af4d-3a4a259a1707
+      X-Runtime:
+      - '0.004698'
+      X-Xss-Protection:
+      - 1; mode=block
+      Content-Length:
+      - '96'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"projects_url":"https://api.bugsnag.com/account/projects","users_url":"https://api.bugsnag.com/account/users"}'
+    http_version: 
+  recorded_at: Tue, 02 Sep 2014 02:49:29 GMT
+recorded_with: VCR 2.9.2

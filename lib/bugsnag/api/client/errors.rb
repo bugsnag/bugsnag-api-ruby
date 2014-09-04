@@ -67,7 +67,7 @@ module Bugsnag
         # @return [Boolean] `true` if error was deleted
         # @see https://bugsnag.com/docs/api/errors#delete-an-error
         def delete_error(error, options = {})
-          delete "errors/#{error}", options
+          boolean_from_response :delete, "errors/#{error}", options
         end
       end
     end
