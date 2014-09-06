@@ -32,15 +32,21 @@ This library borrows heavily from the code and philosophies of the fantastic [Oc
 
 Add this line to your application's Gemfile:
 
-    gem "bugsnag-api"
+```ruby
+gem "bugsnag-api"
+```
 
 And then execute:
 
-    $ bundle
+```
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install bugsnag-api
+```
+$ gem install bugsnag-api
+```
 
 
 ## Usage
@@ -313,6 +319,9 @@ Bugsnag.Api.configure do |config|
 end
 ```
 
+
+## Build Status
+![Build status](https://travis-ci.org/bugsnag/bugsnag-api-ruby.svg?branch=master)
 
 ## Contributing
 
