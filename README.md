@@ -76,17 +76,21 @@ Most methods return a `Resource` object which provides dot notation and [] acces
 ```ruby
 # Fetch the current account
 account = Bugsnag::Api.account
+
 puts account.name
 # => "Acme Co"
+
 puts account.fields
 # => #<Set: {:id, :name, :created_at, :updated_at, :url, :users_url, :projects_url, :account_creator, :billing_contact}>
+
 puts account[:id]
 # => "50baed0d9bf39c1431000003"
+
 account.rels[:users].href
 # => "https://api.bugsnag.com/accounts/50baed0d9bf39c1431000003/users"
 ```
 
-**Note:** URL fields are culled into a separate `.rels` collection for easier access to [related resources](#related-resources).
+**Note:** URL fields are culled into a separate `.rels` collection to make [accessing related resources](#accessing-related-resources) much simpler.
 
 
 ### Accessing Related Resources
@@ -96,8 +100,7 @@ Resources returned by Bugsnag API methods contain not only data but hypermedia l
 ```ruby
 user = Bugsnag::Api.account
 
-# Get the repos rel, returned from the API
-# as repos_url in the resource
+# Get the users rel, returned from the API as users_url in the resource
 account.rels[:users].href
 # => "https://api.bugsnag.com/accounts/50baed0d9bf39c1431000003/users"
 
