@@ -1,3 +1,4 @@
+require "bugsnag/api/version"
 require "bugsnag/api/response/raise_error"
 
 module Bugsnag
