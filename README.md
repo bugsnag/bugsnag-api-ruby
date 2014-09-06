@@ -12,7 +12,12 @@ This library shares code and philosophies with the fantastic [Octokit](https://g
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [Configuration](#configuration)
+  - [Making Requests](#basic-usage)
+  - [Consuming Resources](#consuming-resources)
+  - [Accessing HTTP responses](#accessing-http-responses)
+  - [Related Resources](#resource-relationships)
+  - [Authentication](#authentication)
+  - [Pagination](#pagination)
 - [API Methods](#api-methods)
   - [Accounts](#accounts)
   - [Comments](#comments)
@@ -20,6 +25,7 @@ This library shares code and philosophies with the fantastic [Octokit](https://g
   - [Events](#events)
   - [Projects](#projects)
   - [Users](#users)
+- [Advanced Configuration](#advanced-configuration)
 
 
 ## Installation
@@ -39,42 +45,67 @@ Or install it yourself as:
 
 ## Usage
 
-### Basic Usage (Static client)
+### Making Requests
 
 ```ruby
-# Configure the static API client
+# Provide authentication credentials
 Bugsnag::Api.configure do |config|
   config.auth_token = "your-account-api-token"
 end
 
-# Access API methods directly on `Bugsnag::Api`
+# Fetch the current account
 account = Bugsnag::Api.account
 ```
 
-### Non-static Client
+### Consuming Resources
+
+Most methods return a `Resource` object which provides dot notation and [] access for fields returned in the API response.
 
 ```ruby
-# Create a new API client, configured using a block
-client = Bugsnag::Api::Client.new do |config|
-  config.auth_token = "your-account-api-token"
-end
-
-# Create a new API client, configured using params
-client = Bugsnag::Api::Client.new({
-  auth_token: "your-account-api-token"
-})
-
-# Re-configure an existing API client
-client.configure do |config|
-  config.auth_token = "another-api-token"
-end
-
-# Access API methods on the client
-client.accounts
+# Fetch the current account
+account = Bugsnag::Api.account
+puts account.name
+# => "Acme Co"
+puts account.fields
+# => #<Set: {:id, :name, :created_at, :updated_at, :url, :users_url, :projects_url, :account_creator, :billing_contact}>
+puts account[:id]
+# => "50baed0d9bf39c1431000003"
+account.rels[:users].href
+# => "https://api.bugsnag.com/accounts/50baed0d9bf39c1431000003/users"
 ```
 
+**Note:** URL fields are culled into a separate `.rels` collection for easier access to [related resources](#related-resources).
 
-## Configuration
+
+### Accessing HTTP responses
+
+While most methods return a `Resource` object or a `Boolean`, sometimes you may need access to the raw HTTP response headers. You can access the last HTTP response with `Client#last_response`:
+
+```ruby
+account   = Bugsnag::Api.account
+response  = Bugsnag::Api.last_response
+status    = response.headers[:status]
+```
+
+### Related Resources
+
+Resources returned by Bugsnag API methods contain not only data but hypermedia link relations:
+
+```ruby
+user = Bugsnag::Api.account
+
+# Get the repos rel, returned from the API
+# as repos_url in the resource
+account.rels[:users].href
+# => "https://api.bugsnag.com/accounts/50baed0d9bf39c1431000003/users"
+
+users = account.rels[:users].get.data
+users.last.name
+# => "James Smith"
+```
+
+When processing API responses, all `*_url` attributes are culled in to the link relations collection. Any `url` attribute becomes .rels[:self].
+
 
 ### Authentication
 
@@ -95,30 +126,12 @@ Bugsnag::Api.configure do |config|
 end
 ```
 
-### Endpoint
+### Pagination
 
-By default, `https://api.bugsnag.com` is used for API access, if you are using
-Bugsnag Enterprise, you can configure a custom endpoint.
+Many Bugsnag API resources are paginated. While you may be tempted to start adding :page parameters to your calls, the API returns links to the next and previous pages for you in the `Link` response header, which we expose in `rels`:
 
-```ruby
-Bugsnag.Api.configure do |config|
-  config.endpoint = "http://api.bugsnag.example.com"
-end
-```
-
-### Proxy
-
-If you are using a proxy, you can configure the API client to use it.
-
-```ruby
-Bugsnag.Api.configure do |config|
-  config.proxy = {
-    uri:        "http://proxy.example.com",
-    user:       "foo",
-    password:   "bar"
-  }
-end
-```
+errors = Bugsnag::Api.errors "project-id", per_page: 100
+errors.concat Bugsnag::Api.last_response.rels[:next].get.data
 
 
 ## API Methods
@@ -255,6 +268,44 @@ user = Bugsnag::Api.update_user_permissions("account-id", "user-id", {
 
 # Remove a user from an account
 Bugsnag::Api.remove_user("account-id", "user-id")
+```
+
+
+## Advanced Configuration
+
+### Endpoint
+
+By default, `https://api.bugsnag.com` is used for API access, if you are using
+Bugsnag Enterprise, you can configure a custom endpoint.
+
+```ruby
+Bugsnag.Api.configure do |config|
+  config.endpoint = "http://api.bugsnag.example.com"
+end
+```
+
+### Proxy
+
+If you are using a proxy, you can configure the API client to use it.
+
+```ruby
+Bugsnag.Api.configure do |config|
+  config.proxy = {
+    uri:        "http://proxy.example.com",
+    user:       "foo",
+    password:   "bar"
+  }
+end
+```
+
+### Non-static Client
+
+```ruby
+# Create a non-static API client
+client = Bugsnag::Api::Client.new(auth_token: "your-account-api-token")
+
+# Access API methods on the client
+accounts = client.accounts
 ```
 
 
