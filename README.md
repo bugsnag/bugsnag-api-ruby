@@ -321,7 +321,9 @@ end
 
 
 ## Build Status
+
 ![Build status](https://travis-ci.org/bugsnag/bugsnag-api-ruby.svg?branch=master)
+
 
 ## Contributing
 
@@ -330,3 +332,8 @@ end
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+
+## License
+
+The Bugsnag API Toolkit for Ruby is free software released under the MIT License. See [LICENSE.txt](LICENSE.txt) for details.
