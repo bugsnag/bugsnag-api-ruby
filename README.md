@@ -141,7 +141,7 @@ end
 
 Many Bugsnag API resources are paginated. While you may be tempted to start adding :page parameters to your calls, the API returns links to the next and previous pages for you in the `Link` response header, which we expose in `rels`:
 
-```
+```ruby
 errors = Bugsnag::Api.errors("project-id", per_page: 100)
 errors.concat Bugsnag::Api.last_response.rels[:next].get.data
 ```
