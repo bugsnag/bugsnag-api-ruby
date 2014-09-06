@@ -115,7 +115,7 @@ users.last.name
 # => "James Smith"
 ```
 
-When processing API responses, all `*_url` attributes are culled in to the link relations collection. Any `url` attribute becomes `.rels[:self]``.
+When processing API responses, all `*_url` attributes are culled in to the link relations collection. Any `url` attribute becomes `.rels[:self]`.
 
 
 ### Authentication
