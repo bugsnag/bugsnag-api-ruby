@@ -96,9 +96,6 @@ account.rels[:users].href
 # => "https://api.bugsnag.com/accounts/50baed0d9bf39c1431000003/users"
 ```
 
-**Note:** URL fields are culled into a separate `.rels` collection to make [accessing related resources](#accessing-related-resources) much simpler.
-
-
 ### Accessing Related Resources
 
 Resources returned by Bugsnag API methods contain not only data but hypermedia link relations:
