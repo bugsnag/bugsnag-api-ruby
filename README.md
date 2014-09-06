@@ -122,7 +122,7 @@ When processing API responses, all `*_url` attributes are culled in to the link 
 
 API usage requires authentication. You can authenticate using either your
 Bugsnag account's [auth token](https://bugsnag.com/docs/api#account-authentication)
-or with your Bugsnag user's email address and password.
+or with your Bugsnag [user credentials](https://bugsnag.com/docs/api#user-authentication).
 
 ```ruby
 # Authenticate with your Bugsnag account's auth token
