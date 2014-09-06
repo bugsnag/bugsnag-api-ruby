@@ -5,19 +5,19 @@ The library allows for quick read/write access to the [Bugsnag API](https://bugs
 
 If you are looking to automatically detect crashes in your Ruby apps, you should take a look at the [Bugsnag Ruby Detection Library](https://bugsnag.com/docs/notifiers/ruby) instead.
 
-This library shares code and philosophies with the fantastic [Octokit](https://github.com/octokit/octokit.rb) library.
+This library borrows heavily from the code and philosophies of the fantastic [Octokit](https://github.com/octokit/octokit.rb) library. A big thanks to [@pengwynn](https://github.com/pengwynn) and the rest of the Octokit team!
 
 
 ## Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Making Requests](#basic-usage)
+  - [Making Requests](#making-requests)
   - [Consuming Resources](#consuming-resources)
-  - [Accessing HTTP responses](#accessing-http-responses)
-  - [Related Resources](#resource-relationships)
+  - [Accessing Related Resources](#accessing-related-resources)
   - [Authentication](#authentication)
   - [Pagination](#pagination)
+  - [Accessing HTTP responses](#accessing-http-responses)
 - [API Methods](#api-methods)
   - [Accounts](#accounts)
   - [Comments](#comments)
@@ -47,6 +47,8 @@ Or install it yourself as:
 
 ### Making Requests
 
+API methods are available as module methods or as client instance methods.
+
 ```ruby
 # Provide authentication credentials
 Bugsnag::Api.configure do |config|
@@ -55,6 +57,16 @@ end
 
 # Fetch the current account
 account = Bugsnag::Api.account
+```
+
+or...
+
+```ruby
+# Create an non-static API client
+client = Bugsnag::Api::Client.new(auth_token: "your-account-api-token")
+
+# Access API methods on the client
+accounts = client.accounts
 ```
 
 ### Consuming Resources
@@ -77,17 +89,7 @@ account.rels[:users].href
 **Note:** URL fields are culled into a separate `.rels` collection for easier access to [related resources](#related-resources).
 
 
-### Accessing HTTP responses
-
-While most methods return a `Resource` object or a `Boolean`, sometimes you may need access to the raw HTTP response headers. You can access the last HTTP response with `Client#last_response`:
-
-```ruby
-account   = Bugsnag::Api.account
-response  = Bugsnag::Api.last_response
-status    = response.headers[:status]
-```
-
-### Related Resources
+### Accessing Related Resources
 
 Resources returned by Bugsnag API methods contain not only data but hypermedia link relations:
 
@@ -133,6 +135,16 @@ Many Bugsnag API resources are paginated. While you may be tempted to start addi
 errors = Bugsnag::Api.errors "project-id", per_page: 100
 errors.concat Bugsnag::Api.last_response.rels[:next].get.data
 
+
+### Accessing HTTP responses
+
+While most methods return a `Resource` object or a `Boolean`, sometimes you may need access to the raw HTTP response headers. You can access the last HTTP response with `Client#last_response`:
+
+```ruby
+account   = Bugsnag::Api.account
+response  = Bugsnag::Api.last_response
+status    = response.headers[:status]
+```
 
 ## API Methods
 
@@ -296,16 +308,6 @@ Bugsnag.Api.configure do |config|
     password:   "bar"
   }
 end
-```
-
-### Non-static Client
-
-```ruby
-# Create a non-static API client
-client = Bugsnag::Api::Client.new(auth_token: "your-account-api-token")
-
-# Access API methods on the client
-accounts = client.accounts
 ```
 
 
