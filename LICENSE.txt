@@ -1,6 +1,7 @@
-Copyright (c) 2014 Bugsnag Inc.
+Parts of this software are derived from Octokit.rb, Copyright (c) 2009-2014
+Wynn Netherland, Adam Stacoviak, Erik Michaels-Ober.
 
-MIT License
+The remaining parts are Copyright (c) 2014 Bugsnag Inc.
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
