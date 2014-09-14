@@ -299,7 +299,7 @@ By default, `https://api.bugsnag.com` is used for API access, if you are using
 Bugsnag Enterprise, you can configure a custom endpoint.
 
 ```ruby
-Bugsnag.Api.configure do |config|
+Bugsnag::Api.configure do |config|
   config.endpoint = "http://api.bugsnag.example.com"
 end
 ```
@@ -309,7 +309,7 @@ end
 If you are using a proxy, you can configure the API client to use it.
 
 ```ruby
-Bugsnag.Api.configure do |config|
+Bugsnag::Api.configure do |config|
   config.proxy = {
     uri:        "http://proxy.example.com",
     user:       "foo",
