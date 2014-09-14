@@ -156,7 +156,7 @@ status    = response.headers[:status]
 
 ## API Methods
 
-### Account
+### Accounts
 
 ```ruby
 # List your accounts
