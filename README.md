@@ -326,11 +326,12 @@ end
 
 ## Contributing
 
-1. Fork it
+1. [Fork](https://help.github.com/articles/fork-a-repo) the [library on GitHub](https://github.com/bugsnag/bugsnag-api-ruby
 2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
+3. Commit and push until you are happy with your contribution
 4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+5. Run the tests with rake spec and make sure they all pass
+6. Create a [Pull Request](https://help.github.com/articles/using-pull-requests)
 
 
 ## License
