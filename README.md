@@ -326,7 +326,7 @@ end
 
 ## Contributing
 
-1. [Fork](https://help.github.com/articles/fork-a-repo) the [library on GitHub](https://github.com/bugsnag/bugsnag-api-ruby
+1. [Fork](https://help.github.com/articles/fork-a-repo) the [library on GitHub](https://github.com/bugsnag/bugsnag-api-ruby)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit and push until you are happy with your contribution
 4. Push to the branch (`git push origin my-new-feature`)
