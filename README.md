@@ -51,6 +51,12 @@ $ gem install bugsnag-api
 
 ## Usage
 
+### Require gem
+
+```ruby
+require 'bugsnag/api'
+```
+
 ### Making Requests
 
 API methods are available as module methods or as client instance methods.
