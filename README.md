@@ -146,7 +146,11 @@ Many Bugsnag API resources are paginated. While you may be tempted to start addi
 
 ```ruby
 errors = Bugsnag::Api.errors("project-id", per_page: 100)
-errors.concat Bugsnag::Api.last_response.rels[:next].get.data
+last_response = Bugsnag::Api.last_response
+until last_response.rels[:next].nil?
+  last_response = last_response.rels[:next].get
+  errors.concat last_response.data
+end
 ```
 
 
