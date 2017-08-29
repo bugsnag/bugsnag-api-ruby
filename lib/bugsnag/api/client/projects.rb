@@ -1,88 +1,62 @@
 module Bugsnag
-  module Api
-    class Client
+    module Api
+        class Client
+  
+            # Methods for the Projects API
+            #
+            # @see http://docs.bugsnagapiv2.apiary.io/#reference/projects
+            module Projects
+                # Create a Project in an Organization
+                #
+                # @return [Sawyer::Resource] New Project
+                # @see http://docs.bugsnagapiv2.apiary.io/#reference/projects/projects/create-a-project-in-an-organization
+                def createProject(org_id, name, type, options = {})
+                    post "organizations/#{org_id}/projects", options.merge({:name => name, :type => type})
+                end
 
-      # Methods for the Projects API
-      #
-      # @see https://bugsnag.com/docs/api/projects
-      module Projects
-        # List account projects
-        #
-        # @param account [String] Bugsnag account for which to list projects
-        # @return [Array<Sawyer::Resource>] List of projects
-        # @see https://bugsnag.com/docs/api/projects#list-an-account-s-projects
-        # @example
-        #   Bugsnag::Api.projects("515fb9337c1074f6fd000009")
-        def projects(account=nil, options = {})
-          if account.nil? || account.is_a?(Hash)
-            options = account || {}
+                # View a Project
+                #
+                # @return [Sawyer::Resource] Requested Project
+                # @see http://docs.bugsnagapiv2.apiary.io/#reference/projects/projects/view-a-project
+                def viewProject(id, options = {})
+                    get "projects/#{id}", options
+                end
 
-            raise Bugsnag::Api::AccountCredentialsRequired.new(
-              "Fetching projects without an account id is only possible when "\
-              "using an account auth token."
-            ) unless token_authenticated?
+                # Update a Project
+                #
+                # @option name [String] A name for the project
+                # @option global_grouping [Array<String>] A list of error classes, which will be grouped by class
+                # @option location_grouping [Array<String>] A list of error classes, which will be grouped by context
+                # @option discarded_app_versions [Array<String>] A list of app versions whose events will be ignored
+                # @option discarded_errors [Array<String>] A list of error classes that will be ignored
+                # @option url_whitelist [Array<String>] If configured only errors from whitelisted URLs will be processed
+                # @option ignore_old_browsers [Boolean] Set to ignore events from old web browsers
+                # @option ignored_browser_versions [Object] A mapping of browser name to ignored versions
+                # @option resolve_on_deploy [Boolean] Set all errors to resolved once a new deployment has been notified
+                # @option collaborator_ids [Array<String>] Update the collaborators in the project to only these ids
+                # @return [Sawyer::Resource] Updated Project
+                # @see http://docs.bugsnagapiv2.apiary.io/#reference/projects/projects/update-a-project
+                def updateProject(id, options = {})
+                    patch "projects/#{id}", options
+                end
 
-            paginate "account/projects", options
-          else
-            paginate "accounts/#{account}/projects", options
-          end
+                # Regenerate a Project's notifier API key
+                #
+                # @return 
+                # @see http://docs.bugsnagapiv2.apiary.io/#reference/projects/projects/regenerate-a-project's-notifier-api-key
+                def regenerateAPIKey(id, options = {})
+                    delete "projects/#{id}/api_key", options
+                end
+
+                # Delete a Project
+                #
+                # @return 
+                # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/organizations/delete-an-organization
+                def deleteProject(id, options = {})
+                delete "projects/#{id}", options
+            end
+            end
         end
-        alias :account_projects :projects
-
-        # List user projects
-        #
-        # @param account [String] Bugsnag user for which to list projects
-        # @return [Array<Sawyer::Resource>] List of projects
-        # @see https://bugsnag.com/docs/api/projects#list-a-user-s-projects
-        # @example
-        #   Bugsnag::Api.user_projects("515fb9337c1074f6fd000007")
-        def user_projects(user, options = {})
-          paginate "users/#{user}/projects", options
-        end
-
-        # Get a single project
-        #
-        # @param project [String] A Bugsnag project
-        # @return [Sawyer::Resource] The project you requested, if it exists
-        # @see https://bugsnag.com/docs/api/projects#get-project-details
-        # @example
-        #   Bugsnag::Api.project("50baed119bf39c1431000004")
-        def project(project, options = {})
-          get "projects/#{project}", options
-        end
-
-        # Create a project
-        #
-        # @param account [String] The Bugsnag account to create project on
-        # @option name [String] The project's name
-        # @option type [String] The type of the project
-        # @see https://bugsnag.com/docs/api/projects#create-a-project
-        # @example
-        #   Bugsnag::Api.create_project("515fb9337c1074f6fd000009", name: "Website")
-        def create_project(account, options = {})
-          post "accounts/#{account}/projects", options
-        end
-
-        # Update a project
-        #
-        # @param project [String] A Bugsnag project
-        # @return [Sawyer::Resource] The updated project
-        # @see https://bugsnag.com/docs/api/projects#update-a-project
-        # @example
-        #   Bugsnag::Api.update_project("50baed119bf39c1431000004", name: "Dashboard")
-        def update_project(project, options = {})
-          patch "projects/#{project}", options
-        end
-
-        # Delete a project
-        #
-        # @param project [String] A Bugsnag project
-        # @return [Boolean] `true` if project was deleted
-        # @see https://bugsnag.com/docs/api/projects#delete-a-project
-        def delete_project(project, options = {})
-          boolean_from_response :delete, "projects/#{project}", options
-        end
-      end
     end
-  end
 end
+  
