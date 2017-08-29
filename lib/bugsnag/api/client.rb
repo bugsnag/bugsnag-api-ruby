@@ -15,7 +15,7 @@ module Bugsnag
 
     # Client for the Bugsnag API
     #
-    # @see https://bugsnag.com/docs/api
+    # @see http://docs.bugsnagapiv2.apiary.io/
     class Client
       include Bugsnag::Api::Client::Organizations
       include Bugsnag::Api::Client::Collaborators
