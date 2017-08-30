@@ -23,7 +23,7 @@ module Bugsnag
                 # @return [Sawyer::Resource] Requested Error
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/view-an-error
                 def viewError(project_id, id, options = {})
-                    get "organizations/#{project_id}/errors/#{id}", options
+                    get "projects/#{project_id}/errors/#{id}", options
                 end
 
                 # Update an Error
@@ -36,7 +36,7 @@ module Bugsnag
                 # @return [Sawyer::Resource] Updated Error
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/update-an-error
                 def updateError(project_id, id, operation, options = {})
-                    patch "organizations/#{project_id}/errors/#{id}", options.merge({:operation => operation})
+                    patch "projects/#{project_id}/errors/#{id}", options.merge({:operation => operation})
                 end
 
                 # Bulk update Errors
@@ -49,7 +49,7 @@ module Bugsnag
                 # @return [Array<Sawyer::Resource>] Updated Errors
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/bulk-update-errors
                 def bulkUpdateErrors(project_id, error_ids, operation, options = {})
-                    patch "organizations/#{project_id}/errors", options.merge({:operation => operation, :query => {:error_ids => error_ids.join(' ')}})
+                    patch "projects/#{project_id}/errors", options.merge({:operation => operation, :query => {:error_ids => error_ids.join(' ')}})
                 end
 
                 # Delete an Error
