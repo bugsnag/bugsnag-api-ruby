@@ -64,7 +64,7 @@ module Bugsnag
                 #
                 # @return 
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/delete-all-errors-in-a-project
-                def deleteError(project_id, options = {})
+                def deleteAllErrors(project_id, options = {})
                     delete "projects/#{project_id}/errors", options
                 end 
             end
