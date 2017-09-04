@@ -42,7 +42,7 @@ module Bugsnag
                 # @option admin [Boolean] Whether to give admin permissions. Admins have access to all projects
                 # @return [Array<Sawyer::Resource>] Collaborator details
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/collaborators/bulk-invite-collaborators
-                def bulkInviteCollaborator(org_id, options = {})
+                def bulkInviteCollaborators(org_id, options = {})
                     post "organizations/#{org_id}/collaborators/bulk_invite", options
                 end
 
