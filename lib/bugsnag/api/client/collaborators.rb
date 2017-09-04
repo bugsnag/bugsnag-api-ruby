@@ -52,7 +52,7 @@ module Bugsnag
                 # @option admin [Boolean]  Whether to give admin permissions. Admins have access to all projects
                 # @return [Sawyer::Resource] Collaborator details
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/collaborators/update-a-collaborator's-permissions
-                def updatePermissions(org_id, id, options = {})
+                def updateCollaboratorPermissions(org_id, id, options = {})
                     patch "organizations/#{org_id}/collaborators/#{id}", options
                 end
 
