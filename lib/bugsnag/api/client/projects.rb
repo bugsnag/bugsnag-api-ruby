@@ -10,7 +10,7 @@ module Bugsnag
                 #
                 # @return [Sawyer::Resource] New Project
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/projects/projects/create-a-project-in-an-organization
-                def createProject(org_id, name, type, options = {})
+                def create_project(org_id, name, type, options = {})
                     post "organizations/#{org_id}/projects", options.merge({:name => name, :type => type})
                 end
 
@@ -18,7 +18,7 @@ module Bugsnag
                 #
                 # @return [Sawyer::Resource] Requested Project
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/projects/projects/view-a-project
-                def viewProject(id, options = {})
+                def view_project(id, options = {})
                     get "projects/#{id}", options
                 end
 
@@ -36,7 +36,7 @@ module Bugsnag
                 # @option collaborator_ids [Array<String>] Update the collaborators in the project to only these ids
                 # @return [Sawyer::Resource] Updated Project
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/projects/projects/update-a-project
-                def updateProject(id, options = {})
+                def update_project(id, options = {})
                     patch "projects/#{id}", options
                 end
 
@@ -44,7 +44,7 @@ module Bugsnag
                 #
                 # @return 
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/projects/projects/regenerate-a-project's-notifier-api-key
-                def regenerateAPIKey(id, options = {})
+                def regenerate_api_key(id, options = {})
                     delete "projects/#{id}/api_key", options
                 end
 
@@ -52,7 +52,7 @@ module Bugsnag
                 #
                 # @return 
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/organizations/delete-an-organization
-                def deleteProject(id, options = {})
+                def delete_project(id, options = {})
                 delete "projects/#{id}", options
             end
             end

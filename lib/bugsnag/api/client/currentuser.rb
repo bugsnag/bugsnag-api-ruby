@@ -12,7 +12,7 @@ module Bugsnag
                 # @option per_page [Number] Number of results to return per-page
                 # @return [Array<Sawyer::Resource>] List of Organizations
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/current-user/organizations/list-the-current-user's-organizations
-                def listCurrentUsersOrganizations(options = {})
+                def list_current_users_organizations(options = {})
                     paginate "user/organizations", options
                 end
 
@@ -23,7 +23,7 @@ module Bugsnag
                 # @option per_page [Number] Number of results to return per-page
                 # @return [Array<Sawyer::Resource>] List of Projects
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/current-user/organizations/list-the-current-user's-projects
-                def listCurrentUsersProjects(org_id, options = {})
+                def list_current_users_projects(org_id, options = {})
                     paginate "organizations/#{org_id}/projects", options
                 end
             end

@@ -10,7 +10,7 @@ module Bugsnag
                 #
                 # @return [Sawyer::Resource] Collaborator
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/collaborators/view-a-collaborator
-                def viewCollaborator(org_id, collaborator_id, options = {})
+                def view_collaborator(org_id, collaborator_id, options = {})
                     get "organizations/#{org_id}/collaborators/#{collaborator_id}", options
                 end
 
@@ -19,7 +19,7 @@ module Bugsnag
                 # @option per_page [Number] Amount of results per-page
                 # @return [Array<Sawyer::Resource>] List of Collaborators
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/collaborators/list-collaborators
-                def listCollaborators(org_id, options = {})
+                def list_collaborators(org_id, options = {})
                     paginate "organizations/#{org_id}/collaborators", options
                 end
 
@@ -31,7 +31,7 @@ module Bugsnag
                 # @option admin [Boolean] Whether to give admin permissions. Admins have access to all projects
                 # @return [Sawyer::Resource] Collaborator details
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/collaborators/create-a-collaborator
-                def createCollaborator(org_id, email, options = {})
+                def create_collaborator(org_id, email, options = {})
                     post "organizations/#{org_id}/collaborators", options.merge({:email => email})
                 end
 
@@ -42,7 +42,7 @@ module Bugsnag
                 # @option admin [Boolean] Whether to give admin permissions. Admins have access to all projects
                 # @return [Array<Sawyer::Resource>] Collaborator details
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/collaborators/bulk-invite-collaborators
-                def bulkInviteCollaborators(org_id, options = {})
+                def bulk_invite_collaborators(org_id, options = {})
                     post "organizations/#{org_id}/collaborators/bulk_invite", options
                 end
 
@@ -52,7 +52,7 @@ module Bugsnag
                 # @option admin [Boolean]  Whether to give admin permissions. Admins have access to all projects
                 # @return [Sawyer::Resource] Collaborator details
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/collaborators/update-a-collaborator's-permissions
-                def updateCollaboratorPermissions(org_id, id, options = {})
+                def update_collaborator_permissions(org_id, id, options = {})
                     patch "organizations/#{org_id}/collaborators/#{id}", options
                 end
 
@@ -60,8 +60,8 @@ module Bugsnag
                 #
                 # @return
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/collaborators/delete-a-collaborator
-                def deleteCollaborator(org_id, id, options = {})
-                    delete "organizations/#{org_id}/collaborators/#{id}", options
+                def delete_collaborator(org_id, id, options = {})
+                    boolean_from_response :delete, "organizations/#{org_id}/collaborators/#{id}", options
                 end
 
                 # List Collaborators on a Project
@@ -69,7 +69,7 @@ module Bugsnag
                 # @option per_page [Number] Number of results per page
                 # @return [Array<Sawyer::Resource>] A list of users on the project
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/collaborators/list-collaborators-on-a-project
-                def listProjectCollaborators(project_id, options = {})
+                def list_project_collaborators(project_id, options = {})
                     paginate "projects/#{project_id}/collaborators", options
                 end
 
@@ -80,7 +80,7 @@ module Bugsnag
                 # @option per_page [Number] Number of results per page
                 # @return [Array<Sawyer::Resource>] A list of projects the collaborator belongs to
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/collaborators/view-projects-a-collaborator-has-access-to
-                def viewCollaboratorProjects(org_id, id, options = {})
+                def view_collaborator_projects(org_id, id, options = {})
                     paginate "organizations/#{org_id}/collaborators/#{id}/projects", options
                 end
             end

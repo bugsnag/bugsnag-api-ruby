@@ -10,7 +10,7 @@ module Bugsnag
                 #
                 # @return [Sawyer::Resource] Requested Event
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/events/view-an-event
-                def viewEvent(project_id, id, options = {})
+                def view_event(project_id, id, options = {})
                     get "projects/#{project_id}/events/#{id}", options
                 end
 
@@ -18,7 +18,7 @@ module Bugsnag
                 #
                 # @return 
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/events/delete-an-event
-                def deleteEvent(project_id, id, options = {})
+                def delete_event(project_id, id, options = {})
                     delete "projects/#{project_id}/events/#{id}", options
                 end
 
@@ -30,7 +30,7 @@ module Bugsnag
                 # @option filters [Object] An optional filter object, see http://docs.bugsnagapiv2.apiary.io/#introduction/filtering
                 # @return [Array<Sawyer::Resource>] List of Events for the specified Error
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/events/list-the-events-on-an-error
-                def listErrorEvents(project_id, error_id, options = {})
+                def list_error_events(project_id, error_id, options = {})
                     paginate "projects/#{project_id}/errors/#{error_id}/events", options
                 end
 
@@ -38,7 +38,7 @@ module Bugsnag
                 #
                 # @return [Sawyer::Resource] Last event reported Event
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/events/view-the-latest-event-on-an-error
-                def viewLatestEvent(error_id, options = {})
+                def view_lastest_event(error_id, options = {})
                     get "errors/#{error_id}/lastest_event", options
                 end
 
@@ -50,7 +50,7 @@ module Bugsnag
                 # @option filters [Object] An optional filter object, see http://docs.bugsnagapiv2.apiary.io/#introduction/filtering
                 # @return [Array<Sawyer::Resource>] List of Events for the specified Project
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/events/list-the-events-on-a-project
-                def listProjectEvents(project_id, options = {})
+                def list_project_events(project_id, options = {})
                     get "projects/#{project_id}/events", options
                 end
             end

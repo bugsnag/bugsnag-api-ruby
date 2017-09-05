@@ -14,7 +14,7 @@ module Bugsnag
                 # @option per_page [Number] Number of results to be returned per page
                 # @return [Array<Sawyer::Resource>] List of Pivots for the Error specified
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/pivots/list-pivots-on-an-error
-                def listErrorPivots(project_id, error_id, options = {})
+                def list_error_pivots(project_id, error_id, options = {})
                     paginate "projects/#{project_id}/errors/#{error_id}/pivots", options
                 end
 
@@ -25,7 +25,7 @@ module Bugsnag
                 # @option base [String] Only Events occuring before this time will be used 
                 # @return [Array<Sawyer::Resource>] List of values for the Pivots requested
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/pivots/list-values-of-a-pivot-on-an-error
-                def listErrorPivotValues(project_id, error_id, ef_display_id, options = {})
+                def list_error_pivot_values(project_id, error_id, ef_display_id, options = {})
                     paginate "projects/#{project_id}/errors/#{error_id}/pivots/#{ef_display_id}/values", options
                 end
 
@@ -36,7 +36,7 @@ module Bugsnag
                 # @option filters [Object] An optional filter object, see http://docs.bugsnagapiv2.apiary.io/#introduction/filtering
                 # @return [Array<Sawyer::Resource>] List of Pivots for the Project specified
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/pivots/list-pivots-on-a-project
-                def listProjectPivots(project_id, options = {})
+                def list_project_pivots(project_id, options = {})
                     get "projects/#{project_id}/pivots", options
                 end
 
@@ -47,7 +47,7 @@ module Bugsnag
                 # @option base [String] Only Events occuring before this time will be used 
                 # @return [Array<Sawyer::Resource>] List of values for the Pivots specified
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/organizations/view-an-organization
-                def listProjectPivotValues(project_id, ef_display_id, options = {})
+                def list_project_pivot_values(project_id, ef_display_id, options = {})
                     paginate "projects/#{project_id}/pivots/#{ef_display_id}/values", options
                 end
             end

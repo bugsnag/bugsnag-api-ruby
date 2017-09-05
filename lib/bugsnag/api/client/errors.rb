@@ -14,7 +14,7 @@ module Bugsnag
                 # @option filters [Filters] An optional filters object, see http://docs.bugsnagapiv2.apiary.io/#introduction/filtering
                 # @return [Array<Sawyer::Resource>] List of Project Errors
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/list-the-errors-on-a-project
-                def listProjectErrors(project_id, options = {})
+                def list_project_errors(project_id, options = {})
                     paginate "projects/#{project_id}/errors", options
                 end
 
@@ -22,7 +22,7 @@ module Bugsnag
                 #
                 # @return [Sawyer::Resource] Requested Error
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/view-an-error
-                def viewError(project_id, id, options = {})
+                def view_error(project_id, id, options = {})
                     get "projects/#{project_id}/errors/#{id}", options
                 end
 
@@ -32,10 +32,10 @@ module Bugsnag
                 # @option assigned_collaborator_id [String] THe collaborator to assign to the Error
                 # @option issue_url [String] Updates to link to an existing 3rd party issue
                 # @option issue_title [String] Updates the issues title
-                # @option reopen-rules [Object] Snooze rules for automatically reopening the Error
+                # @option reopen_rules [Object] Snooze rules for automatically reopening the Error
                 # @return [Sawyer::Resource] Updated Error
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/update-an-error
-                def updateError(project_id, id, operation, options = {})
+                def update_error(project_id, id, operation, options = {})
                     patch "projects/#{project_id}/errors/#{id}", options.merge({:operation => operation})
                 end
 
@@ -45,10 +45,10 @@ module Bugsnag
                 # @option assigned_collaborator_id [String] THe collaborator to assign to the Error
                 # @option issue_url [String] Updates to link to an existing 3rd party issue
                 # @option issue_title [String] Updates the issues title
-                # @option reopen-rules [Object] Snooze rules for automatically reopening the Error
+                # @option reopen_rules [Object] Snooze rules for automatically reopening the Error
                 # @return [Array<Sawyer::Resource>] Updated Errors
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/bulk-update-errors
-                def bulkUpdateErrors(project_id, error_ids, operation, options = {})
+                def bulk_update_errors(project_id, error_ids, operation, options = {})
                     patch "projects/#{project_id}/errors", options.merge({:operation => operation, :query => {:error_ids => error_ids.join(' ')}})
                 end
 
@@ -56,16 +56,16 @@ module Bugsnag
                 #
                 # @return 
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/delete-an-error
-                def deleteError(id, options = {})
-                    delete "errors/#{id}", options
+                def delete_error(id, options = {})
+                    boolean_from_response :delete, "errors/#{id}", options
                 end
 
                 # Delete all Errors in a Project
                 #
                 # @return 
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/delete-all-errors-in-a-project
-                def deleteAllErrors(project_id, options = {})
-                    delete "projects/#{project_id}/errors", options
+                def delete_all_errors(project_id, options = {})
+                    boolean_from_response :delete, "projects/#{project_id}/errors", options
                 end 
             end
         end

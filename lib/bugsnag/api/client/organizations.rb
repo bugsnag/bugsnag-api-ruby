@@ -10,7 +10,7 @@ module Bugsnag
                 #
                 # @return [Sawyer::Resource] New Organization
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/organizations/create-an-organization
-                def createOrganization(name, options = {})
+                def create_organization(name, options = {})
                     post "organizations", options.merge({:name => name})
                 end
 
@@ -18,7 +18,7 @@ module Bugsnag
                 #
                 # @return [Sawyer::Resource] Requested Organization
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/organizations/view-an-organization
-                def viewOrganization(id, options = {})
+                def view_organization(id, options = {})
                     get "organizations/#{id}", options
                 end
 
@@ -28,7 +28,7 @@ module Bugsnag
                 # @option billing_emails [Array<String>] List of billing emails
                 # @return [Sawyer::Resource] Updated Organization
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/organizations/update-an-organization
-                def updateOrganization(id, name, auto_upgrade, options = {})
+                def update_organization(id, name, auto_upgrade, options = {})
                     patch "organizations/#{id}", options.merge({:name => name, :auto_upgrade => auto_upgrade})
                 end
 
@@ -36,7 +36,7 @@ module Bugsnag
                 #
                 # @return 
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/organizations/delete-an-organization
-                def deleteOrganization(id, options = {})
+                def delete_organization(id, options = {})
                     delete "organizations/#{id}", options
                 end
             end
