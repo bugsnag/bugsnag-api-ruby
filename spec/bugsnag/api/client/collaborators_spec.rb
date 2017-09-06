@@ -13,7 +13,7 @@ describe Bugsnag::Api::Client::Collaborators do
     describe ".create_collaborator", :vcr do
         it "creates and returns a collaborator" do
             collaborator = @client.create_collaborator @organization_id, @collaborator_email
-            expect(collaborator.email).to eq(collaborator)
+            expect(collaborator.email).to eq(@collaborator_email)
 
             assert_requested :post, bugsnag_url("/organizations/#{@organization_id}/collaborators")
         end
@@ -29,7 +29,7 @@ describe Bugsnag::Api::Client::Collaborators do
         end
     end
 
-    context "given a collaborator exists" do
+    context "given a collaborator exists", :vcr do
         before do
             @collaborator = @client.create_collaborator @organization_id, @collaborator_email, {:project_ids => [@project_id]}
         end
@@ -60,7 +60,7 @@ describe Bugsnag::Api::Client::Collaborators do
                 expect(collaborators).to be_a_kind_of(Array)
                 expect(collaborators.length).to be > 1
 
-                assert_requested :get, bugsnag_url("/projects/#{@project_id}/collaborators"
+                assert_requested :get, bugsnag_url("/projects/#{@project_id}/collaborators")
             end
         end
 
@@ -85,7 +85,7 @@ describe Bugsnag::Api::Client::Collaborators do
         end
 
         describe ".delete_collaborator", :vcr do
-            it "deletes a collaborator" do
+            it "deletes a collaborator" do                
                 collaborator = @client.delete_collaborator @organization_id, @collaborator.id
                 expect(collaborator).to be true
 
