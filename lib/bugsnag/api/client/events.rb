@@ -38,7 +38,7 @@ module Bugsnag
                 #
                 # @return [Sawyer::Resource] Last event reported Event
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/events/view-the-latest-event-on-an-error
-                def view_lastest_event(error_id, options = {})
+                def view_latest_event(error_id, options = {})
                     get "errors/#{error_id}/lastest_event", options
                 end
 
