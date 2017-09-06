@@ -1,0 +1,165 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bugsnag.com/organizations
+    body:
+      encoding: UTF-8
+      string: '{"name":"testOrg"}'
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.3
+      Content-Type:
+      - application/json
+      X-Version:
+      - '2'
+      Authorization:
+      - Basic ***REMOVED***
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 06 Sep 2017 15:36:30 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"c7e4fcb8954d85a05b6ee6b067fcc035"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _bugsnag_session_2=RmhEQXZvTU1vRmp1VDVFSDZKZjhETU1TRXBKSDV2VkpKMWhmdDNya0IyaXdQaVEzcWxqUlVoOURvOE1PM29sdnBmVDJsT3lYaUVPR2QxcjBvV2M0eGEyUnRsK2ptT2xhNnEyNEV1TjhQamhUUFhMYmd2VG5ZaFpGanBvV0xIM2RCakVzdkhOalRtdlI4cDJITTNqUDROMndPN2pvQWpzV044MlVUUXZZSnRNYlZIbXRCczU1V3B0VHpLLzJjb3U5cm83b3NpaE5vTVpnZVFFYk16UFViZz09LS1vQXJQSFJKbmlJZi9hOTFkR2pjUG1BPT0%3D--7a4dce35d2233b9e339c8253615fc8a331a9d0f2;
+        domain=.bugsnag.com; path=/; expires=Thu, 06 Sep 2018 15:36:30 -0000; secure;
+        HttpOnly
+      X-Request-Id:
+      - bbfd5f01-66f7-440a-b592-eb98c5fc7ee6
+      X-Runtime:
+      - '2.369410'
+      Vary:
+      - Origin
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '7'
+      Content-Security-Policy:
+      - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
+        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
+        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
+        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
+        https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
+        https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - noindex, nofollow
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"59b015fcd0e0b80023727ae7","name":"testOrg","slug":"testorg-18","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-09-06T15:36:28.639Z","updated_at":"2017-09-06T15:36:29.486Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-18/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]}'
+    http_version: 
+  recorded_at: Wed, 06 Sep 2017 15:36:30 GMT
+- request:
+    method: patch
+    uri: https://api.bugsnag.com/organizations/59b015fcd0e0b80023727ae7
+    body:
+      encoding: UTF-8
+      string: '{"invoice_address":"test_string","name":"updated_name","auto_upgrade":false}'
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.3
+      Content-Type:
+      - application/json
+      X-Version:
+      - '2'
+      Authorization:
+      - Basic ***REMOVED***
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 06 Sep 2017 15:36:31 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d42ae8a8b7494df2f158b392867fccea"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _bugsnag_session_2=SzlneVAzd1BRdzRvMUFGamc3dnVoaXJwc3U1ak5BMFFlcHdRMCtuRmhCcTlqaStxUkhVZlhqN3hrak1OMUJlbjVpa3pUUEJQUG1WQmJIZzdLUDhLZGsyUldvUDZJT25aK21lZmFjd2l1MTlqRC9nNEVyVGl0VVhnd3JyMnhNS1BqRUU3a3JvSzRETmxsS2pzRVh0V2FVd3B1NFQ3b1FySUJTRi9oUWFWU1BVZWhKWURETldjVVIrV2lwZitiVEdocWJob0NIY2J2WkJ2QXZ3RzRoRGtvQT09LS1pY0paNlI4ckU1MGdvd0FaeG1namlBPT0%3D--928f6b23586045a98607817f0f02e9b9c638f470;
+        domain=.bugsnag.com; path=/; expires=Thu, 06 Sep 2018 15:36:31 -0000; secure;
+        HttpOnly
+      X-Request-Id:
+      - 76a7e636-513d-43f5-8a53-f16d302c1cde
+      X-Runtime:
+      - '0.309745'
+      Vary:
+      - Origin
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '6'
+      Content-Security-Policy:
+      - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
+        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
+        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
+        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
+        https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
+        https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - noindex, nofollow
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"59b015fcd0e0b80023727ae7","name":"updated_name","slug":"updated-name-2","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-09-06T15:36:28.639Z","updated_at":"2017-09-06T15:36:31.296Z","auto_upgrade":false,"upgrade_url":"https://api.bugsnag.com/settings/updated-name-2/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]}'
+    http_version: 
+  recorded_at: Wed, 06 Sep 2017 15:36:31 GMT
+recorded_with: VCR 2.9.3
