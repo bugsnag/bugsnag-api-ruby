@@ -1,69 +1,78 @@
 require "spec_helper"
 
 describe Bugsnag::Api::Client::Errors do
-  before do
-    Bugsnag::Api.reset!
-    @client = basic_auth_client
-  end
-
-  describe ".errors", :vcr do
-    it "returns all errors on an project" do
-      errors = @client.errors(test_bugsnag_project)
-      expect(errors).to be_kind_of(Array)
-      expect(errors.first.class).not_to be_nil
-
-      assert_requested :get, basic_bugsnag_url("/projects/#{test_bugsnag_project}/errors")
-    end
-  end
-
-  context "with error", :vcr do
-    let(:error_url) { basic_bugsnag_url("/errors/#{test_bugsnag_error}") }
-
-    describe ".error" do
-      it "returns an error" do
-        error = @client.error(test_bugsnag_error)
-        expect(error.class).not_to be_nil
-
-        assert_requested :get, error_url
-      end
+    before do
+        @client = auth_token_client
+        @project_id = test_bugsnag_project_id
+        @error_id = test_bugsnag_error_id
+        Bugsnag::Api.reset!
     end
 
-    describe ".resolve_error", :vcr do
-      it "resolves the error" do
-        error = @client.resolve_error(test_bugsnag_error)
-        expect(error.resolved).to be true
+    describe ".list_project_errors", :vcr do
+        it "returns errors on the project" do
+            errors = @client.list_project_errors @project_id
+            expect(errors).to be_a_kind_of(Array)
+            expect(errors.first.id).to not_be_nil
+            expect(errors.first.context).to not_be_nil
 
-        assert_requested :patch, error_url
-      end
+            assert_requested :get, bugsnag_url("/projects/#{@project_id}/errors")
+        end
     end
 
-    describe ".reopen_error", :vcr do
-      it "reopens the error" do
-        error = @client.reopen_error(test_bugsnag_error)
-        expect(error.resolved).to be false
+    describe ".view_error", :vcr do
+        it "returns a single error" do
+            error = @client.view_error @project_id, @error_id
+            expect(error.id).to not_be_nil
+            expect(error.context).to not_be_nil
 
-        assert_requested :patch, error_url
-      end
+            assert_requested :get, bugsnag_url("/projects/#{@project_id}/errors/#{@error_id}")
+        end
     end
 
     describe ".update_error", :vcr do
-      it "updates the error" do
-        error = @client.update_error(test_bugsnag_error, :resolved => true)
-        expect(error.resolved).to be true
+        it "updates and returns the updated error" do
+            error = @client.update_error @project_id, @error_id, "open", {:severity => "info"}
+            expect(error.id).to not_be_nil
+            expect(error.context).to not_be_nil
+            expect(error.severity).to eq("info")
+            expect(error.status).to eq("open")
 
-        assert_requested :patch, error_url
-      end
+            assert_requested :patch, bugsnag_url("/projects/#{@project_id}/errors/#{@error_id}")
+        end
+    end
+
+    describe ".bulk_update_errors", :vcr do
+        it "updates and returns the updated errors" do
+            errors = @client.bulk_update_errors @project_id, [@error_id], "fix", {:severity => "warn"}
+            expect(error).to be_a_kind_of(Array)
+            expect(error.first.id).to not_be_nil
+            expect(error.first.context).to not_be_nil
+            expect(error.first.severity).to eq("warn")
+            expect(error.first.status).to eq("fixed")
+
+            assert_requested :patch, bugsnag_url("/projects/#{@project_id}/errors")
+        end
     end
 
     describe ".delete_error", :vcr do
-      it "deletes the error" do
-        stub_request(:delete, error_url).to_return(:status => [204, "No Content"])
+        it "deletes the error and returns true" do
+            stub_request(:delete, bugsnag_url("/errors/#{@error_id}").to_return(:status => [204, "No Content"])
+            
+            response = @client.delete_error @error_id
+            expect(response).to be true
 
-        response = @client.delete_error(test_bugsnag_error)
-        expect(response).to be true
-
-        assert_requested :delete, error_url
-      end
+            assert_requested :delete, bugsnag_url("/errors/#{@error_id}")
+        end
     end
-  end
+
+    describe ".delete_all_errors", :vcr do
+        it "deletes all errors and returns true" do
+            stub_request(:delete, bugsnag_url("/projects/#{@project_id}/errors").to_return(:status => [204, "No Content"])
+
+            response = @client.delete_all_errors @project_id
+            expect(response).to be true
+
+            assert_requested :delete, bugsnag_url("/projects/#{@project_id}/errors")
+        end
+    end
 end

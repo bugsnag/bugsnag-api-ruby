@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bugsnag.com/
+    uri: https://api.bugsnag.com/user/organizations
     body:
       encoding: US-ASCII
       string: ''
@@ -13,6 +13,8 @@ http_interactions:
       - application/json
       X-Version:
       - '2'
+      Authorization:
+      - Basic YWxleEBidWdzbmFnLmNvbTp6eE5HTUtIaE5ZdkRoV0RiTTR0YUxraVA=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -29,15 +31,23 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"59024f0b45c7aee36c00eaa89f2cce70"
+      - W/"1d2f612168092162da68d366717172c7"
       Cache-Control:
       - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _bugsnag_session_2=WUpGaHNTZ0V0cFdvbU1UbEhaNVBzaGR0Mk0yZmxCR1N1Nm9QV0xNbGZpOVpGTGhwT2JxS0pHL1Q1Njltd3dRSXRITkEwemlObVgwcDJSVjhxZnVkak5WZ2JKcWZqNWh6bkgvOXM5ckUzK3FFczlzR3dvVlpNN0VXTkpEK0NQT3dhdkJ6Q0JVTk53ZUVpOWphMXBvK3NTZkU0NmtsUUNjNVNNcGFWb0xLb2FnOU83TEJqS0JXOUo1MVpUVkFDV2FYVDlYMUtxSEhETTlqNkRybFdnb2w4UT09LS1vNElMQmxzTWI2OXBZQlQ4QkliSmJRPT0%3D--5ac726b828d505c6429c1efee3a555cc323aada9;
+        domain=.bugsnag.com; path=/; expires=Tue, 04 Sep 2018 07:44:47 -0000; secure;
+        HttpOnly
       X-Request-Id:
-      - 986b9c8b-3b97-4f73-a848-14fd2ac3e5ef
+      - 237a5dd0-78f1-4956-9af0-d270f697c46a
       X-Runtime:
-      - '0.007797'
+      - '0.277583'
       Vary:
       - Origin
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '8'
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
         connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
@@ -68,7 +78,7 @@ http_interactions:
       - chunked
     body:
       encoding: UTF-8
-      string: '{"organizations_url":"https://api.bugsnag.com/user/organizations"}'
+      string: '[{"id":"<BUGSNAG_ID>","name":"Bugsnag","slug":"bugsnag","creator":null,"created_at":"2012-12-02T05:54:21.635Z","updated_at":"2017-09-01T22:50:10.821Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/bugsnag/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["<BUGSNAG_EMAIL>"]}]'
     http_version: 
-  recorded_at: Mon, 04 Sep 2017 07:44:44 GMT
+  recorded_at: Mon, 04 Sep 2017 07:44:43 GMT
 recorded_with: VCR 2.9.3
