@@ -10,18 +10,18 @@ describe Bugsnag::Api::Client::Projects do
     describe ".create_project", :vcr do
         it "creates a new project" do
         new_project = @client.create_project @org_id, "testProject", "other"
-        expect(new_project.name).to eq(@new_project_name)
+        expect(new_project.name).to eq("testProject")
 
         assert_requested :post, bugsnag_url("/organizations/#{@org_id}/projects")
         end
     end
 
-    context "given a project" do
+    context "given a project", :vcr do
         before do
             @project = @client.create_project @org_id, "testProject", "other"
         end
 
-        describe ".view_project" do
+        describe ".view_project", :vcr do
             it "returns the requested project" do
                 project = @client.view_project @project.id
                 expect(project.id).to eq(@project.id)
