@@ -1,0 +1,157 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bugsnag.com/organizations/BUGSNAG_ORG_ID/projects
+    body:
+      encoding: UTF-8
+      string: '{"name":"testProject","type":"other"}'
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.3
+      Content-Type:
+      - application/json
+      X-Version:
+      - '2'
+      Authorization:
+      - token BUGSNAG_AUTH_TOKEN
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 06 Sep 2017 16:05:26 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"33832d46acdc6bd259379c548bf49a9e"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 28d6d990-04ee-40e1-bb2b-d573ad8ada47
+      X-Runtime:
+      - '0.447995'
+      Vary:
+      - Origin
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '5'
+      Content-Security-Policy:
+      - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
+        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
+        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
+        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
+        https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
+        https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - noindex, nofollow
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"59b01cc540ab4d001dea69ff","slug":"testproject-13","name":"testProject","api_key":"52a45aeb15add43205399b1dc047f329","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-09-06T16:05:25.920Z","updated_at":"2017-09-06T16:05:25.920Z","errors_url":"https://api.bugsnag.com/projects/59b01cc540ab4d001dea69ff/errors","events_url":"https://api.bugsnag.com/projects/59b01cc540ab4d001dea69ff/events","url":"https://api.bugsnag.com/projects/59b01cc540ab4d001dea69ff","html_url":"https://app.bugsnag.com/testorg-6/testproject-13","open_error_count":0,"collaborators_count":2,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false}'
+    http_version: 
+  recorded_at: Wed, 06 Sep 2017 16:05:26 GMT
+- request:
+    method: delete
+    uri: https://api.bugsnag.com/projects/59b01cc540ab4d001dea69ff/api_key
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.3
+      Content-Type:
+      - application/json
+      X-Version:
+      - '2'
+      Authorization:
+      - token BUGSNAG_AUTH_TOKEN
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 06 Sep 2017 16:05:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"5a708bdf74eb390ad2f7ac9722a635e2"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 48d99156-a377-494c-944b-572ee421f418
+      X-Runtime:
+      - '0.513068'
+      Vary:
+      - Origin
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '4'
+      Content-Security-Policy:
+      - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
+        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
+        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
+        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
+        https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
+        https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - noindex, nofollow
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"59b01cc540ab4d001dea69ff","slug":"testproject-13","name":"testProject","api_key":"b43cbea20e163b5c2a51971c3e913ae0","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-09-06T16:05:25.920Z","updated_at":"2017-09-06T16:05:27.105Z","errors_url":"https://api.bugsnag.com/projects/59b01cc540ab4d001dea69ff/errors","events_url":"https://api.bugsnag.com/projects/59b01cc540ab4d001dea69ff/events","url":"https://api.bugsnag.com/projects/59b01cc540ab4d001dea69ff","html_url":"https://app.bugsnag.com/testorg-6/testproject-13","open_error_count":0,"collaborators_count":2,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false}'
+    http_version: 
+  recorded_at: Wed, 06 Sep 2017 16:05:27 GMT
+recorded_with: VCR 2.9.3
