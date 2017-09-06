@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.bugsnag.com/organizations/BUGSNAG_ORG_ID/collaborators
+    body:
+      encoding: UTF-8
+      string: '{"email":"BUGSNAG_COLLABORATOR_EMAIL"}'
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.3
+      Content-Type:
+      - application/json
+      X-Version:
+      - '2'
+      Authorization:
+      - token BUGSNAG_AUTH_TOKEN
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 06 Sep 2017 10:31:13 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"aaf7e4a6e0a4d51862bb5fa8ffccfe3f"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 2bbbb6bb-7268-4171-b8bf-3964959512b2
+      X-Runtime:
+      - '0.791120'
+      Vary:
+      - Origin
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '5'
+      Content-Security-Policy:
+      - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
+        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
+        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
+        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
+        https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
+        https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - noindex, nofollow
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"59afc14140ab4d001de9d7f0","name":null,"email":"BUGSNAG_COLLABORATOR_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-06T09:34:57.068Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59afc14140ab4d001de9d7f0/projects","heroku":false,"recovery_codes_remaining":0,"is_admin":false,"pending_invitation":true,"last_request_at":null,"project_ids":[],"paid_for":false}'
+    http_version: 
+  recorded_at: Wed, 06 Sep 2017 10:31:13 GMT
+recorded_with: VCR 2.9.3
