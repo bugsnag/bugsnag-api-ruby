@@ -53,7 +53,7 @@ module Bugsnag
                 # @return 
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/organizations/delete-an-organization
                 def delete_project(id, options = {})
-                    boolean_from_response "projects/#{id}", options
+                    boolean_from_response :delete, "projects/#{id}", options
                 end
             end
         end

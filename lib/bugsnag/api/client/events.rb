@@ -19,7 +19,7 @@ module Bugsnag
                 # @return 
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/events/delete-an-event
                 def delete_event(project_id, id, options = {})
-                    boolean_from_response "projects/#{project_id}/events/#{id}", options
+                    boolean_from_response :delete, "projects/#{project_id}/events/#{id}", options
                 end
 
                 # List the Events on an Error
@@ -39,7 +39,7 @@ module Bugsnag
                 # @return [Sawyer::Resource] Last event reported Event
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/events/view-the-latest-event-on-an-error
                 def view_latest_event(error_id, options = {})
-                    get "errors/#{error_id}/lastest_event", options
+                    get "errors/#{error_id}/latest_event", options
                 end
 
                 # List the Events on a Project
