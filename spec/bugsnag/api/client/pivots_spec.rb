@@ -5,7 +5,7 @@ describe Bugsnag::Api::Client::Pivots do
         @client = auth_token_client
         @project_id = test_bugsnag_project_id
         @error_id = test_bugsnag_error_id
-        @event_field_id = test_bugsnag_errorfield_id
+        @event_field_id = test_bugsnag_eventfield_id
         Bugsnag::Api.reset!
     end
 
