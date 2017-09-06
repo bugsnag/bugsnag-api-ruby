@@ -21,7 +21,7 @@ describe Bugsnag::Api::Client::Organizations do
             @organization = @client.create_organization "testOrg"
         end
 
-        describe ".view_organization" do
+        describe ".view_organization", :vcr do
             it "returns the requested organization" do
                 organization = @client.view_organization @organization.id
                 expect(organization.id).to eq(@organization.id)
