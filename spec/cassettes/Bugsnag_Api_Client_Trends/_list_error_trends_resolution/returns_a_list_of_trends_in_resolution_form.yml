@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/errors/59ad772267ea82001b89d5cf/trend?resolution=12h
+    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/errors/BUGSNAG_ERROR_ID/trend?resolution=12h
     body:
       encoding: US-ASCII
       string: ''

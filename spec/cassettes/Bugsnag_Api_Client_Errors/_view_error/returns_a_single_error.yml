@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/errors/59ad772267ea82001b89d5cf
+    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/errors/BUGSNAG_ERROR_ID
     body:
       encoding: US-ASCII
       string: ''
@@ -74,8 +74,8 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"59ad772267ea82001b89d5cf","project_id":"BUGSNAG_PROJECT_ID","error_class":"NoMethodError","message":"Unable
-        to connect to database.","context":"auth/session#create","severity":"error","original_severity":"error","overridden_severity":null,"events":8,"unthrottled_occurrence_count":8,"users":1,"first_seen":"2017-09-04T15:54:10.000Z","last_seen":"2017-09-04T15:54:37.000Z","first_seen_unfiltered":"2017-09-04T15:54:10.000Z","last_seen_unfiltered":"2017-09-04T15:54:37.479Z","status":"open","created_issue":{},"reopen_rules":null,"assigned_collaborator_id":null,"comment_count":0,"missing_dsyms":[],"release_stages":["production"],"grouping_reason":"user_defined","grouping_fields":{"custom":"buggy_file.rb"},"url":"https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/errors/59ad772267ea82001b89d5cf","project_url":"https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID"}'
+      string: '{"id":"BUGSNAG_ERROR_ID","project_id":"BUGSNAG_PROJECT_ID","error_class":"NoMethodError","message":"Unable
+        to connect to database.","context":"auth/session#create","severity":"error","original_severity":"error","overridden_severity":null,"events":8,"unthrottled_occurrence_count":8,"users":1,"first_seen":"2017-09-04T15:54:10.000Z","last_seen":"2017-09-04T15:54:37.000Z","first_seen_unfiltered":"2017-09-04T15:54:10.000Z","last_seen_unfiltered":"2017-09-04T15:54:37.479Z","status":"open","created_issue":{},"reopen_rules":null,"assigned_collaborator_id":null,"comment_count":0,"missing_dsyms":[],"release_stages":["production"],"grouping_reason":"user_defined","grouping_fields":{"custom":"buggy_file.rb"},"url":"https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/errors/BUGSNAG_ERROR_ID","project_url":"https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID"}'
     http_version: 
   recorded_at: Wed, 06 Sep 2017 10:40:32 GMT
 recorded_with: VCR 2.9.3

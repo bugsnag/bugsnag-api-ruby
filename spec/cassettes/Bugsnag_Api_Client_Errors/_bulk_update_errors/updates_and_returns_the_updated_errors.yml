@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: patch
-    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/errors?error_ids=59ad772267ea82001b89d5cf
+    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/errors?error_ids=BUGSNAG_ERROR_ID
     body:
       encoding: UTF-8
       string: '{"severity":"warn","operation":"fix"}'
@@ -74,7 +74,7 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"operation":"fix","59ad772267ea82001b89d5cf":{"assigned_collaborator_id":null,"created_issue":{},"reopen_rules":null,"status":"fixed"}}'
+      string: '{"operation":"fix","BUGSNAG_ERROR_ID":{"assigned_collaborator_id":null,"created_issue":{},"reopen_rules":null,"status":"fixed"}}'
     http_version: 
   recorded_at: Wed, 06 Sep 2017 10:40:31 GMT
 recorded_with: VCR 2.9.3
