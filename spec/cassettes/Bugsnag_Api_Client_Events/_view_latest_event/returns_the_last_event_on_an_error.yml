@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bugsnag.com/errors/59ad772267ea82001b89d5cf/latest_event
+    uri: https://api.bugsnag.com/errors/BUGSNAG_ERROR_ID/latest_event
     body:
       encoding: US-ASCII
       string: ''
@@ -74,7 +74,7 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"59ad773d3d5dd500180a55a7","url":"https://api.bugsnag.com/events/59ad773d3d5dd500180a55a7","project_url":"https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID","is_full_report":true,"error_id":"59ad772267ea82001b89d5cf","received_at":"2017-09-04T15:54:37.000Z","exceptions":[{"error_class":"NoMethodError","message":"Unable
+      string: '{"id":"BUGSNAG_EVENT_ID","url":"https://api.bugsnag.com/events/BUGSNAG_EVENT_ID","project_url":"https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID","is_full_report":true,"error_id":"BUGSNAG_ERROR_ID","received_at":"2017-09-04T15:54:37.000Z","exceptions":[{"error_class":"NoMethodError","message":"Unable
         to connect to database.","stacktrace":[{"column_number":123,"in_project":true,"line_number":1234,"method":"create","file":"controllers/auth/session_controller.rb","code":{"1231":"  def
         a","1232":"","1233":"    if problem?","1234":"      raise ''something went
         wrong''","1235":"    end","1236":"","1237":"  end"},"macho_uuid":null,"source_control_link":null,"source_control_name":null}]}],"threads":[{"id":"thread_id","name":"thread_name","stacktrace":[{"file":"controllers/auth/session_controller.rb","lineNumber":1234,"columnNumber":123,"method":"create","inProject":true,"code":{"1231":"  def
