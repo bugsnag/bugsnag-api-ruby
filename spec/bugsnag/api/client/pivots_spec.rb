@@ -2,6 +2,7 @@ require "spec_helper"
 
 describe Bugsnag::Api::Client::Pivots do
     before do
+        skip "event_fields API has issues currently"
         @client = auth_token_client
         @project_id = test_bugsnag_project_id
         @error_id = test_bugsnag_error_id

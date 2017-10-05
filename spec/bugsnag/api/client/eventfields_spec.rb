@@ -1,7 +1,9 @@
 require "spec_helper"
 
 describe Bugsnag::Api::Client::EventFields do
+
     before do
+        skip "event_fields API has issues currently"
         @client = auth_token_client
         @project_id = test_bugsnag_project_id
         Bugsnag::Api.reset!
