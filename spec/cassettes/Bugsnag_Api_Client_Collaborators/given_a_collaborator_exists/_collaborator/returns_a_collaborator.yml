@@ -27,17 +27,17 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 06 Sep 2017 10:29:31 GMT
+      - Thu, 05 Oct 2017 15:17:10 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"3c0e18d6b01a226db3486bdb052337e5"
+      - W/"aaf7e4a6e0a4d51862bb5fa8ffccfe3f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - f28578f6-914a-4bd2-a751-602e9c53608a
+      - d339d219-5b2d-48fa-a59e-eb3f756c7010
       X-Runtime:
-      - '0.418341'
+      - '0.423742'
       Vary:
       - Origin
       X-Ratelimit-Limit:
@@ -74,12 +74,12 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"59afc14140ab4d001de9d7f0","name":null,"email":"BUGSNAG_COLLABORATOR_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-06T09:34:57.068Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59afc14140ab4d001de9d7f0/projects","heroku":false,"recovery_codes_remaining":0,"is_admin":true,"pending_invitation":true,"last_request_at":null,"project_ids":["BUGSNAG_PROJECT_ID","59afb2f8d0e0b8001971def9","59afb2fad0e0b8001e71e05f","59afb2fbbf058b001e55ef61","59afc13ebf058b001e56358a","59afc168bf058b0023562dae"],"paid_for":false}'
+      string: '{"id":"59afc14140ab4d001de9d7f0","name":null,"email":"BUGSNAG_COLLABORATOR_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-06T09:34:57.068Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59afc14140ab4d001de9d7f0/projects","heroku":false,"recovery_codes_remaining":0,"is_admin":false,"pending_invitation":true,"last_request_at":null,"project_ids":[],"paid_for":false}'
     http_version: 
-  recorded_at: Wed, 06 Sep 2017 10:29:31 GMT
+  recorded_at: Thu, 05 Oct 2017 15:17:10 GMT
 - request:
     method: get
-    uri: https://api.bugsnag.com/organizations/BUGSNAG_ORG_ID/collaborators
+    uri: https://api.bugsnag.com/organizations/BUGSNAG_ORG_ID/collaborators/59afc14140ab4d001de9d7f0
     body:
       encoding: US-ASCII
       string: ''
@@ -104,19 +104,17 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 06 Sep 2017 10:29:32 GMT
+      - Thu, 05 Oct 2017 15:17:10 GMT
       Content-Type:
       - application/json; charset=utf-8
-      X-Total-Count:
-      - '5'
       Etag:
-      - W/"f5ae55d1d898739ecbd3eeed18c6b0ec"
+      - W/"aaf7e4a6e0a4d51862bb5fa8ffccfe3f"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b83e5675-7529-4d9b-95dd-132209459af1
+      - 3d6e4ecf-8824-4996-8af1-84d7a4f29015
       X-Runtime:
-      - '0.246635'
+      - '0.231962'
       Vary:
       - Origin
       X-Ratelimit-Limit:
@@ -153,9 +151,7 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '[{"id":"59afc14140ab4d001de9d7f0","name":null,"email":"BUGSNAG_COLLABORATOR_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-06T09:34:57.068Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59afc14140ab4d001de9d7f0/projects","heroku":false,"recovery_codes_remaining":0,"is_admin":true,"pending_invitation":true,"last_request_at":null,"project_ids":["BUGSNAG_PROJECT_ID","59afb2f8d0e0b8001971def9","59afb2fad0e0b8001e71e05f","59afb2fbbf058b001e55ef61","59afc13ebf058b001e56358a","59afc168bf058b0023562dae"],"paid_for":false},{"id":"59afb2e65710a800203768ab","name":null,"email":"\u003cbugsnag_collabortator_email\u003e","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-06T08:33:42.545Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59afb2e65710a800203768ab/projects","heroku":false,"recovery_codes_remaining":0,"is_admin":false,"pending_invitation":true,"last_request_at":null,"project_ids":["BUGSNAG_PROJECT_ID"],"paid_for":false},{"id":"59ae67b68a0558001a351bcb","name":"Alex
-        \"Test\" Moinet","email":"BUGSNAG_USER_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-05T09:04:10.936Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59ae67b68a0558001a351bcb/projects","heroku":false,"recovery_codes_remaining":0,"is_admin":true,"pending_invitation":false,"last_request_at":"2017-09-06T10:29:32.384Z","project_ids":["BUGSNAG_PROJECT_ID","59afb2f8d0e0b8001971def9","59afb2fad0e0b8001e71e05f","59afb2fbbf058b001e55ef61","59afc13ebf058b001e56358a","59afc168bf058b0023562dae"],"paid_for":false},{"id":"59ad646a010e2a001bd7e72f","name":null,"email":"alex.moinet@yahoo.co.uk","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-04T14:34:18.388Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59ad646a010e2a001bd7e72f/projects","heroku":false,"recovery_codes_remaining":0,"is_admin":false,"pending_invitation":true,"last_request_at":null,"project_ids":[],"paid_for":false},{"id":"59844ed2a2ebdd0022a938d3","name":"Alexander
-        Moinet","email":"alex@bugsnag.com","two_factor_enabled":true,"two_factor_enabled_on":"2017-09-05T08:56:21.730Z","password_updated_on":"2017-08-14T10:12:26.692Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59844ed2a2ebdd0022a938d3/projects","heroku":false,"recovery_codes_remaining":5,"is_admin":true,"pending_invitation":false,"last_request_at":"2017-09-06T10:08:09.075Z","project_ids":["BUGSNAG_PROJECT_ID","59afb2f8d0e0b8001971def9","59afb2fad0e0b8001e71e05f","59afb2fbbf058b001e55ef61","59afc13ebf058b001e56358a","59afc168bf058b0023562dae"],"paid_for":false}]'
+      string: '{"id":"59afc14140ab4d001de9d7f0","name":null,"email":"BUGSNAG_COLLABORATOR_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-06T09:34:57.068Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59afc14140ab4d001de9d7f0/projects","heroku":false,"recovery_codes_remaining":0,"is_admin":false,"pending_invitation":true,"last_request_at":null,"project_ids":[],"paid_for":false}'
     http_version: 
-  recorded_at: Wed, 06 Sep 2017 10:29:32 GMT
+  recorded_at: Thu, 05 Oct 2017 15:17:10 GMT
 recorded_with: VCR 2.9.3
