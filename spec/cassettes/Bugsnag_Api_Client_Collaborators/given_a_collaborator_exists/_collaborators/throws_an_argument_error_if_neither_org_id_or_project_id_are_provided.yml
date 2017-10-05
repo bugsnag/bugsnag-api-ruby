@@ -5,7 +5,7 @@ http_interactions:
     uri: https://api.bugsnag.com/organizations/BUGSNAG_ORG_ID/collaborators
     body:
       encoding: UTF-8
-      string: '{"email":"BUGSNAG_COLLABORATOR_EMAIL"}'
+      string: '{"project_ids":["BUGSNAG_PROJECT_ID"],"email":"BUGSNAG_COLLABORATOR_EMAIL"}'
     headers:
       User-Agent:
       - Bugsnag API Ruby Gem 1.0.3
@@ -27,7 +27,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 06 Sep 2017 10:31:13 GMT
+      - Thu, 05 Oct 2017 15:17:11 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
@@ -35,15 +35,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 2bbbb6bb-7268-4171-b8bf-3964959512b2
+      - 779df212-8043-4865-902e-70bde4ce4013
       X-Runtime:
-      - '0.791120'
+      - '0.432818'
       Vary:
       - Origin
       X-Ratelimit-Limit:
       - '10'
       X-Ratelimit-Remaining:
-      - '5'
+      - '4'
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
         connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
@@ -76,5 +76,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"id":"59afc14140ab4d001de9d7f0","name":null,"email":"BUGSNAG_COLLABORATOR_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-06T09:34:57.068Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59afc14140ab4d001de9d7f0/projects","heroku":false,"recovery_codes_remaining":0,"is_admin":false,"pending_invitation":true,"last_request_at":null,"project_ids":[],"paid_for":false}'
     http_version: 
-  recorded_at: Wed, 06 Sep 2017 10:31:13 GMT
+  recorded_at: Thu, 05 Oct 2017 15:17:11 GMT
 recorded_with: VCR 2.9.3
