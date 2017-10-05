@@ -5,11 +5,11 @@ describe Bugsnag::Api::Client::CurrentUser do
     Bugsnag::Api.reset!
   end
 
-  describe ".list_current_users_organizations", :vcr do
+  describe ".list_organizations", :vcr do
     context "when using user credentials" do
       it "returns users organizations" do
         client = basic_auth_client
-        organizations = client.list_current_users_organizations
+        organizations = client.organizations
         expect(organizations).to be_kind_of(Array)
         expect(organizations.first.name).not_to be_nil
 
@@ -19,7 +19,7 @@ describe Bugsnag::Api::Client::CurrentUser do
     context "when using auth token" do
       it "returns the organization the auth token belongs to" do
         client = auth_token_client
-        organizations = client.list_current_users_organizations
+        organizations = client.organizations
         expect(organizations).to be_kind_of(Array)
         expect(organizations.length).to eq(1)
         expect(organizations.first.name).not_to be_nil
@@ -29,12 +29,12 @@ describe Bugsnag::Api::Client::CurrentUser do
     end
   end
 
-  describe ".list_current_users_projects", :vcr do
+  describe ".list_projects", :vcr do
     context "when using auth token" do
       it "lists current user's projects in the organization" do
         client = auth_token_client
         org_id = test_bugsnag_org_id
-        projects = client.list_current_users_projects org_id
+        projects = client.projects org_id
         expect(projects).to be_kind_of(Array)
         expect(projects.first.name).not_to be_nil
 
@@ -46,7 +46,7 @@ describe Bugsnag::Api::Client::CurrentUser do
       it "lists current user's projects in the organization" do
         client = basic_auth_client
         org_id = test_bugsnag_org_id
-        projects = client.list_current_users_projects org_id
+        projects = client.projects org_id
         expect(projects).to be_kind_of(Array)
         expect(projects.first.name).not_to be_nil
 
