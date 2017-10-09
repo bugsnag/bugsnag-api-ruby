@@ -55,13 +55,11 @@ module Bugsnag
         #
         # @return 
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/delete-an-error
-        def delete_errors(error_id=nil, project_id=nil, options = {})
+        def delete_errors(project_id, error_id=nil, options = {})
           if !error_id.nil?
-            boolean_from_response :delete, "errors/#{error_id}", options
-          elsif !project_id.nil?
-            boolean_from_response :delete, "projects/#{project_id}/errors", options
+            boolean_from_response :delete, "projects/#{project_id}/errors/#{error_id}", options
           else
-            raise ArgumentError, "Must supply either an error_id or a project_id"
+            boolean_from_response :delete, "projects/#{project_id}/errors", options
           end
         end
       end
