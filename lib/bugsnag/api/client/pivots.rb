@@ -29,7 +29,7 @@ module Bugsnag
         # @option base [String] Only Events occuring before this time will be used 
         # @return [Array<Sawyer::Resource>] List of values for the Pivots requested
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/pivots/list-values-of-a-pivot-on-an-error
-        def pivot_values(project_id, error_id=nil, ef_display_id, options = {})
+        def pivot_values(project_id, ef_display_id, error_id=nil, options = {})
           if error_id.nil?
             paginate "projects/#{project_id}/pivots/#{ef_display_id}/values", options
           else

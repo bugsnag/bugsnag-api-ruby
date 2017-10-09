@@ -39,7 +39,7 @@ module Bugsnag
         # @return [Sawyer::Resource] The updated Comment
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/comments/update-a-comment
         def update_comment(id, message, options = {})
-            patch "comments/#{id}", options
+            patch "comments/#{id}", options.merge({:message => message})
         end
 
         # Delete a Comment
