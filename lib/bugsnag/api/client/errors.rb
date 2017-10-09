@@ -14,7 +14,7 @@ module Bugsnag
         # @option filters [Filters] An optional filters object, see http://docs.bugsnagapiv2.apiary.io/#introduction/filtering
         # @return [Array<Sawyer::Resource>] List of Project Errors
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/list-the-errors-on-a-project
-        def errors(project_id, id=nil options = {})
+        def errors(project_id, id=nil, options = {})
           paginate "projects/#{project_id}/errors", options
         end
 
@@ -57,7 +57,7 @@ module Bugsnag
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/delete-an-error
         def delete_errors(error_id=nil, project_id=nil, options = {})
           if !error_id.nil?
-            boolean_from_response :delete, "errors/#{id}", options
+            boolean_from_response :delete, "errors/#{error_id}", options
           elsif !project_id.nil?
             boolean_from_response :delete, "projects/#{project_id}/errors", options
           else

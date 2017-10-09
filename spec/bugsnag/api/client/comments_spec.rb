@@ -10,8 +10,7 @@ describe Bugsnag::Api::Client::Comments do
 
   describe ".create_comment", :vcr do
     it "creates a comment on the error" do
-      client = auth_token_client
-      comment = client.create_comment @project_id, @error_id, "test_message"
+      comment = @client.create_comment @project_id, @error_id, "test_message"
       expect(comment.message).to eq("test_message")
       expect(comment.id).to_not be_nil
 
@@ -21,9 +20,8 @@ describe Bugsnag::Api::Client::Comments do
 
   context "given a comment has been created" do
     before do
-      @comment = client.create_comment @project_id, @error_id, "message"
+      @comment = @client.create_comment @project_id, @error_id, "message"
     end
-
 
     describe ".comments", :vcr do
       it "retrieves all comments on an error" do
@@ -32,7 +30,7 @@ describe Bugsnag::Api::Client::Comments do
         expect(comments).to be_kind_of(Array)
         expect(comments.first.message).to_not be_nil
 
-        assert_requested :get, bugsnag_url("/projects/#{@project_id}/errors/#{error_id}/comments")
+        assert_requested :get, bugsnag_url("/projects/#{@project_id}/errors/#{@error_id}/comments")
       end
     end
 
@@ -62,7 +60,7 @@ describe Bugsnag::Api::Client::Comments do
       it "deletes the comment and returns true" do
         stub_request(:delete, bugsnag_url("/comments/#{@comment.id}")).to_return(:status => [204, "No Content"])
         
-        response = @client.delete_error @comment.id
+        response = @client.delete_comment @comment.id
         expect(response).to be true
 
         assert_requested :delete, bugsnag_url("/comments/#{@comment.id}")

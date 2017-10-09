@@ -30,7 +30,7 @@ describe Bugsnag::Api::Client::Pivots do
 
   describe ".pivot_values", :vcr do
     it "returns values of pivots on an error" do
-      values = @client.pivot_values @project_id, @error_id, @event_field_id
+      values = @client.pivot_values @project_id, @event_field_id, @error_id
       expect(values).to be_a_kind_of(Array)
       expect(values.length).to be > 0
 
@@ -38,7 +38,7 @@ describe Bugsnag::Api::Client::Pivots do
     end
 
     it "returns values of pivots on a project" do
-      values = @client.pivot_values @project_id, nil, @event_field_id
+      values = @client.pivot_values @project_id, @event_field_id
       expect(values).to be_a_kind_of(Array)
       expect(values.length).to be > 0
 

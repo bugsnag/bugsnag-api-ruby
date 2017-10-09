@@ -11,7 +11,7 @@ module Bugsnag
         # @option filters [Object] An optional filter object, see http://docs.bugsnagapiv2.apiary.io/#introduction/filtering
         # @return [Array<Sawyer::Resource>] List of Trends as requested
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/trends/list-the-trends-for-an-error-(buckets)
-        def trends_buckets(project_id, error_id=nil, buckets_count, options = {})
+        def trends_buckets(project_id, buckets_count, error_id=nil, options = {})
           if !error_id.nil?
             get "projects/#{project_id}/errors/#{error_id}/trend", options.merge({:query => {:buckets_count => buckets_count}})
           else
@@ -24,7 +24,7 @@ module Bugsnag
         # @option filters [Object] An optional filter object, see http://docs.bugsnagapiv2.apiary.io/#introduction/filtering
         # @return [Array<Sawyer::Resource>] List of Trends as requested
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/trends/list-the-trends-for-an-error-(buckets)
-        def trends_resolution(project_id, error_id=nil, resolution, options = {})
+        def trends_resolution(project_id, resolution, error_id=nil, options = {})
           if !error_id.nil?
             get "projects/#{project_id}/errors/#{error_id}/trend", options.merge({:query => {:resolution => resolution}})
           else
