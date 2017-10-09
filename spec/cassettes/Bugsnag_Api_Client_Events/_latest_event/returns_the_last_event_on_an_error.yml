@@ -1,0 +1,171 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bugsnag.com/BUGSNAG_EVENTFIELD_IDs/BUGSNAG_ERROR_ID/latest_event
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.3
+      Content-Type:
+      - application/json
+      X-Version:
+      - '2'
+      Authorization:
+      - token BUGSNAG_AUTH_TOKEN
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 09 Oct 2017 13:07:09 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Etag:
+      - W/"d8b5434ed385f1ef975359e2319aa455"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 7ed24138-467d-4e1d-8cff-a9fe611f4cc2
+      X-Runtime:
+      - '0.418566'
+      Vary:
+      - Origin
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '8'
+      Content-Security-Policy:
+      - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
+        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
+        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
+        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
+        https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
+        https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - noindex, nofollow
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"59d60bc5daa959001ca38468","url":"https://api.bugsnag.com/events/59d60bc5daa959001ca38468","project_url":"https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID","is_full_report":true,"BUGSNAG_EVENTFIELD_ID_id":"BUGSNAG_ERROR_ID","received_at":"2017-10-05T10:39:01.000Z","exceptions":[{"BUGSNAG_EVENTFIELD_ID_class":"RuntimeError","message":"RuntimeError","stacktrace":[{"column_number":null,"in_project":null,"line_number":7,"method":"irb_binding","file":"(irb)","code":null,"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":86,"method":"eval","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/irb/workspace.rb","code":{"83":"","84":"    #
+        Evaluate the given +statements+ within the  context of this workspace.","85":"    def
+        evaluate(context, statements, file = __FILE__, line = __LINE__)","86":"      eval(statements,
+        @binding, file, line)","87":"    end","88":"","89":"    # BUGSNAG_EVENTFIELD_ID
+        message manipulator"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":86,"method":"evaluate","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/irb/workspace.rb","code":{"83":"","84":"    #
+        Evaluate the given +statements+ within the  context of this workspace.","85":"    def
+        evaluate(context, statements, file = __FILE__, line = __LINE__)","86":"      eval(statements,
+        @binding, file, line)","87":"    end","88":"","89":"    # BUGSNAG_EVENTFIELD_ID
+        message manipulator"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":379,"method":"evaluate","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/irb/context.rb","code":{"376":"","377":"    def
+        evaluate(line, line_no) # :nodoc:","378":"      @line_no = line_no","379":"      set_last_value(@workspace.evaluate(self,
+        line, irb_path, line_no))","380":"    end","381":"","382":"    def inspect_last_value
+        # :nodoc:"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":489,"method":"block
+        (2 levels) in eval_input","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/irb.rb","code":{"486":"        signal_status(:IN_EVAL)
+        do","487":"          begin","488":"            line.untaint","489":"            @context.evaluate(line,
+        line_no)","490":"            output_value if @context.echo?","491":"            exc
+        = nil","492":"          rescue Interrupt =\u003e exc"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":623,"method":"signal_status","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/irb.rb","code":{"620":"      signal_status_back
+        = @signal_status","621":"      @signal_status = status","622":"      begin","623":"        yield","624":"      ensure","625":"        @signal_status
+        = signal_status_back","626":"      end"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":486,"method":"block
+        in eval_input","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/irb.rb","code":{"483":"      end","484":"","485":"      @scanner.each_top_level_statement
+        do |line, line_no|","486":"        signal_status(:IN_EVAL) do","487":"          begin","488":"            line.untaint","489":"            @context.evaluate(line,
+        line_no)"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":245,"method":"block
+        (2 levels) in each_top_level_statement","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/irb/ruby-lex.rb","code":{"242":"          end","243":"          if
+        @line != \"\\n\"","244":"            @line.force_encoding(@io.encoding)","245":"            yield
+        @line, @exp_line_no","246":"          end","247":"          break unless l","248":"          @line
+        = ''''"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":231,"method":"loop","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/irb/ruby-lex.rb","code":{"228":"  def
+        each_top_level_statement","229":"    initialize_input","230":"    catch(:TERM_INPUT)
+        do","231":"      loop do","232":"        begin","233":"          @continue
+        = false","234":"          prompt"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":231,"method":"block
+        in each_top_level_statement","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/irb/ruby-lex.rb","code":{"228":"  def
+        each_top_level_statement","229":"    initialize_input","230":"    catch(:TERM_INPUT)
+        do","231":"      loop do","232":"        begin","233":"          @continue
+        = false","234":"          prompt"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":230,"method":"catch","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/irb/ruby-lex.rb","code":{"227":"","228":"  def
+        each_top_level_statement","229":"    initialize_input","230":"    catch(:TERM_INPUT)
+        do","231":"      loop do","232":"        begin","233":"          @continue
+        = false"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":230,"method":"each_top_level_statement","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/irb/ruby-lex.rb","code":{"227":"","228":"  def
+        each_top_level_statement","229":"    initialize_input","230":"    catch(:TERM_INPUT)
+        do","231":"      loop do","232":"        begin","233":"          @continue
+        = false"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":485,"method":"eval_input","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/irb.rb","code":{"482":"        end","483":"      end","484":"","485":"      @scanner.each_top_level_statement
+        do |line, line_no|","486":"        signal_status(:IN_EVAL) do","487":"          begin","488":"            line.untaint"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":395,"method":"block
+        in start","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/irb.rb","code":{"392":"","393":"    begin","394":"      catch(:IRB_EXIT)
+        do","395":"        irb.eval_input","396":"      end","397":"    ensure","398":"      irb_at_exit"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":394,"method":"catch","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/irb.rb","code":{"391":"    end","392":"","393":"    begin","394":"      catch(:IRB_EXIT)
+        do","395":"        irb.eval_input","396":"      end","397":"    ensure"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":394,"method":"start","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/irb.rb","code":{"391":"    end","392":"","393":"    begin","394":"      catch(:IRB_EXIT)
+        do","395":"        irb.eval_input","396":"      end","397":"    ensure"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":11,"method":"\u003ctop
+        (required)\u003e","file":"/Users/amoinet/.rbenv/versions/2.2.2/bin/irb","code":{"5":"#   \t$Revision:
+        40560 $","6":"#   \tby Keiju ISHITSUKA(keiju@ruby-lang.org)","7":"#","8":"","9":"require
+        \"irb\"","10":"","11":"IRB.start(__FILE__)"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":63,"method":"load","file":"gems/bundler-1.12.0/lib/bundler/cli/exec.rb","code":{"60":"      ui
+        = Bundler.ui","61":"      Bundler.ui = nil","62":"      require \"bundler/setup\"","63":"      Kernel.load(file)","64":"    rescue
+        SystemExit","65":"      raise","66":"    rescue Exception =\u003e e # rubocop:disable
+        Lint/RescueException"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":63,"method":"kernel_load","file":"gems/bundler-1.12.0/lib/bundler/cli/exec.rb","code":{"60":"      ui
+        = Bundler.ui","61":"      Bundler.ui = nil","62":"      require \"bundler/setup\"","63":"      Kernel.load(file)","64":"    rescue
+        SystemExit","65":"      raise","66":"    rescue Exception =\u003e e # rubocop:disable
+        Lint/RescueException"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":24,"method":"run","file":"gems/bundler-1.12.0/lib/bundler/cli/exec.rb","code":{"21":"      validate_cmd!","22":"      SharedHelpers.set_bundle_environment","23":"      if
+        bin_path = Bundler.which(cmd)","24":"        return kernel_load(bin_path,
+        *args) if ruby_shebang?(bin_path)","25":"        # First, try to exec directly
+        to something in PATH","26":"        kernel_exec([bin_path, cmd], *args)","27":"      else"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":304,"method":"exec","file":"gems/bundler-1.12.0/lib/bundler/cli.rb","code":{"301":"    map
+        \"e\" =\u003e \"exec\"","302":"    def exec(*args)","303":"      require \"bundler/cli/exec\"","304":"      Exec.new(options,
+        args).run","305":"    end","306":"","307":"    desc \"config NAME [VALUE]\",
+        \"retrieve or set a configuration value\""},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":27,"method":"run","file":"gems/bundler-1.12.0/lib/bundler/vendor/thor/lib/thor/command.rb","code":{"24":"        instance.class.handle_no_command_BUGSNAG_EVENTFIELD_ID(name)","25":"      elsif
+        public_method?(instance)","26":"        arity = instance.method(name).arity","27":"        instance.__send__(name,
+        *args)","28":"      elsif local_method?(instance, :method_missing)","29":"        instance.__send__(:method_missing,
+        name.to_sym, *args)","30":"      else"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":126,"method":"invoke_command","file":"gems/bundler-1.12.0/lib/bundler/vendor/thor/lib/thor/invocation.rb","code":{"123":"","124":"      unless
+        current.include?(command.name)","125":"        current \u003c\u003c command.name","126":"        command.run(self,
+        *args)","127":"      end","128":"    end","129":"    alias_method :invoke_task,
+        :invoke_command"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":359,"method":"dispatch","file":"gems/bundler-1.12.0/lib/bundler/vendor/thor/lib/thor.rb","code":{"356":"      yield
+        instance if block_given?","357":"      args = instance.args","358":"      trailing
+        = args[Range.new(arguments.size, -1)]","359":"      instance.invoke_command(command,
+        trailing || [])","360":"    end","361":"","362":"    # The banner for this
+        class. You can customize it if you are invoking the"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":440,"method":"start","file":"gems/bundler-1.12.0/lib/bundler/vendor/thor/lib/thor/base.rb","code":{"437":"      #","438":"      def
+        start(given_args = ARGV, config = {})","439":"        config[:shell] ||= Bundler::Thor::Base.shell.new","440":"        dispatch(nil,
+        given_args.dup, nil, config)","441":"      rescue Bundler::Thor::Error =\u003e
+        e","442":"        config[:debug] || ENV[\"THOR_DEBUG\"] == \"1\" ? (raise
+        e) : config[:shell].BUGSNAG_EVENTFIELD_ID(e.message)","443":"        exit(1)
+        if exit_on_failure?"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":11,"method":"start","file":"gems/bundler-1.12.0/lib/bundler/cli.rb","code":{"8":"    AUTO_INSTALL_CMDS
+        = %w(show binstubs outdated exec open console licenses clean).freeze","9":"","10":"    def
+        self.start(*)","11":"      super","12":"    rescue Exception =\u003e e","13":"      Bundler.ui
+        = UI::Shell.new","14":"      raise e"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":27,"method":"block
+        in \u003ctop (required)\u003e","file":"gems/bundler-1.12.0/exe/bundle","code":{"22":"  #
+        Allow any command to use --help flag to show help for that command","23":"  help_flags
+        = %w(--help -h)","24":"  help_flag_used = ARGV.any? {|a| help_flags.include?
+        a }","25":"  args = help_flag_used ? Bundler::CLI.reformatted_help_args(ARGV)
+        : ARGV","26":"","27":"  Bundler::CLI.start(args, :debug =\u003e true)","28":"end"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":98,"method":"with_friendly_BUGSNAG_EVENTFIELD_IDs","file":"gems/bundler-1.12.0/lib/bundler/friendly_BUGSNAG_EVENTFIELD_IDs.rb","code":{"95":"  end","96":"","97":"  def
+        self.with_friendly_BUGSNAG_EVENTFIELD_IDs","98":"    yield","99":"  rescue
+        Exception =\u003e e","100":"    FriendlyErrors.log_BUGSNAG_EVENTFIELD_ID(e)","101":"    exit
+        FriendlyErrors.exit_status(e)"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":19,"method":"\u003ctop
+        (required)\u003e","file":"gems/bundler-1.12.0/exe/bundle","code":{"16":"end","17":"","18":"require
+        \"bundler/friendly_BUGSNAG_EVENTFIELD_IDs\"","19":"Bundler.with_friendly_BUGSNAG_EVENTFIELD_IDs
+        do","20":"  require \"bundler/cli\"","21":"","22":"  # Allow any command to
+        use --help flag to show help for that command"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":23,"method":"load","file":"/Users/amoinet/.rbenv/versions/2.2.2/bin/bundle","code":{"17":"    version
+        = $1","18":"    ARGV.shift","19":"  end","20":"end","21":"","22":"gem ''bundler'',
+        version","23":"load Gem.bin_path(''bundler'', ''bundle'', version)"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":23,"method":"\u003cmain\u003e","file":"/Users/amoinet/.rbenv/versions/2.2.2/bin/bundle","code":{"17":"    version
+        = $1","18":"    ARGV.shift","19":"  end","20":"end","21":"","22":"gem ''bundler'',
+        version","23":"load Gem.bin_path(''bundler'', ''bundle'', version)"},"macho_uuid":null,"source_control_link":null,"source_control_name":null}]}],"threads":[],"metaData":{"app":{"type":null}},"customDiagnostics":{},"request":{},"app":{"releaseStage":"production"},"device":{"hostname":"Alexanders-MacBook-Pro.local"},"user":{},"breadcrumbs":[],"context":"(irb):7","severity":"warning","unhandled":null,"derived":{"deploy":null}}'
+    http_version: 
+  recorded_at: Mon, 09 Oct 2017 13:07:09 GMT
+recorded_with: VCR 2.9.3
