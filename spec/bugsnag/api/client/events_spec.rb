@@ -51,9 +51,9 @@ describe Bugsnag::Api::Client::Events do
     end
   end
 
-  describe ".project_events", :vcr do
+  describe ".events", :vcr do
     it "returns the a list of project errors" do
-      events = @client.project_events @project_id
+      events = @client.events @project_id
       expect(events).to be_a_kind_of(Array)
       expect(events.first.id).to_not be_nil
       expect(events.first.context).to_not be_nil
