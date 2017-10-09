@@ -18,7 +18,7 @@ module Bugsnag
                 #
                 # @return [Sawyer::Resource] Requested Organization
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/organizations/view-an-organization
-                def view_organization(id, options = {})
+                def organization(id, options = {})
                     get "organizations/#{id}", options
                 end
 
