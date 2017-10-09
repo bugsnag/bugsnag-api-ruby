@@ -11,7 +11,7 @@ module Bugsnag
                 # @option per_page []Number] Number of results required per page
                 # @return [Array<Sawyer::Resource>] List of event fields
                 # @see http://docs.bugsnagapiv2.apiary.io/#reference/projects/event-fields/list-the-event-fields-for-a-project
-                def list_event_fields(project_id, options = {})
+                def event_fields(project_id, options = {})
                     paginate "projects/#{project_id}/event_fields", options
                 end
 

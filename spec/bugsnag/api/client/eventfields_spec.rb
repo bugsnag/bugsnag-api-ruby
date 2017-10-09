@@ -23,9 +23,9 @@ describe Bugsnag::Api::Client::EventFields do
             @eventfield = @client.create_event_field @project_id, "event_field_test", "metadata/pivot", {:name => "test"}
         end
 
-        describe ".list_event_fields", :vcr do
+        describe ".event_fields", :vcr do
             it "lists project eventfields" do
-                eventfields = @client.list_event_fields @project_id
+                eventfields = @client.event_fields @project_id
                 expect(eventfields).to be_kind_of(Array)
                 expect(eventfields.first.display_id).to_not be_nil
                 expect(eventfields.first.custom).to_not be_nil
