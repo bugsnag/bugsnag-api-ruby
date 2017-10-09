@@ -25,7 +25,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 06 Sep 2017 10:29:28 GMT
+      - Mon, 09 Oct 2017 14:20:09 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
@@ -33,9 +33,9 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 6e4e09c6-4276-4e96-bc3d-46818935b380
+      - 3bb88017-d992-4f63-8560-e17d1af10910
       X-Runtime:
-      - '0.004845'
+      - '0.006426'
       Vary:
       - Origin
       Content-Security-Policy:
@@ -70,5 +70,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"organizations_url":"https://api.bugsnag.com/user/organizations"}'
     http_version: 
-  recorded_at: Wed, 06 Sep 2017 10:29:28 GMT
+  recorded_at: Mon, 09 Oct 2017 14:20:08 GMT
 recorded_with: VCR 2.9.3

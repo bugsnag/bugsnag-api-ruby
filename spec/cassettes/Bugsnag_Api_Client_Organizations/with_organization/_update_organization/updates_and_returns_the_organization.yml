@@ -27,21 +27,21 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 06 Sep 2017 15:36:30 GMT
+      - Mon, 09 Oct 2017 14:20:12 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"c7e4fcb8954d85a05b6ee6b067fcc035"
+      - W/"17b9414eb1d84ddffa5eedeff3b3cd81"
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _bugsnag_session_2=RmhEQXZvTU1vRmp1VDVFSDZKZjhETU1TRXBKSDV2VkpKMWhmdDNya0IyaXdQaVEzcWxqUlVoOURvOE1PM29sdnBmVDJsT3lYaUVPR2QxcjBvV2M0eGEyUnRsK2ptT2xhNnEyNEV1TjhQamhUUFhMYmd2VG5ZaFpGanBvV0xIM2RCakVzdkhOalRtdlI4cDJITTNqUDROMndPN2pvQWpzV044MlVUUXZZSnRNYlZIbXRCczU1V3B0VHpLLzJjb3U5cm83b3NpaE5vTVpnZVFFYk16UFViZz09LS1vQXJQSFJKbmlJZi9hOTFkR2pjUG1BPT0%3D--7a4dce35d2233b9e339c8253615fc8a331a9d0f2;
-        domain=.bugsnag.com; path=/; expires=Thu, 06 Sep 2018 15:36:30 -0000; secure;
-        HttpOnly
+      - _bugsnag_session_2=Z2VkTncyb2k4RnJMTnBLWmxoMDREU2xnUXdFU085bmdnUUVML1VwVkxaSHo1SFpUSGZLYTFsN1NFajNCVEFDeFZjelRBdDFHbGVldzYyd3BMd0dXTzdUTUNpRlN1WTVvV1BuMUVIZjJQRVdLbnM5dWZvUGpTczJYNGNoa05iSE5pTDIvUkpFZHNUZytjWG5RMDh4cjdFaEdHOXlsQnlEZE9aNnlhbnVWaDlKSHFLRXBxak56emFya2xnVjVBZE9vYitLdFd4RFoxenlFRGQ0djlXMXlSUT09LS1aQnNlS3BOcnpjNnoyekg4WllvREdRPT0%3D--bbfebe0ea64e1eb7d946390823ab623709b9ae8c;
+        domain=.bugsnag.com; path=/; expires=Tue, 09 Oct 2018 14:20:12 -0000; secure;
+        HttpOnly; SameSite=Lax
       X-Request-Id:
-      - bbfd5f01-66f7-440a-b592-eb98c5fc7ee6
+      - 527e0bd2-ac21-420a-8059-3e6f34ebed7d
       X-Runtime:
-      - '2.369410'
+      - '1.101822'
       Vary:
       - Origin
       X-Ratelimit-Limit:
@@ -78,12 +78,12 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"59b015fcd0e0b80023727ae7","name":"testOrg","slug":"testorg-18","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-09-06T15:36:28.639Z","updated_at":"2017-09-06T15:36:29.486Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-18/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]}'
+      string: '{"id":"59db859cc1951b0021d5ddc8","name":"testOrg","slug":"testorg-26","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-10-09T14:20:12.051Z","updated_at":"2017-10-09T14:20:12.149Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-26/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]}'
     http_version: 
-  recorded_at: Wed, 06 Sep 2017 15:36:30 GMT
+  recorded_at: Mon, 09 Oct 2017 14:20:12 GMT
 - request:
     method: patch
-    uri: https://api.bugsnag.com/organizations/59b015fcd0e0b80023727ae7
+    uri: https://api.bugsnag.com/organizations/59db859cc1951b0021d5ddc8
     body:
       encoding: UTF-8
       string: '{"invoice_address":"test_string","name":"updated_name","auto_upgrade":false}'
@@ -108,21 +108,21 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Wed, 06 Sep 2017 15:36:31 GMT
+      - Mon, 09 Oct 2017 14:20:13 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"d42ae8a8b7494df2f158b392867fccea"
+      - W/"b6da0f25289ba17971be692b9c264ef5"
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _bugsnag_session_2=SzlneVAzd1BRdzRvMUFGamc3dnVoaXJwc3U1ak5BMFFlcHdRMCtuRmhCcTlqaStxUkhVZlhqN3hrak1OMUJlbjVpa3pUUEJQUG1WQmJIZzdLUDhLZGsyUldvUDZJT25aK21lZmFjd2l1MTlqRC9nNEVyVGl0VVhnd3JyMnhNS1BqRUU3a3JvSzRETmxsS2pzRVh0V2FVd3B1NFQ3b1FySUJTRi9oUWFWU1BVZWhKWURETldjVVIrV2lwZitiVEdocWJob0NIY2J2WkJ2QXZ3RzRoRGtvQT09LS1pY0paNlI4ckU1MGdvd0FaeG1namlBPT0%3D--928f6b23586045a98607817f0f02e9b9c638f470;
-        domain=.bugsnag.com; path=/; expires=Thu, 06 Sep 2018 15:36:31 -0000; secure;
-        HttpOnly
+      - _bugsnag_session_2=VnAwZ2dHbit1ZWhwODdLRW1tZzhSNWRNSHM4TTlYSXdwN0VKU1M5TGNJTDNxUnFLaVlhQkdNdlBwQnlZaG5GSVJtcnhZdEduZUh6T3U0OHZrenNYWklpVEdTNXRiWUI3NVh1NmswbHNHOFZxSk5XRUhXWEZFMzcxR1ljZW1aMGR5QXIvOUowVzVEM3ZVTzhlbm5oODJJTXJYZGtydFlaVXI1eU5XclE5WTNKRFd5Z1ZnUXFkcTRzNUQzaHNFUm1TU1J5T3RiOEdUWHJrTE13Ujc2b1c4Zz09LS1lNFNDNWtzQkJ5SnpLdW9pb25Yd0dBPT0%3D--84fa37bd36f2812d3ac6789809743db0b4976c98;
+        domain=.bugsnag.com; path=/; expires=Tue, 09 Oct 2018 14:20:13 -0000; secure;
+        HttpOnly; SameSite=Lax
       X-Request-Id:
-      - 76a7e636-513d-43f5-8a53-f16d302c1cde
+      - ad380df2-35a8-4115-8805-2409b21ca93a
       X-Runtime:
-      - '0.309745'
+      - '0.298303'
       Vary:
       - Origin
       X-Ratelimit-Limit:
@@ -159,7 +159,7 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"59b015fcd0e0b80023727ae7","name":"updated_name","slug":"updated-name-2","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-09-06T15:36:28.639Z","updated_at":"2017-09-06T15:36:31.296Z","auto_upgrade":false,"upgrade_url":"https://api.bugsnag.com/settings/updated-name-2/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]}'
+      string: '{"id":"59db859cc1951b0021d5ddc8","name":"updated_name","slug":"updated-name-4","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-10-09T14:20:12.051Z","updated_at":"2017-10-09T14:20:13.476Z","auto_upgrade":false,"upgrade_url":"https://api.bugsnag.com/settings/updated-name-4/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]}'
     http_version: 
-  recorded_at: Wed, 06 Sep 2017 15:36:31 GMT
+  recorded_at: Mon, 09 Oct 2017 14:20:12 GMT
 recorded_with: VCR 2.9.3

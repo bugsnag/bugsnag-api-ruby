@@ -27,27 +27,27 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Oct 2017 10:27:03 GMT
+      - Mon, 09 Oct 2017 14:20:14 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f3441f3a8f92d38721f8bb5d3807c2a5"
+      - W/"3f464d130e63840630bbb4521e74b7f1"
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _bugsnag_session_2=UnhLVVh4Q0pHVHVVTXJza3FFSVJNeXdubGp0di9lUlFLeVZZWnoyYVN1bzBtSmRsaUZzaFhiN0liblQxVlB3cnpMeGdDdlZKeHErS0RWMlk2NllKRDlqZW0zL1pZY2lmTVhIaTFyS09CNDdZbno0dis1aXc4d1l1azFmYWdxVllDMFdsVlczZTdXUkJ1SUFGcXZRMUM0WUd5MDc1akxWcWZqUHZzVmk5WTc1UWY0aEl0SlBMOVlUNDJFdVAwWS9LQmVXcHVob3VabmtPVWJtNkdzZjdlQT09LS1nRUR3SmtKZ09VekJvaDVTNnIrRkd3PT0%3D--d1712d9e1ea7ad6cd940c50dfe7fe05415963902;
-        domain=.bugsnag.com; path=/; expires=Tue, 09 Oct 2018 10:27:03 -0000; secure;
+      - _bugsnag_session_2=VEUvWHU0dVdUYmpra2Exdjh1K3owOFNWY3BxdUlzRjY4cER0RWo4cFNRR3RaSmdGdlZyd2kwSHBReHZ5bysxcUVLQkVvTU5yTkJiNUxVSE9ESng0RnRoVERmSDdUQUxvTE1VbHFtZ3pGdGFWWUFQUElybVUwR1o4c0Jmemt6Y0hkaGkwMWRDRWNLWEJ2QjNHdnFWdXpPd0M1K3BXazd4bExLUVJ5clJqaFZuTkUyODYxaGpQK2Z1a3lPbkRldVJ2UUowVDQweExZUWdiRWkrbjd5ZEk2QT09LS1qZk8zVDdDb1lXOHBrTlF2a09qajJ3PT0%3D--4948f914359e75c8a82ea5dcb4eea1dc774b2add;
+        domain=.bugsnag.com; path=/; expires=Tue, 09 Oct 2018 14:20:14 -0000; secure;
         HttpOnly; SameSite=Lax
       X-Request-Id:
-      - '08b56941-f1c6-420c-a893-ffe5dcab0cfa'
+      - ba378990-54b2-462c-8d17-4b30c87b0563
       X-Runtime:
-      - '2.208387'
+      - '1.166667'
       Vary:
       - Origin
       X-Ratelimit-Limit:
       - '10'
       X-Ratelimit-Remaining:
-      - '9'
+      - '5'
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
         connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
@@ -78,12 +78,12 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"59db4ef5c1951b0026d56df0","name":"testOrg","slug":"testorg-21","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-10-09T10:27:01.516Z","updated_at":"2017-10-09T10:27:01.726Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-21/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]}'
+      string: '{"id":"59db859ec1951b0026d5a31c","name":"testOrg","slug":"testorg-27","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-10-09T14:20:14.089Z","updated_at":"2017-10-09T14:20:14.187Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-27/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]}'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 10:27:03 GMT
+  recorded_at: Mon, 09 Oct 2017 14:20:14 GMT
 - request:
     method: get
-    uri: https://api.bugsnag.com/organizations/59db4ef5c1951b0026d56df0
+    uri: https://api.bugsnag.com/organizations/59db859ec1951b0026d5a31c
     body:
       encoding: US-ASCII
       string: ''
@@ -108,27 +108,27 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Oct 2017 10:27:03 GMT
+      - Mon, 09 Oct 2017 14:20:15 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"f3441f3a8f92d38721f8bb5d3807c2a5"
+      - W/"3f464d130e63840630bbb4521e74b7f1"
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _bugsnag_session_2=aGxUdVVrUUJrL29TVVFHRVhpNWdCWkhlNE0vQmh6RENITXRIai9ISXNjc0xNNTdBekloWXh0cTUxRTZBZDBqZld1SENEYkFROXQxMVVHM2ZLaGFHSzRvMGs3aVRjREdCOTB2bEZNMW5LWmlLSXJPaEh3Um1BMlUzdFV6a0pUUW5URWdicEJMRnJTVHZ2K0Mvcm1uSmlqRzZ4S0FPeXlrVzU2ajZHUUFPNEF3Qytkcjg0TlVQeWdmSlNCTCtFdkRsaCtnZnhGY1QweWhSMFBaUGRyajZvUT09LS1VbWJvRWNaTmlrVXhmNEVlWTNmZDBBPT0%3D--0946415b744e962c5e13b99b65edc607fc139302;
-        domain=.bugsnag.com; path=/; expires=Tue, 09 Oct 2018 10:27:03 -0000; secure;
+      - _bugsnag_session_2=VXBEMnRuOGpFdTAzL0JLUnp5TVF0L1JCT2k0YmEybjJqdk12QkhyU3F2cDBWUUFVZkthWnpGRXNYQi9la0RRYW9TZHVhUk80MGFLdDNWb3dpOG53NDM3RStCS01FV2krK3J4US9jK0Q2QW5sWHViMkRDMzZWb2R5aGtrNFZsbnQ4Rmw4TWo3Vnh1VTBtelU1NVZuWXFYNnpWTWpCWnJIc3NtOERCUjVXandWVzNxZE9pN2FXbXJaaXlVOVZScFJlamVjNmxienB3dENYREZFUWRNZ3pzUT09LS1OUW9lTFc2YXowK1ZaOTByUkVNRUxnPT0%3D--d8acc37630fc8955d1e230f2c02bc52796090b51;
+        domain=.bugsnag.com; path=/; expires=Tue, 09 Oct 2018 14:20:15 -0000; secure;
         HttpOnly; SameSite=Lax
       X-Request-Id:
-      - 0c9f5fcf-a4d5-4108-a3c5-d0932186a423
+      - 54bdd096-ce64-405f-babc-9f612c33ecec
       X-Runtime:
-      - '0.278643'
+      - '0.286369'
       Vary:
       - Origin
       X-Ratelimit-Limit:
       - '10'
       X-Ratelimit-Remaining:
-      - '8'
+      - '4'
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
         connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
@@ -159,7 +159,7 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"59db4ef5c1951b0026d56df0","name":"testOrg","slug":"testorg-21","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-10-09T10:27:01.516Z","updated_at":"2017-10-09T10:27:01.726Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-21/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]}'
+      string: '{"id":"59db859ec1951b0026d5a31c","name":"testOrg","slug":"testorg-27","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-10-09T14:20:14.089Z","updated_at":"2017-10-09T14:20:14.187Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-27/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]}'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 10:27:04 GMT
+  recorded_at: Mon, 09 Oct 2017 14:20:14 GMT
 recorded_with: VCR 2.9.3

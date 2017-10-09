@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/BUGSNAG_EVENTFIELD_IDs/BUGSNAG_ERROR_ID/comments
+    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/errors/BUGSNAG_ERROR_ID/comments
     body:
       encoding: UTF-8
       string: '{"message":"message"}'
@@ -27,27 +27,27 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Oct 2017 10:28:28 GMT
+      - Mon, 09 Oct 2017 14:23:16 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Location:
-      - https://api.bugsnag.com/comments/59db4f4c562ced0027106373
+      - https://api.bugsnag.com/comments/59db8654c1951b0026d5a422
       Etag:
-      - W/"7e1da92e612a35b3ccf744ccd43eade7"
+      - W/"e65d7e8fb49e547a78ca748a74cb6682"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ee43da03-fde2-44b5-b788-324b9f8341da
+      - 39553cc5-1f18-46c4-bc7b-5a48b2a548cf
       X-Runtime:
-      - '0.464619'
+      - '0.276641'
       Vary:
       - Origin
       X-Ratelimit-Limit:
       - '10'
       X-Ratelimit-Remaining:
-      - '3'
+      - '4'
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
         connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
@@ -76,7 +76,7 @@ http_interactions:
       - clear
     body:
       encoding: UTF-8
-      string: '{"id":"59db4f4c562ced0027106373","message":"message","created_at":"2017-10-09T10:28:28.000Z","collaborator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-05T09:04:10.936Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59ae67b68a0558001a351bcb/projects","heroku":false,"recovery_codes_remaining":0}}'
+      string: '{"id":"59db8654c1951b0026d5a422","message":"message","created_at":"2017-10-09T14:23:16.000Z","collaborator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-05T09:04:10.936Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59ae67b68a0558001a351bcb/projects","heroku":false,"recovery_codes_remaining":0}}'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 10:28:28 GMT
+  recorded_at: Mon, 09 Oct 2017 14:23:15 GMT
 recorded_with: VCR 2.9.3

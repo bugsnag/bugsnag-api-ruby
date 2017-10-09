@@ -38,7 +38,6 @@ VCR.configure do |c|
   c.filter_sensitive_data("BUGSNAG_PROJECT_ID") { test_bugsnag_project_id }
   c.filter_sensitive_data("BUGSNAG_COLLABORATOR_EMAIL") { test_bugsnag_collaborator }
   c.filter_sensitive_data("BUGSNAG_ERROR_ID") { test_bugsnag_error_id }
-  c.filter_sensitive_data("BUGSNAG_EVENTFIELD_ID") { test_bugsnag_eventfield_id}
   c.filter_sensitive_data("BUGSNAG_EVENT_ID") { test_bugsnag_event_id }
   
 end

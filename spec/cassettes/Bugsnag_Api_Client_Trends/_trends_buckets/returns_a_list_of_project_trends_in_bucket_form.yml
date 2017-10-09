@@ -27,17 +27,17 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Oct 2017 10:27:06 GMT
+      - Mon, 09 Oct 2017 14:19:56 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"28257bce751a4025f6bb7fc6888ac0a0"
+      - W/"f0f507c922f0ec44182c7267e527bb78"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - fc7e5b04-cddb-4c8a-a325-387090c988c1
+      - b5955090-0d86-45fb-9aef-ad4b28556cb9
       X-Runtime:
-      - '0.881247'
+      - '0.320538'
       Vary:
       - Origin
       X-Ratelimit-Limit:
@@ -74,7 +74,7 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '[{"from":"2017-10-05T10:39:00Z","to":"2017-10-06T05:48:38Z","events_count":1},{"from":"2017-10-06T05:48:38Z","to":"2017-10-07T00:58:16Z","events_count":0},{"from":"2017-10-07T00:58:16Z","to":"2017-10-07T20:07:54Z","events_count":0},{"from":"2017-10-07T20:07:54Z","to":"2017-10-08T15:17:32Z","events_count":0},{"from":"2017-10-08T15:17:32Z","to":"2017-10-09T10:27:10Z","events_count":0}]'
+      string: '[{"from":"2017-10-09T14:18:24Z","to":"2017-10-09T14:18:43Z","events_count":1},{"from":"2017-10-09T14:18:43Z","to":"2017-10-09T14:19:02Z","events_count":0},{"from":"2017-10-09T14:19:02Z","to":"2017-10-09T14:19:21Z","events_count":0},{"from":"2017-10-09T14:19:21Z","to":"2017-10-09T14:19:40Z","events_count":0},{"from":"2017-10-09T14:19:40Z","to":"2017-10-09T14:19:59Z","events_count":0}]'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 10:27:07 GMT
+  recorded_at: Mon, 09 Oct 2017 14:19:55 GMT
 recorded_with: VCR 2.9.3
