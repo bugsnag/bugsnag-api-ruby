@@ -1,0 +1,82 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/BUGSNAG_EVENTFIELD_IDs
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.3
+      Content-Type:
+      - application/json
+      X-Version:
+      - '2'
+      Authorization:
+      - token BUGSNAG_AUTH_TOKEN
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 09 Oct 2017 10:27:00 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Total-Count:
+      - '1'
+      Etag:
+      - W/"09dc7566b3c9faca9277a2e53d40596b"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - fe389f82-759a-4e10-b9fc-ead0441ad21d
+      X-Runtime:
+      - '0.345623'
+      Vary:
+      - Origin
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '9'
+      Content-Security-Policy:
+      - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
+        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
+        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
+        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
+        https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
+        https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - noindex, nofollow
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"BUGSNAG_ERROR_ID","project_id":"BUGSNAG_PROJECT_ID","BUGSNAG_EVENTFIELD_ID_class":"RuntimeError","message":"RuntimeError","context":"(irb):7","severity":"warning","original_severity":"warning","overridden_severity":null,"events":1,"unthrottled_occurrence_count":1,"users":0,"first_seen":"2017-10-05T10:39:01.000Z","last_seen":"2017-10-05T10:39:01.000Z","first_seen_unfiltered":"2017-10-05T10:39:01.000Z","last_seen_unfiltered":"2017-10-05T10:39:01.041Z","status":"fixed","created_issue":{},"reopen_rules":null,"assigned_collaborator_id":null,"comment_count":1,"missing_dsyms":[],"release_stages":["production"],"grouping_reason":"frame-inner","grouping_fields":{"file":"(irb)","lineNumber":7,"BUGSNAG_EVENTFIELD_IDClass":"RuntimeError"},"url":"https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/BUGSNAG_EVENTFIELD_IDs/BUGSNAG_ERROR_ID","project_url":"https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID"}]'
+    http_version: 
+  recorded_at: Mon, 09 Oct 2017 10:27:00 GMT
+recorded_with: VCR 2.9.3
