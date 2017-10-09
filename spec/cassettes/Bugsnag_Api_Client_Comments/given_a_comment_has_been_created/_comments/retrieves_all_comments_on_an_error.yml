@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/BUGSNAG_EVENTFIELD_IDs/BUGSNAG_ERROR_ID/comments
+    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/errors/BUGSNAG_ERROR_ID/comments
     body:
       encoding: UTF-8
       string: '{"message":"message"}'
@@ -27,98 +27,21 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Oct 2017 10:28:24 GMT
+      - Mon, 09 Oct 2017 14:23:14 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
       - chunked
       Location:
-      - https://api.bugsnag.com/comments/59db4f48c1951b0026d56df4
+      - https://api.bugsnag.com/comments/59db8652c636d200228adcd7
       Etag:
-      - W/"009dc33180ca9571eb0544580068c90b"
+      - W/"6b43066c9c3209cae0f8ed7edfc9e604"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - b037125f-fbf1-4709-af18-4f5449a79404
+      - 1c7d8dd5-06bc-48b1-a5e8-38c536894f99
       X-Runtime:
-      - '0.446221'
-      Vary:
-      - Origin
-      X-Ratelimit-Limit:
-      - '10'
-      X-Ratelimit-Remaining:
-      - '9'
-      Content-Security-Policy:
-      - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
-        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
-        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
-        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
-        script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
-        https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
-        https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
-      X-Content-Type-Options:
-      - nosniff
-      X-Download-Options:
-      - noopen
-      X-Frame-Options:
-      - DENY
-      X-Permitted-Cross-Domain-Policies:
-      - none
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Robots-Tag:
-      - noindex, nofollow
-      Strict-Transport-Security:
-      - max-age=31536000
-      Via:
-      - 1.1 google
-      Alt-Svc:
-      - clear
-    body:
-      encoding: UTF-8
-      string: '{"id":"59db4f48c1951b0026d56df4","message":"message","created_at":"2017-10-09T10:28:24.000Z","collaborator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-05T09:04:10.936Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59ae67b68a0558001a351bcb/projects","heroku":false,"recovery_codes_remaining":0}}'
-    http_version: 
-  recorded_at: Mon, 09 Oct 2017 10:28:24 GMT
-- request:
-    method: get
-    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/BUGSNAG_EVENTFIELD_IDs/BUGSNAG_ERROR_ID/comments
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Bugsnag API Ruby Gem 1.0.3
-      Content-Type:
-      - application/json
-      X-Version:
-      - '2'
-      Authorization:
-      - token BUGSNAG_AUTH_TOKEN
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - "*/*"
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 09 Oct 2017 10:28:24 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Total-Count:
-      - '3'
-      Etag:
-      - W/"3968da11d93aad9aa3162495a1700b6d"
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 0d78d318-d973-4b1a-8426-f92185acc954
-      X-Runtime:
-      - '0.235711'
+      - '0.332625'
       Vary:
       - Origin
       X-Ratelimit-Limit:
@@ -151,13 +74,88 @@ http_interactions:
       - 1.1 google
       Alt-Svc:
       - clear
+    body:
+      encoding: UTF-8
+      string: '{"id":"59db8652c636d200228adcd7","message":"message","created_at":"2017-10-09T14:23:14.000Z","collaborator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-05T09:04:10.936Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59ae67b68a0558001a351bcb/projects","heroku":false,"recovery_codes_remaining":0}}'
+    http_version: 
+  recorded_at: Mon, 09 Oct 2017 14:23:13 GMT
+- request:
+    method: get
+    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/errors/BUGSNAG_ERROR_ID/comments
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.3
+      Content-Type:
+      - application/json
+      X-Version:
+      - '2'
+      Authorization:
+      - token BUGSNAG_AUTH_TOKEN
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 09 Oct 2017 14:23:14 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Total-Count:
+      - '2'
+      Etag:
+      - W/"02d442c6ef711d6998a0f57edb8371d8"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 0bd33ae0-7c5b-4202-8427-ac0e93dd2b22
+      X-Runtime:
+      - '0.252916'
+      Vary:
+      - Origin
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '7'
+      Content-Security-Policy:
+      - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
+        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
+        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
+        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
+        https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
+        https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - noindex, nofollow
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
       Transfer-Encoding:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '[{"id":"59db4f48c1951b0026d56df4","message":"message","created_at":"2017-10-09T10:28:24.000Z","collaborator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-05T09:04:10.936Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59ae67b68a0558001a351bcb/projects","heroku":false,"recovery_codes_remaining":0}},{"id":"59db4efe901da000201e9580","message":"test_message","created_at":"2017-10-09T10:27:10.000Z","collaborator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-05T09:04:10.936Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59ae67b68a0558001a351bcb/projects","heroku":false,"recovery_codes_remaining":0}},{"id":"59db391c901da0001b1e4ef3","message":"This
-        is a comment","created_at":"2017-10-09T08:53:48.000Z","collaborator":{"id":"59844ed2a2ebdd0022a938d3","name":"Alexander
-        Moinet","email":"alex@bugsnag.com","two_factor_enabled":true,"two_factor_enabled_on":"2017-09-05T08:56:21.730Z","password_updated_on":"2017-08-14T10:12:26.692Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59844ed2a2ebdd0022a938d3/projects","heroku":false,"recovery_codes_remaining":5}}]'
+      string: '[{"id":"59db8652c636d200228adcd7","message":"message","created_at":"2017-10-09T14:23:14.000Z","collaborator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-05T09:04:10.936Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59ae67b68a0558001a351bcb/projects","heroku":false,"recovery_codes_remaining":0}},{"id":"59db85eec636d200228adcd4","message":"updated","created_at":"2017-10-09T14:21:34.000Z","collaborator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-05T09:04:10.936Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59ae67b68a0558001a351bcb/projects","heroku":false,"recovery_codes_remaining":0}}]'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 10:28:25 GMT
+  recorded_at: Mon, 09 Oct 2017 14:23:13 GMT
 recorded_with: VCR 2.9.3

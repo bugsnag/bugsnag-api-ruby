@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/BUGSNAG_EVENTFIELD_IDs/BUGSNAG_ERROR_ID/trend?buckets_count=5
+    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/errors/BUGSNAG_ERROR_ID/trend?buckets_count=5
     body:
       encoding: US-ASCII
       string: ''
@@ -27,17 +27,17 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Oct 2017 10:27:07 GMT
+      - Mon, 09 Oct 2017 14:19:56 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"28257bce751a4025f6bb7fc6888ac0a0"
+      - W/"f0f507c922f0ec44182c7267e527bb78"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 7a630bc0-1c1e-4d44-98d1-7d2c06ab03e5
+      - da621a3c-b6db-41d6-96d3-34c543f7d05b
       X-Runtime:
-      - '0.615754'
+      - '0.378838'
       Vary:
       - Origin
       X-Ratelimit-Limit:
@@ -74,7 +74,7 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '[{"from":"2017-10-05T10:39:00Z","to":"2017-10-06T05:48:38Z","events_count":1},{"from":"2017-10-06T05:48:38Z","to":"2017-10-07T00:58:16Z","events_count":0},{"from":"2017-10-07T00:58:16Z","to":"2017-10-07T20:07:54Z","events_count":0},{"from":"2017-10-07T20:07:54Z","to":"2017-10-08T15:17:32Z","events_count":0},{"from":"2017-10-08T15:17:32Z","to":"2017-10-09T10:27:10Z","events_count":0}]'
+      string: '[{"from":"2017-10-09T14:18:24Z","to":"2017-10-09T14:18:43Z","events_count":1},{"from":"2017-10-09T14:18:43Z","to":"2017-10-09T14:19:02Z","events_count":0},{"from":"2017-10-09T14:19:02Z","to":"2017-10-09T14:19:21Z","events_count":0},{"from":"2017-10-09T14:19:21Z","to":"2017-10-09T14:19:40Z","events_count":0},{"from":"2017-10-09T14:19:40Z","to":"2017-10-09T14:19:59Z","events_count":0}]'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 10:27:07 GMT
+  recorded_at: Mon, 09 Oct 2017 14:19:55 GMT
 recorded_with: VCR 2.9.3

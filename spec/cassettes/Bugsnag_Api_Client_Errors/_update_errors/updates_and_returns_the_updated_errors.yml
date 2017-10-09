@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: patch
-    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/BUGSNAG_EVENTFIELD_IDs?BUGSNAG_EVENTFIELD_ID_ids=BUGSNAG_ERROR_ID
+    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/errors?error_ids=BUGSNAG_ERROR_ID
     body:
       encoding: UTF-8
       string: '{"severity":"warn","operation":"fix"}'
@@ -27,23 +27,23 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Oct 2017 10:27:00 GMT
+      - Mon, 09 Oct 2017 14:19:57 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b605c3e88f97266a4e0b418ccfa0cc1f"
+      - W/"e6cc93de28b5cf22c1c149382ee16d61"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9d6352d1-a8f4-49d9-8ea6-1b3917c88036
+      - bb20172a-9970-4255-a412-dc332cf14665
       X-Runtime:
-      - '0.243102'
+      - '0.232163'
       Vary:
       - Origin
       X-Ratelimit-Limit:
       - '10'
       X-Ratelimit-Remaining:
-      - '8'
+      - '4'
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
         connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
@@ -76,5 +76,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: '{"operation":"fix","BUGSNAG_ERROR_ID":{"assigned_collaborator_id":null,"created_issue":{},"reopen_rules":null,"status":"fixed"}}'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 10:27:00 GMT
+  recorded_at: Mon, 09 Oct 2017 14:19:56 GMT
 recorded_with: VCR 2.9.3

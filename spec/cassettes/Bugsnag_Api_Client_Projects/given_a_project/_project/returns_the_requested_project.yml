@@ -27,23 +27,23 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Oct 2017 10:27:08 GMT
+      - Mon, 09 Oct 2017 14:20:00 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"85911d834f376c98666e775db9d5e6ab"
+      - W/"3f354d498328ab061a6abfff1c461f8d"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - ce836aa4-90bc-4ad7-817a-5a37ad276b8d
+      - b10870c6-6d5f-4059-b5f1-dd87dc333fe9
       X-Runtime:
-      - '0.556921'
+      - '0.462449'
       Vary:
       - Origin
       X-Ratelimit-Limit:
       - '10'
       X-Ratelimit-Remaining:
-      - '4'
+      - '9'
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
         connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
@@ -74,12 +74,12 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"59db4efc562ced00221047b9","slug":"testproject-16","name":"testProject","api_key":"23eab552cd68923b90e7cac98ac6c3a7","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-10-09T10:27:08.438Z","updated_at":"2017-10-09T10:27:08.438Z","BUGSNAG_EVENTFIELD_IDs_url":"https://api.bugsnag.com/projects/59db4efc562ced00221047b9/BUGSNAG_EVENTFIELD_IDs","events_url":"https://api.bugsnag.com/projects/59db4efc562ced00221047b9/events","url":"https://api.bugsnag.com/projects/59db4efc562ced00221047b9","html_url":"https://app.bugsnag.com/testorg-6/testproject-16","open_BUGSNAG_EVENTFIELD_ID_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_BUGSNAG_EVENTFIELD_IDs":[],"custom_event_fields_used":0,"resolve_on_deploy":false}'
+      string: '{"id":"59db8590c1951b0026d5a314","slug":"testproject-18","name":"testProject","api_key":"58d7fa000f28c0a38170582e7fd320ce","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-10-09T14:20:00.572Z","updated_at":"2017-10-09T14:20:00.572Z","errors_url":"https://api.bugsnag.com/projects/59db8590c1951b0026d5a314/errors","events_url":"https://api.bugsnag.com/projects/59db8590c1951b0026d5a314/events","url":"https://api.bugsnag.com/projects/59db8590c1951b0026d5a314","html_url":"https://app.bugsnag.com/testorg-6/testproject-18","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false}'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 10:27:08 GMT
+  recorded_at: Mon, 09 Oct 2017 14:19:59 GMT
 - request:
     method: get
-    uri: https://api.bugsnag.com/projects/59db4efc562ced00221047b9
+    uri: https://api.bugsnag.com/projects/59db8590c1951b0026d5a314
     body:
       encoding: US-ASCII
       string: ''
@@ -104,23 +104,23 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Mon, 09 Oct 2017 10:27:09 GMT
+      - Mon, 09 Oct 2017 14:20:01 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"85911d834f376c98666e775db9d5e6ab"
+      - W/"3f354d498328ab061a6abfff1c461f8d"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 3d58cb49-c28d-497c-a529-19f1f62b8cfd
+      - 8a037d05-aa2c-4675-b8f4-39c11cc46812
       X-Runtime:
-      - '0.232042'
+      - '0.232956'
       Vary:
       - Origin
       X-Ratelimit-Limit:
       - '10'
       X-Ratelimit-Remaining:
-      - '3'
+      - '8'
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
         connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
@@ -151,7 +151,7 @@ http_interactions:
       - chunked
     body:
       encoding: ASCII-8BIT
-      string: '{"id":"59db4efc562ced00221047b9","slug":"testproject-16","name":"testProject","api_key":"23eab552cd68923b90e7cac98ac6c3a7","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-10-09T10:27:08.438Z","updated_at":"2017-10-09T10:27:08.438Z","BUGSNAG_EVENTFIELD_IDs_url":"https://api.bugsnag.com/projects/59db4efc562ced00221047b9/BUGSNAG_EVENTFIELD_IDs","events_url":"https://api.bugsnag.com/projects/59db4efc562ced00221047b9/events","url":"https://api.bugsnag.com/projects/59db4efc562ced00221047b9","html_url":"https://app.bugsnag.com/testorg-6/testproject-16","open_BUGSNAG_EVENTFIELD_ID_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_BUGSNAG_EVENTFIELD_IDs":[],"custom_event_fields_used":0,"resolve_on_deploy":false}'
+      string: '{"id":"59db8590c1951b0026d5a314","slug":"testproject-18","name":"testProject","api_key":"58d7fa000f28c0a38170582e7fd320ce","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-10-09T14:20:00.572Z","updated_at":"2017-10-09T14:20:00.572Z","errors_url":"https://api.bugsnag.com/projects/59db8590c1951b0026d5a314/errors","events_url":"https://api.bugsnag.com/projects/59db8590c1951b0026d5a314/events","url":"https://api.bugsnag.com/projects/59db8590c1951b0026d5a314","html_url":"https://app.bugsnag.com/testorg-6/testproject-18","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false}'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 10:27:09 GMT
+  recorded_at: Mon, 09 Oct 2017 14:20:00 GMT
 recorded_with: VCR 2.9.3
