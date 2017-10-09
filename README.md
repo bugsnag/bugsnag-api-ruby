@@ -347,21 +347,6 @@ end
 ```
 
 
-## Build Status
-
-![Build status](https://travis-ci.org/bugsnag/bugsnag-api-ruby.svg?branch=master)
-
-
-## Contributing
-
-1. [Fork](https://help.github.com/articles/fork-a-repo) the [library on GitHub](https://github.com/bugsnag/bugsnag-api-ruby)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit and push until you are happy with your contribution
-4. Push to the branch (`git push origin my-new-feature`)
-5. Run the tests with rake spec and make sure they all pass
-6. Create a [Pull Request](https://help.github.com/articles/using-pull-requests)
-
-
 ## License
 
 The Bugsnag API Toolkit for Ruby is free software released under the MIT License. See [LICENSE.txt](LICENSE.txt) for details.
