@@ -50,7 +50,7 @@ module Bugsnag
         # @option filters [Object] An optional filter object, see http://docs.bugsnagapiv2.apiary.io/#introduction/filtering
         # @return [Array<Sawyer::Resource>] List of Events for the specified Project
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/events/list-the-events-on-a-project
-        def project_events(project_id, options = {})
+        def events(project_id, options = {})
           get "projects/#{project_id}/events", options
         end
       end
