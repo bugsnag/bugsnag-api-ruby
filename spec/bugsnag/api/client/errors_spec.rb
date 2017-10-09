@@ -50,20 +50,20 @@ describe Bugsnag::Api::Client::Errors do
     end
   end
 
-  describe ".delete_errors", :vcr do
+  describe ".delete_errors" do
     it "deletes the error and returns true" do
-      stub_request(:delete, bugsnag_url("/errors/#{@error_id}")).to_return(:status => [204, "No Content"])
+      stub_request(:delete, bugsnag_url("/projects/#{@project_id}/errors/#{@error_id}")).to_return(:status => [204, "No Content"])
       
-      response = @client.delete_errors @error_id
+      response = @client.delete_errors @project_id, @error_id
       expect(response).to be true
 
-      assert_requested :delete, bugsnag_url("/errors/#{@error_id}")
+      assert_requested :delete, bugsnag_url("/projects/#{@project_id}/errors/#{@error_id}")
     end
 
     it "deletes all errors and returns true" do
       stub_request(:delete, bugsnag_url("/projects/#{@project_id}/errors")).to_return(:status => [204, "No Content"])
 
-      response = @client.delete_errors nil, @project_id
+      response = @client.delete_errors @project_id
       expect(response).to be true
 
       assert_requested :delete, bugsnag_url("/projects/#{@project_id}/errors")
