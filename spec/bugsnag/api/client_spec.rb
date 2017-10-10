@@ -87,6 +87,11 @@ describe Bugsnag::Api::Client do
       expect { Bugsnag::Api.get('/booya') }.to raise_error(Bugsnag::Api::NotFound)
     end
 
+    it "raises on 429" do
+      stub_get('/test').to_return(:status => 429)
+      expect { Bugsnag::Api.get('/test') }.to raise_error(Bugsnag::Api::RateLimitExceeded)
+    end
+
     it "raises on 500" do
       stub_get('/boom').to_return(:status => 500)
       expect { Bugsnag::Api.get('/boom') }.to raise_error(Bugsnag::Api::InternalServerError)
