@@ -44,14 +44,14 @@ describe Bugsnag::Api::Client do
     end
 
     it "handles query params", :vcr do
-      Bugsnag::Api.get "/", :foo => "bar"
+      Bugsnag::Api.get bugsnag_url("/"), :foo => "bar"
       assert_requested :get, "https://api.bugsnag.com?foo=bar"
     end
 
     it "handles headers" do
       request = stub_get("/zen").
         with(:query => {:foo => "bar"}, :headers => {:accept => "text/plain"})
-      Bugsnag::Api.get "/zen", :foo => "bar", :accept => "text/plain"
+      Bugsnag::Api.get bugsnag_url("/zen"), :foo => "bar", :accept => "text/plain"
       assert_requested request
     end
   end
@@ -62,7 +62,7 @@ describe Bugsnag::Api::Client do
       client = Bugsnag::Api.client
       expect(client.last_response).to be_nil
 
-      client.get "/"
+      client.get bugsnag_url("/")
       expect(client.last_response.status).to eq(200)
     end
   end

@@ -2,61 +2,52 @@ module Bugsnag
   module Api
     class Client
 
-      # Methods for the Comments API
+      # Methods for the Errors API
       #
-      # @see https://bugsnag.com/docs/api/comments
+      # @see http://docs.bugsnagapiv2.apiary.io/#reference/comments
       module Comments
-        # List an error's comments
+        # List Comments on an Error
         #
-        # @param error [String] Bugsnag error for which to list comments
-        # @return [Array<Sawyer::Resource>] List of comments
-        # @see https://bugsnag.com/docs/api/comments#list-an-error-s-comments
-        # @example
-        #   Bugsnag::Api.comments("515fb9337c1074f6fd000009")
-        def comments(error, options = {})
-          paginate "errors/#{error}/comments", options
+        # @option offset [Number] The pagination offset (not required for general use)
+        # @option sort [String] Comments are only sortable by creation time e.g. "created_at"
+        # @option direction [String] Which direction to sort the result by, one of: asc, desc
+        # @option per_page [Number] How many results to return per page
+        # @return [Array<Sawyer::Resource>] List of Error Comments
+        # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/comments/list-comments-on-an-error
+        def comments(project_id, error_id, options = {})
+          paginate "projects/#{project_id}/errors/#{error_id}/comments", options
         end
 
-        # Get a single comment
+        # View an Comment
         #
-        # @param comment [String] A Bugsnag comment ID
-        # @return [Sawyer::Resource] The comment you requested, if it exists
-        # @see https://bugsnag.com/docs/api/comments#get-comment-details
-        # @example
-        #   Bugsnag::Api.comment("50baed119bf39c1431000004")
-        def comment(comment, options = {})
-          get "comments/#{comment}", options
+        # @return [Sawyer::Resource] Requested Comment
+        # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/comments/view-a-comment
+        def comment(id, options = {})
+          get "comments/#{id}", options
         end
 
-        # Create a comment
+        # Create a Comment on an Error
         #
-        # @param error [String] The Bugsnag error to create the comment on
-        # @option message [String] The comment's message
-        # @see https://bugsnag.com/docs/api/comments#create-a-comment
-        # @example
-        #   Bugsnag::Api.create_comment("515fb9337c1074f6fd000009", message: "Oops!")
-        def create_comment(error, message, options = {})
-          post "errors/#{error}/comments", options.merge({:message => message})
+        # @return [Sawyer::Resource] The new Comment
+        # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/comments/create-a-comment-on-an-error
+        def create_comment(project_id, error_id, message, options = {})
+          post "projects/#{project_id}/errors/#{error_id}/comments", options.merge({:message => message})
         end
 
-        # Update a comment
+        # Update a Comment
         #
-        # @param error [String] The Bugsnag comment to update
-        # @return [Sawyer::Resource] The updated comment
-        # @see https://bugsnag.com/docs/api/comments#update-a-comment
-        # @example
-        #   Bugsnag::Api.update_comment("50baed119bf39c1431000004", message: "Fixed!")
-        def update_comment(comment, message, options = {})
-          patch "comments/#{comment}", options.merge({:message => message})
+        # @return [Sawyer::Resource] The updated Comment
+        # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/comments/update-a-comment
+        def update_comment(id, message, options = {})
+          patch "comments/#{id}", options.merge({:message => message})
         end
 
-        # Delete a comment
+        # Delete a Comment
         #
-        # @param comment [String] The Bugsnag comment to delete
-        # @return [Boolean] `true` if comment was deleted
-        # @see https://bugsnag.com/docs/api/comments#delete-a-comment
-        def delete_comment(comment, options = {})
-          boolean_from_response :delete, "comments/#{comment}", options
+        # @return 
+        # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/comments/delete-a-comment
+        def delete_comment(id, options = {})
+          boolean_from_response :delete, "comments/#{id}", options
         end
       end
     end

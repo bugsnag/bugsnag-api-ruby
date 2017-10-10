@@ -1,25 +1,33 @@
 require "sawyer"
 
-require "bugsnag/api/client/accounts"
-require "bugsnag/api/client/comments"
+require "bugsnag/api/client/organizations"
+require "bugsnag/api/client/collaborators"
+require "bugsnag/api/client/projects"
+require "bugsnag/api/client/eventfields"
+require "bugsnag/api/client/currentuser"
 require "bugsnag/api/client/errors"
 require "bugsnag/api/client/events"
-require "bugsnag/api/client/projects"
-require "bugsnag/api/client/users"
+require "bugsnag/api/client/pivots"
+require "bugsnag/api/client/trends"
+require "bugsnag/api/client/comments"
 
 module Bugsnag
   module Api
 
     # Client for the Bugsnag API
     #
-    # @see https://bugsnag.com/docs/api
+    # @see http://docs.bugsnagapiv2.apiary.io/
     class Client
-      include Bugsnag::Api::Client::Accounts
-      include Bugsnag::Api::Client::Comments
+      include Bugsnag::Api::Client::Organizations
+      include Bugsnag::Api::Client::Collaborators
+      include Bugsnag::Api::Client::Projects
+      include Bugsnag::Api::Client::EventFields
+      include Bugsnag::Api::Client::CurrentUser
       include Bugsnag::Api::Client::Errors
       include Bugsnag::Api::Client::Events
-      include Bugsnag::Api::Client::Projects
-      include Bugsnag::Api::Client::Users
+      include Bugsnag::Api::Client::Pivots
+      include Bugsnag::Api::Client::Trends
+      include Bugsnag::Api::Client::Comments
 
       # Header keys that can be passed in options hash to {#get},{#head}
       CONVENIENCE_HEADERS = Set.new([:accept, :content_type])
@@ -140,6 +148,7 @@ module Bugsnag
       def agent
         @agent ||= Sawyer::Agent.new(configuration.endpoint, sawyer_options) do |http|
           http.headers[:content_type] = "application/json"
+          http.headers[:'X-Version'] = "2"
           http.headers[:user_agent] = configuration.user_agent
 
           if basic_authenticated?

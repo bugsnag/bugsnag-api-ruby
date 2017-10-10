@@ -1,13 +1,20 @@
 language: ruby
 rvm:
+- 2.4.1
+- 2.2.2
 - 2.1.0
 - 2.0.0
 - 1.9.3
-- jruby-18mode
 - jruby-19mode
-- 1.8.7
-- rbx-2
-notifications:
-  hipchat:
-    rooms:
-      secure: pxU3BZq7lQKFdbEzzysH9tFzHYPWh/AfqJ3yG1lois4D4UW+29ranTtOPR8qUChXSM6KhC4uOXwekTDOQTTALO95483gEYyGvXCTtomhSrZEBCv7Ngl9IHRtPU0nPuuQBo2v95S/KlInuEsL/gwaKQO8iXItevdJZnRChFaKDuA=
+
+before_install:
+- gem install bundler -v 1.12
+- gem update --system
+- bundle --version
+- gem --version
+
+install:
+- bundle _1.12.0_ install --with "$GEMSETS"
+
+script:
+- bundle _1.12.0_ exec rake
