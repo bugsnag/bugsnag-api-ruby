@@ -1,9 +1,12 @@
 Bugsnag API Toolkit for Ruby
 ============================
+![Build status](https://travis-ci.org/bugsnag/bugsnag-api-ruby.svg?branch=master)
 
-The library allows for quick read/write access to the [Bugsnag API](https://bugsnag.com/docs/api) from your Ruby applications. You can use this library to build your own applications which leverage data found in your Bugsnag dashboard.
+The library allows for quick read/write access to the [Bugsnag Data Access API](https://docs.bugsnag.com/api/data-access/) from your Ruby applications. You can use this library to build your own applications which leverage data found in your Bugsnag dashboard.
 
-If you are looking to automatically detect crashes in your Ruby apps, you should take a look at the [Bugsnag Ruby Detection Library](https://bugsnag.com/docs/notifiers/ruby) instead.
+Version 2.x (current) of this gem corresponds to v2 of the Data Access API, while [1.x](https://github.com/bugsnag/bugsnag-api-ruby/tree/v1.0.3) uses the (deprecated) v1 of the Data Access API.
+
+If you are looking to automatically detect crashes in your Ruby apps, you should take a look at the [Bugsnag Ruby Detection Library](https://docs.bugsnag.com/platforms/ruby) instead.
 
 This library borrows heavily from the code and philosophies of the fantastic [Octokit](https://github.com/octokit/octokit.rb) library. A big thanks to [@pengwynn](https://github.com/pengwynn) and the rest of the Octokit team!
 
@@ -19,12 +22,15 @@ This library borrows heavily from the code and philosophies of the fantastic [Oc
   - [Pagination](#pagination)
   - [Accessing HTTP responses](#accessing-http-responses)
 - [API Methods](#api-methods)
-  - [Accounts](#accounts)
+  - [Organizations](#organizations)
+  - [Collaborators](#collaborators)
   - [Comments](#comments)
   - [Errors](#errors)
   - [Events](#events)
+  - [Event Fields](#event-fields)
+  - [Pivots](#pivots)
   - [Projects](#projects)
-  - [Users](#users)
+  - [Trends](#trends)
 - [Advanced Configuration](#advanced-configuration)
 
 
@@ -64,42 +70,44 @@ API methods are available as module methods or as client instance methods.
 ```ruby
 # Provide authentication credentials
 Bugsnag::Api.configure do |config|
-  config.auth_token = "your-account-api-token"
+  config.auth_token = "your-personal-auth-token"
 end
 
-# Fetch the current account
-account = Bugsnag::Api.account
+# Access API methods
+organizations = Bugsnag::Api.organizations
 ```
 
 or...
 
 ```ruby
 # Create an non-static API client
-client = Bugsnag::Api::Client.new(auth_token: "your-account-api-token")
+client = Bugsnag::Api::Client.new(auth_token: "your-personal-auth-token")
 
 # Access API methods on the client
-accounts = client.accounts
+organizations = client.organizations
 ```
 
 ### Consuming Resources
 
-Most methods return a `Resource` object which provides dot notation and [] access for fields returned in the API response.
+Most methods return a [`Resource`](http://www.rubydoc.info/gems/sawyer/Sawyer/Resource)
+object which provides dot notation and [] access for fields returned in the API
+response.
 
 ```ruby
-# Fetch the current account
-account = Bugsnag::Api.account
+# Fetch an organization
+org = Bugsnag::Api.organization("organization-id")
 
-puts account.name
+puts org.name
 # => "Acme Co"
 
-puts account.fields
-# => #<Set: {:id, :name, :created_at, :updated_at, :url, :users_url, :projects_url, :account_creator, :billing_contact}>
+puts org.fields
+# => #<Set: {:id, :name, :slug, :creator, :created_at, :updated_at, :auto_upgrade, :upgrade_url, :billing_emails}>
 
-puts account[:id]
+puts org.id
 # => "50baed0d9bf39c1431000003"
 
-account.rels[:users].href
-# => "https://api.bugsnag.com/accounts/50baed0d9bf39c1431000003/users"
+account.rels[:upgrade].href
+# => "https://api.bugsnag.com/organizations/50baed0d9bf39c1431000003/..."
 ```
 
 ### Accessing Related Resources
@@ -107,15 +115,15 @@ account.rels[:users].href
 Resources returned by Bugsnag API methods contain not only data but hypermedia link relations:
 
 ```ruby
-account = Bugsnag::Api.account
+project = Bugsnag::Api.projects("organization-id")
 
 # Get the users rel, returned from the API as users_url in the resource
-account.rels[:users].href
-# => "https://api.bugsnag.com/accounts/50baed0d9bf39c1431000003/users"
+project.rels[:errors].href
+# => "https://api.bugsnag.com/projects/50baed0d9bf39c1431000003/errors"
 
-users = account.rels[:users].get.data
-users.last.name
-# => "James Smith"
+errors = project.rels[:errors].get.data
+errors.first.message
+# => "Can't find method: getStrng()"
 ```
 
 When processing API responses, all `*_url` attributes are culled in to the link relations collection. Any `url` attribute becomes `.rels[:self]`.
@@ -124,16 +132,17 @@ When processing API responses, all `*_url` attributes are culled in to the link 
 ### Authentication
 
 API usage requires authentication. You can authenticate using either your
-Bugsnag account's [auth token](https://bugsnag.com/docs/api#account-authentication)
-or with your Bugsnag [user credentials](https://bugsnag.com/docs/api#user-authentication).
+Bugsnag account's [auth token](https://app.bugsnag.com/settings/my-account/)
+or with your Bugsnag user credentials.
 
 ```ruby
 # Authenticate with your Bugsnag account's auth token
 Bugsnag::Api.configure do |config|
-  config.auth_token = "your-account-api-token"
+  config.auth_token = "your-personal-auth-token"
 end
 
-# Authenticate using your Bugsnag email address and password
+# Authenticate using your Bugsnag email address and password. Unavailable when
+# using multi-factor authentication.
 Bugsnag::Api.configure do |config|
   config.email = "example@example.com"
   config.password = "password"
@@ -159,37 +168,62 @@ end
 While most methods return a `Resource` object or a `Boolean`, sometimes you may need access to the raw HTTP response headers. You can access the last HTTP response with `Client#last_response`:
 
 ```ruby
-account   = Bugsnag::Api.account
-response  = Bugsnag::Api.last_response
-status    = response.headers[:status]
+organization = Bugsnag::Api.organizations.first
+response = Bugsnag::Api.last_response
+status = response.headers[:status]
 ```
 
 ## API Methods
 
-### Accounts
+The following methods are available via `Bugsnag::Api` and the Client interface.
+For more information, consult the [API
+documentation](http://www.rubydoc.info/gems/bugsnag-api/Bugsnag/Api/Client)
+
+### Organizations
 
 ```ruby
-# List your accounts
-accounts = Bugsnag::Api.accounts
+# List your organizations
+orgs = Bugsnag::Api.organizations
 
-# Get a single account
-account = Bugsnag::Api.account("account-id")
-
-# Get authenticated account (requires account auth)
-account = Bugsnag::Api.account
+# Get a single organization
+org = Bugsnag::Api.organizations("organization-id")
 ```
+
+### Collaborators
+
+```ruby
+# List organization collaborators
+users = Bugsnag::Api.collaborators("organization-id")
+
+# List project collaborators
+users = Bugsnag::Api.collaborators(nil, "project-id")
+
+# Invite a user to an account
+user = Bugsnag::Api.invite_collaborators("org-id", "example@example.com", {
+  admin: true
+})
+
+# Update a user's account permissions
+user = Bugsnag::Api.update_collaborator_permissions("org-id", "user-id", {
+  admin: false
+})
+
+# Remove a user from an account
+Bugsnag::Api.delete_collaborator("org-id", "user-id")
+```
+
 
 ### Comments
 
 ```ruby
 # List error comments
-comments = Bugsnag::Api.comments("error-id")
+comments = Bugsnag::Api.comments("project-id", "error-id")
 
 # Get a single comment
-comment = Bugsnag::Api.comment("comment-id")
+comment = Bugsnag::Api.comment("project-id", "comment-id")
 
 # Create a comment
-comment = Bugsnag::Api.create_comment("error-id", "comment message")
+comment = Bugsnag::Api.create_comment("project-id", "error-id", "comment message")
 
 # Update a comment
 comment = Bugsnag::Api.update_comment("comment-id", "new comment message")
@@ -202,24 +236,20 @@ Bugsnag::Api.delete_comment("comment-id")
 
 ```ruby
 # List project errors
-errors = Bugsnag::Api.errors("project-id")
+errors = Bugsnag::Api.errors("project-id", "project-id")
 
 # Get a single error
-error = Bugsnag::Api.error("error-id")
+error = Bugsnag::Api.error("project-id", "error-id")
 
-# Resolve an error
-error = Bugsnag::Api.resolve_error("error-id")
+# Update a single error
+error = Bugsnag::Api.update_errors("project-id", "error-id")
 
-# Re-open an error
-error = Bugsnag::Api.reopen_error("error-id")
-
-# Update an error
-error = Bugsnag::Api.update_error("error-id", {
-  resolved: true
-})
+# Update bulk errors
+error = Bugsnag::Api.update_errors("project-id",
+                                   ["error-id1", "error-id2"])
 
 # Delete an error
-error = Bugsnag::Api.delete_error("error-id")
+error = Bugsnag::Api.delete_error("project-id", "error-id")
 ```
 
 ### Events
@@ -229,77 +259,67 @@ error = Bugsnag::Api.delete_error("error-id")
 events = Bugsnag::Api.events("project-id")
 
 # List error events
-events = Bugsnag::Api.error_events("error-id")
+events = Bugsnag::Api.error_events("project-id", "error-id")
+
+# Get the latest event
+event = Bugsnag::Api.latest_event("project-id", "error-id")
 
 # Get a single event
-event = Bugsnag::Api.event("event-id")
+event = Bugsnag::Api.event("project-id", "event-id")
 
 # Delete an event
-Bugsnag::Api.delete_event("event-id")
+Bugsnag::Api.delete_event("project-id", "event-id")
+```
+
+### Event Fields
+
+```ruby
+# list a project's event fields
+Bugsnag::Api.event_fields("project-id")
+
+# create an event field
+Bugsnag::Api.create_event_field("project-id", "display id", "path.to.field", {})
+
+# update an event field
+Bugsnag::Api.update_event_field("project-id", "display id", "new.path.to.field")
+
+# delete an event field
+Bugsnag::Api.delete_event_field("project-id", "display id")
 ```
 
 ### Projects
 
 ```ruby
-# List account projects
-projects = Bugsnag::Api.projects("account-id")
-
-# List authenticated account's projects (requires account auth)
-projects = Bugsnag::Api.projects
-
-# List user projects
-projects = Bugsnag::Api.user_projects("user-id")
+# List organization projects
+projects = Bugsnag::Api.projects("organization-id")
 
 # Get a single project
 project = Bugsnag::Api.project("project-id")
 
 # Create a project
-project = Bugsnag::Api.create_project("account-id", {
-  name: "Name",
-  type: "rails"
-})
+project = Bugsnag::Api.create_project("organization-id", "project name", "rails")
 
 # Update a project
 project = Bugsnag::Api.update_project("project-id", {
   name: "New Name"
 })
 
+# Regenerate a project API key
+Bugsnag::Api.regenerate_api_key("project-id")
+
 # Delete a project
 Bugsnag::Api.delete_project("project-id")
 ```
 
-### Users
+### Pivots
 
 ```ruby
-# List account users
-users = Bugsnag::Api.users("account-id")
+# list a project's pivots
+Bugsnag::Api.pivots("project-id")
 
-# List authenticated account's users (requires account auth)
-users = Bugsnag::Api.users
-
-# List project users
-users = Bugsnag::Api.project_users("project-id")
-
-# Get a single user
-user = Bugsnag::Api.user("user-id")
-
-# Get authenticated user (requires user auth)
-user = Bugsnag::Api.user
-
-# Invite a user to an account
-user = Bugsnag::Api.invite_user("account-id", "example@example.com", {
-  admin: true
-})
-
-# Update a user's account permissions
-user = Bugsnag::Api.update_user_permissions("account-id", "user-id", {
-  admin: false
-})
-
-# Remove a user from an account
-Bugsnag::Api.remove_user("account-id", "user-id")
+# list pivot values
+Bugsnag::Api.pivot_values("project-id", "display id")
 ```
-
 
 ## Advanced Configuration
 
@@ -327,21 +347,6 @@ Bugsnag::Api.configure do |config|
   }
 end
 ```
-
-
-## Build Status
-
-![Build status](https://travis-ci.org/bugsnag/bugsnag-api-ruby.svg?branch=master)
-
-
-## Contributing
-
-1. [Fork](https://help.github.com/articles/fork-a-repo) the [library on GitHub](https://github.com/bugsnag/bugsnag-api-ruby)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit and push until you are happy with your contribution
-4. Push to the branch (`git push origin my-new-feature`)
-5. Run the tests with rake spec and make sure they all pass
-6. Create a [Pull Request](https://help.github.com/articles/using-pull-requests)
 
 
 ## License

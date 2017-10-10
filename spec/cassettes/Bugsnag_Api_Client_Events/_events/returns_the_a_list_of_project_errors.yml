@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/events
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.3
+      Content-Type:
+      - application/json
+      X-Version:
+      - '2'
+      Authorization:
+      - token BUGSNAG_AUTH_TOKEN
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 10 Oct 2017 07:45:09 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Total-Count:
+      - '1'
+      Etag:
+      - W/"bf2feb969a8cf69c47e1491e2aec2a78"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 68b47bfb-3bb0-4f40-810f-b2adf7770456
+      X-Runtime:
+      - '0.237505'
+      Vary:
+      - Origin
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '9'
+      Content-Security-Policy:
+      - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
+        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
+        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
+        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
+        https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
+        https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - noindex, nofollow
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"BUGSNAG_EVENT_ID","url":"https://api.bugsnag.com/events/BUGSNAG_EVENT_ID","project_url":"https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID","is_full_report":false,"error_id":"BUGSNAG_ERROR_ID","receivedAt":"2017-10-09T14:18:25.000Z","exceptions":[{"errorClass":"RuntimeError","message":"Bugsnag
+        Padrino demo says: It crashed! Go check bugsnag.com for a new notification!"}],"severity":"error","context":"GET
+        /crash","unhandled":true,"app":{"releaseStage":"development"}}]'
+    http_version: 
+  recorded_at: Tue, 10 Oct 2017 07:45:07 GMT
+recorded_with: VCR 2.9.3

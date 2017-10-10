@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bugsnag.com/organizations/BUGSNAG_ORG_ID/projects
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 1.0.3
+      Content-Type:
+      - application/json
+      X-Version:
+      - '2'
+      Authorization:
+      - Basic YWxleCt0ZXN0QGJ1Z3NuYWcuY29tOkNvc21vcG9saXRhblBlYXNlbnQ=
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Mon, 09 Oct 2017 14:20:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Total-Count:
+      - '18'
+      Etag:
+      - W/"e5c6f99d8acfbec5b17aaae01844b459"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _bugsnag_session_2=ZCtmZEI0VDBjeEsyOVVLelFLS0ZLeUFubXdxTjBuUkh3SFlBL0tYc09ROEgrVzVmVFBTRnlyN2wrYjJBTlNtdlIrazFYclpadlVoRXAyU3JseUlWNGlhM0tZVHBZMW11bldCTkZVZ3lpaGNuaHZhWTlJSFIySnl4dXlJVkc5dHpMUDl3OHlDblRaTUtBZm1rNHIwN1duWFJZVVlmVm5BZ0UwRVlEOFhiZ3B6Y0t3cU8wR3VLN2w2Nkw2VDBteVpGYXZTR3dBZ0ZpSWpndWhyK3ZNZEtLdz09LS03VkxjZExnaDczMzRSZ0xrMVB0cWV3PT0%3D--c9e73972e259b88b2ee40f32479264171df64595;
+        domain=.bugsnag.com; path=/; expires=Tue, 09 Oct 2018 14:20:11 -0000; secure;
+        HttpOnly; SameSite=Lax
+      X-Request-Id:
+      - 0aaf5a04-6464-4bd1-8c71-203fd755c7ec
+      X-Runtime:
+      - '0.559344'
+      Vary:
+      - Origin
+      X-Ratelimit-Limit:
+      - '10'
+      X-Ratelimit-Remaining:
+      - '8'
+      Content-Security-Policy:
+      - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
+        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
+        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
+        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
+        https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
+        https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - DENY
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Robots-Tag:
+      - noindex, nofollow
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"59db8594562ced002210765c","slug":"testproject-21","name":"testProject","api_key":"384434dd535d5358f7386e399ec2007f","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-10-09T14:20:04.766Z","updated_at":"2017-10-09T14:20:04.766Z","errors_url":"https://api.bugsnag.com/projects/59db8594562ced002210765c/errors","events_url":"https://api.bugsnag.com/projects/59db8594562ced002210765c/events","url":"https://api.bugsnag.com/projects/59db8594562ced002210765c","html_url":"https://app.bugsnag.com/testorg-6/testproject-21","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59db8593c1951b0026d5a316","slug":"othername-3","name":"otherName","api_key":"7e3bd84a2d0fc1ea9585561dcef8ba1b","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-10-09T14:20:03.469Z","updated_at":"2017-10-09T14:20:04.180Z","errors_url":"https://api.bugsnag.com/projects/59db8593c1951b0026d5a316/errors","events_url":"https://api.bugsnag.com/projects/59db8593c1951b0026d5a316/events","url":"https://api.bugsnag.com/projects/59db8593c1951b0026d5a316","html_url":"https://app.bugsnag.com/testorg-6/othername-3","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59db8590c1951b0026d5a314","slug":"testproject-18","name":"testProject","api_key":"58d7fa000f28c0a38170582e7fd320ce","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-10-09T14:20:00.572Z","updated_at":"2017-10-09T14:20:00.572Z","errors_url":"https://api.bugsnag.com/projects/59db8590c1951b0026d5a314/errors","events_url":"https://api.bugsnag.com/projects/59db8590c1951b0026d5a314/events","url":"https://api.bugsnag.com/projects/59db8590c1951b0026d5a314","html_url":"https://app.bugsnag.com/testorg-6/testproject-18","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59db858e562ced00271092cd","slug":"testproject-17","name":"testProject","api_key":"76fc920d13137e7ab9740298e327f992","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-10-09T14:19:59.067Z","updated_at":"2017-10-09T14:20:00.006Z","errors_url":"https://api.bugsnag.com/projects/59db858e562ced00271092cd/errors","events_url":"https://api.bugsnag.com/projects/59db858e562ced00271092cd/events","url":"https://api.bugsnag.com/projects/59db858e562ced00271092cd","html_url":"https://app.bugsnag.com/testorg-6/testproject-17","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59db4efc562ced00221047b9","slug":"testproject-16","name":"testProject","api_key":"23eab552cd68923b90e7cac98ac6c3a7","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-10-09T10:27:08.438Z","updated_at":"2017-10-09T10:27:08.438Z","errors_url":"https://api.bugsnag.com/projects/59db4efc562ced00221047b9/errors","events_url":"https://api.bugsnag.com/projects/59db4efc562ced00221047b9/events","url":"https://api.bugsnag.com/projects/59db4efc562ced00221047b9","html_url":"https://app.bugsnag.com/testorg-6/testproject-16","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59b01cc9d0e0b8001972ba0b","slug":"testproject-15","name":"testProject","api_key":"e3224debefc9fc1ee170e9e80877fdd3","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-09-06T16:05:29.230Z","updated_at":"2017-09-06T16:05:29.230Z","errors_url":"https://api.bugsnag.com/projects/59b01cc9d0e0b8001972ba0b/errors","events_url":"https://api.bugsnag.com/projects/59b01cc9d0e0b8001972ba0b/events","url":"https://api.bugsnag.com/projects/59b01cc9d0e0b8001972ba0b","html_url":"https://app.bugsnag.com/testorg-6/testproject-15","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59b01cc540ab4d001dea69ff","slug":"testproject-13","name":"testProject","api_key":"b43cbea20e163b5c2a51971c3e913ae0","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-09-06T16:05:25.920Z","updated_at":"2017-09-06T16:05:27.105Z","errors_url":"https://api.bugsnag.com/projects/59b01cc540ab4d001dea69ff/errors","events_url":"https://api.bugsnag.com/projects/59b01cc540ab4d001dea69ff/events","url":"https://api.bugsnag.com/projects/59b01cc540ab4d001dea69ff","html_url":"https://app.bugsnag.com/testorg-6/testproject-13","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59b01cc4d0e0b80023727b93","slug":"testproject-12","name":"testProject","api_key":"5683099e71b2ebad61d0952673c0913b","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-09-06T16:05:24.665Z","updated_at":"2017-09-06T16:05:24.665Z","errors_url":"https://api.bugsnag.com/projects/59b01cc4d0e0b80023727b93/errors","events_url":"https://api.bugsnag.com/projects/59b01cc4d0e0b80023727b93/events","url":"https://api.bugsnag.com/projects/59b01cc4d0e0b80023727b93","html_url":"https://app.bugsnag.com/testorg-6/testproject-12","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59b01cc3d0e0b8001e72b5ca","slug":"othername-2","name":"otherName","api_key":"d5eea2e409f20889b5db402e6d843a5f","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-09-06T16:05:23.248Z","updated_at":"2017-09-06T16:05:23.837Z","errors_url":"https://api.bugsnag.com/projects/59b01cc3d0e0b8001e72b5ca/errors","events_url":"https://api.bugsnag.com/projects/59b01cc3d0e0b8001e72b5ca/events","url":"https://api.bugsnag.com/projects/59b01cc3d0e0b8001e72b5ca","html_url":"https://app.bugsnag.com/testorg-6/othername-2","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59b01c8fd0e0b8001972b989","slug":"testproject-10","name":"testProject","api_key":"9fe9539ca0da2a34bdb16060e76854e7","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-09-06T16:04:31.271Z","updated_at":"2017-09-06T16:04:31.271Z","errors_url":"https://api.bugsnag.com/projects/59b01c8fd0e0b8001972b989/errors","events_url":"https://api.bugsnag.com/projects/59b01c8fd0e0b8001972b989/events","url":"https://api.bugsnag.com/projects/59b01c8fd0e0b8001972b989","html_url":"https://app.bugsnag.com/testorg-6/testproject-10","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59b01c8dd0e0b8001e72b5c8","slug":"othername-1","name":"otherName","api_key":"75f48f43d4bdfe2708ce01561a4ffafa","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-09-06T16:04:29.975Z","updated_at":"2017-09-06T16:04:30.547Z","errors_url":"https://api.bugsnag.com/projects/59b01c8dd0e0b8001e72b5c8/errors","events_url":"https://api.bugsnag.com/projects/59b01c8dd0e0b8001e72b5c8/events","url":"https://api.bugsnag.com/projects/59b01c8dd0e0b8001e72b5c8","html_url":"https://app.bugsnag.com/testorg-6/othername-1","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59b01c8cd0e0b8001972b987","slug":"testproject-8","name":"testProject","api_key":"207b25c76ba8033502af25ebb260f639","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-09-06T16:04:28.302Z","updated_at":"2017-09-06T16:04:29.194Z","errors_url":"https://api.bugsnag.com/projects/59b01c8cd0e0b8001972b987/errors","events_url":"https://api.bugsnag.com/projects/59b01c8cd0e0b8001972b987/events","url":"https://api.bugsnag.com/projects/59b01c8cd0e0b8001972b987","html_url":"https://app.bugsnag.com/testorg-6/testproject-8","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59afc168bf058b0023562dae","slug":"testproject-6","name":"testProject","api_key":"de2d6996fd37e52179e58c4f41aad643","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-09-06T09:35:36.689Z","updated_at":"2017-09-06T09:35:36.689Z","errors_url":"https://api.bugsnag.com/projects/59afc168bf058b0023562dae/errors","events_url":"https://api.bugsnag.com/projects/59afc168bf058b0023562dae/events","url":"https://api.bugsnag.com/projects/59afc168bf058b0023562dae","html_url":"https://app.bugsnag.com/testorg-6/testproject-6","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59afc13ebf058b001e56358a","slug":"testproject-5","name":"testProject","api_key":"54fcc98509c087b247ca8e57d85daa17","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-09-06T09:34:54.394Z","updated_at":"2017-09-06T09:34:54.394Z","errors_url":"https://api.bugsnag.com/projects/59afc13ebf058b001e56358a/errors","events_url":"https://api.bugsnag.com/projects/59afc13ebf058b001e56358a/events","url":"https://api.bugsnag.com/projects/59afc13ebf058b001e56358a","html_url":"https://app.bugsnag.com/testorg-6/testproject-5","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59afb2fbbf058b001e55ef61","slug":"othername","name":"otherName","api_key":"0daec2f6dd20d809f89c5bd3edc8f06c","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-09-06T08:34:03.998Z","updated_at":"2017-09-06T08:34:04.815Z","errors_url":"https://api.bugsnag.com/projects/59afb2fbbf058b001e55ef61/errors","events_url":"https://api.bugsnag.com/projects/59afb2fbbf058b001e55ef61/events","url":"https://api.bugsnag.com/projects/59afb2fbbf058b001e55ef61","html_url":"https://app.bugsnag.com/testorg-6/othername","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59afb2fad0e0b8001e71e05f","slug":"testproject-3","name":"testProject","api_key":"1fdc5108d68a063900c1ce44903433b6","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-09-06T08:34:02.563Z","updated_at":"2017-09-06T08:34:03.394Z","errors_url":"https://api.bugsnag.com/projects/59afb2fad0e0b8001e71e05f/errors","events_url":"https://api.bugsnag.com/projects/59afb2fad0e0b8001e71e05f/events","url":"https://api.bugsnag.com/projects/59afb2fad0e0b8001e71e05f","html_url":"https://app.bugsnag.com/testorg-6/testproject-3","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"59afb2f8d0e0b8001971def9","slug":"testproject-1","name":"testProject","api_key":"98a436f6d2709699a4a77c8e773b53c7","type":"other","is_full_view":true,"release_stages":[],"language":null,"created_at":"2017-09-06T08:34:00.446Z","updated_at":"2017-09-06T08:34:00.446Z","errors_url":"https://api.bugsnag.com/projects/59afb2f8d0e0b8001971def9/errors","events_url":"https://api.bugsnag.com/projects/59afb2f8d0e0b8001971def9/events","url":"https://api.bugsnag.com/projects/59afb2f8d0e0b8001971def9","html_url":"https://app.bugsnag.com/testorg-6/testproject-1","open_error_count":0,"collaborators_count":3,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":0,"resolve_on_deploy":false},{"id":"BUGSNAG_PROJECT_ID","slug":"testproject","name":"testProject","api_key":"a9314cbebc860a6d0ad32f0cd7c65581","type":"other","is_full_view":true,"release_stages":["production","development"],"language":null,"created_at":"2017-09-04T14:08:33.195Z","updated_at":"2017-09-04T14:08:33.195Z","errors_url":"https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/errors","events_url":"https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/events","url":"https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID","html_url":"https://app.bugsnag.com/testorg-6/testproject","open_error_count":0,"collaborators_count":4,"global_grouping":[],"location_grouping":[],"discarded_app_versions":[],"discarded_errors":[],"custom_event_fields_used":5,"resolve_on_deploy":false}]'
+    http_version: 
+  recorded_at: Mon, 09 Oct 2017 14:20:10 GMT
+recorded_with: VCR 2.9.3
