@@ -23,6 +23,7 @@ module Bugsnag
                     when 409      then Bugsnag::Api::Conflict
                     when 415      then Bugsnag::Api::UnsupportedMediaType
                     when 422      then Bugsnag::Api::UnprocessableEntity
+                    when 429      then Bugsnag::Api::RateLimitExceeded
                     when 400..499 then Bugsnag::Api::ClientError
                     when 500      then Bugsnag::Api::InternalServerError
                     when 501      then Bugsnag::Api::NotImplemented
@@ -101,6 +102,9 @@ module Bugsnag
 
     # Raised when Bugsnag returns a 422 HTTP status code
     class UnprocessableEntity < ClientError; end
+
+    # Raised when the api limit has been exceeded
+    class RateLimitExceeded < ClientError; end
 
     # Raised on errors in the 500-599 range
     class ServerError < Error; end
