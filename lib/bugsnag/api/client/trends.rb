@@ -12,10 +12,18 @@ module Bugsnag
         # @return [Array<Sawyer::Resource>] List of Trends as requested
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/trends/list-the-trends-for-an-error-(buckets)
         def trends_buckets(project_id, buckets_count, error_id=nil, options = {})
+          defaults = {:query => {:buckets_count => buckets_count}}
+          merged_opts = defaults.merge(options) do |key, oldVal, newVal|
+            if oldVal.is_a?(Hash) && newVal.is_a?(Hash)
+              oldVal.merge(newVal)
+            else
+              newVal
+            end
+          end
           if !error_id.nil?
-            get "projects/#{project_id}/errors/#{error_id}/trend", options.merge({:query => {:buckets_count => buckets_count}})
+            get "projects/#{project_id}/errors/#{error_id}/trend", merged_opts
           else
-            get "projects/#{project_id}/trend", options.merge({:query => {:buckets_count => buckets_count}})
+            get "projects/#{project_id}/trend", merged_opts
           end
         end
 
@@ -25,10 +33,18 @@ module Bugsnag
         # @return [Array<Sawyer::Resource>] List of Trends as requested
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/trends/list-the-trends-for-an-error-(buckets)
         def trends_resolution(project_id, resolution, error_id=nil, options = {})
+          defaults = {:query => {:resolution => resolution}}
+          merged_opts = defaults.merge(options) do |key, oldVal, newVal|
+            if oldVal.is_a?(Hash) && newVal.is_a?(Hash)
+              oldVal.merge(newVal)
+            else
+              newVal
+            end
+          end
           if !error_id.nil?
-            get "projects/#{project_id}/errors/#{error_id}/trend", options.merge({:query => {:resolution => resolution}})
+            get "projects/#{project_id}/errors/#{error_id}/trend", merged_opts
           else
-            get "projects/#{project_id}/trend", options.merge({:query => {:resolution => resolution}})
+            get "projects/#{project_id}/trend", merged_opts
           end
         end
       end

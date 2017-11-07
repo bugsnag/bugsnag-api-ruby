@@ -42,7 +42,15 @@ module Bugsnag
           when String
             patch "projects/#{project_id}/errors/#{ids}", options.merge({:operation => operation})
           when Array
-            patch "projects/#{project_id}/errors", options.merge({:operation => operation, :query => {:error_ids => ids.join(' ')}})
+            defaults = {:operation => operation, :query => {:error_ids => ids.join(' ')}}
+            merged_opts = defaults.merge(options) do |key, oldVal, newVal|
+              if oldVal.is_a?(Hash) && newVal.is_a?(Hash)
+                oldVal.merge(newVal)
+              else
+                newVal
+              end
+            end
+            patch "projects/#{project_id}/errors", merged_opts
           else
             raise ArgumentError, "ids must be a String or an Array"
           end
