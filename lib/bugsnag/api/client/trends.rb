@@ -13,13 +13,7 @@ module Bugsnag
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/trends/list-the-trends-for-an-error-(buckets)
         def trends_buckets(project_id, buckets_count, error_id=nil, options = {})
           defaults = {:query => {:buckets_count => buckets_count}}
-          merged_opts = defaults.merge(options) do |key, oldVal, newVal|
-            if oldVal.is_a?(Hash) && newVal.is_a?(Hash)
-              oldVal.merge(newVal)
-            else
-              newVal
-            end
-          end
+          merged_opts = deep_merge(defaults, options)
           if !error_id.nil?
             get "projects/#{project_id}/errors/#{error_id}/trend", merged_opts
           else
@@ -34,13 +28,7 @@ module Bugsnag
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/trends/list-the-trends-for-an-error-(buckets)
         def trends_resolution(project_id, resolution, error_id=nil, options = {})
           defaults = {:query => {:resolution => resolution}}
-          merged_opts = defaults.merge(options) do |key, oldVal, newVal|
-            if oldVal.is_a?(Hash) && newVal.is_a?(Hash)
-              oldVal.merge(newVal)
-            else
-              newVal
-            end
-          end
+          merged_opts = deep_merge(defaults, options)
           if !error_id.nil?
             get "projects/#{project_id}/errors/#{error_id}/trend", merged_opts
           else
