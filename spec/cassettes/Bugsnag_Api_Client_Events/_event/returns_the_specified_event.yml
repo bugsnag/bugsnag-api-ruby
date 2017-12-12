@@ -8,11 +8,13 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Bugsnag API Ruby Gem 1.0.3
+      - Bugsnag API Ruby Gem 2.0.1
       Content-Type:
       - application/json
       X-Version:
       - '2'
+      X-Bugsnag-Api:
+      - 'true'
       Authorization:
       - token BUGSNAG_AUTH_TOKEN
       Accept-Encoding:
@@ -24,31 +26,25 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 09 Oct 2017 14:20:05 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"0401f7a63d242024c1b50e1c30154845"
+      - W/"c31d3b29e0b5d58647ea595a6a5ee69c"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 3cc47a54-26f6-47f5-bf03-d2fbbf449612
+      - 1d7949fb-29ec-44b0-8509-b555c876039b
       X-Runtime:
-      - '0.287969'
+      - '0.357561'
       Vary:
       - Origin
-      X-Ratelimit-Limit:
-      - '10'
-      X-Ratelimit-Remaining:
-      - '2'
+      X-Rack-Cors:
+      - miss; no-origin
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
-        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
-        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
-        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        connect-src ''self'' https://api.bugsnag.com https://notify.bugsnag.com https://*.stripe.com
+        https://bugsnag.zendesk.com https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com;
+        img-src ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
         script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
         https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
         https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
@@ -62,192 +58,13 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
-      X-Robots-Tag:
-      - noindex, nofollow
-      Strict-Transport-Security:
-      - max-age=31536000
-      Via:
-      - 1.1 google
-      Alt-Svc:
-      - clear
       Transfer-Encoding:
       - chunked
     body:
-      encoding: ASCII-8BIT
-      string: '{"id":"BUGSNAG_EVENT_ID","url":"https://api.bugsnag.com/events/BUGSNAG_EVENT_ID","project_url":"https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID","is_full_report":true,"error_id":"BUGSNAG_ERROR_ID","received_at":"2017-10-09T14:18:25.000Z","exceptions":[{"error_class":"RuntimeError","message":"Bugsnag
-        Padrino demo says: It crashed! Go check bugsnag.com for a new notification!","stacktrace":[{"column_number":null,"in_project":null,"line_number":74,"method":"block
-        in \u003cclass:App\u003e","file":"/Users/amoinet/Desktop/libraries/bugsnag-ruby/example/padrino/app/app.rb","code":{"71":"    end","72":"","73":"    get
-        ''/crash'' do","74":"      raise RuntimeError.new(''Bugsnag Padrino demo says:
-        It crashed! Go check '' +","75":"        ''bugsnag.com for a new notification!'')","76":"    end","77":""},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":735,"method":"call","file":"gems/padrino-core-0.12.2/lib/padrino-core/application/routing.rb","code":{"732":"","733":"        block
-        = block.arity != 0 ?","734":"          proc { |a,p| unbound_method.bind(a).call(*p)
-        } :","735":"          proc { |a,p| unbound_method.bind(a).call }","736":"","737":"        invoke_hook(:route_added,
-        verb, path, block)","738":""},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":735,"method":"block
-        in route","file":"gems/padrino-core-0.12.2/lib/padrino-core/application/routing.rb","code":{"732":"","733":"        block
-        = block.arity != 0 ?","734":"          proc { |a,p| unbound_method.bind(a).call(*p)
-        } :","735":"          proc { |a,p| unbound_method.bind(a).call }","736":"","737":"        invoke_hook(:route_added,
-        verb, path, block)","738":""},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":62,"method":"[]","file":"gems/padrino-core-0.12.2/lib/padrino-core/application/routing.rb","code":{"59":"        (@route.before_filters
-        - settings.filters[:before]).each { |block| instance_eval(\u0026block) }","60":"        @layout
-        = path.route.use_layout if path.route.use_layout","61":"        @route.custom_conditions.each
-        { |block| pass if block.bind(self).call == false }","62":"        halt_response     =
-        catch(:halt) { route_eval { @route.dest[self, @block_params] } }","63":"        @_response_buffer
-        = halt_response.is_a?(Array) ? halt_response.last : halt_response","64":"        successful        =
-        true","65":"        halt halt_response"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":62,"method":"block
-        (3 levels) in process_destination_path","file":"gems/padrino-core-0.12.2/lib/padrino-core/application/routing.rb","code":{"59":"        (@route.before_filters
-        - settings.filters[:before]).each { |block| instance_eval(\u0026block) }","60":"        @layout
-        = path.route.use_layout if path.route.use_layout","61":"        @route.custom_conditions.each
-        { |block| pass if block.bind(self).call == false }","62":"        halt_response     =
-        catch(:halt) { route_eval { @route.dest[self, @block_params] } }","63":"        @_response_buffer
-        = halt_response.is_a?(Array) ? halt_response.last : halt_response","64":"        successful        =
-        true","65":"        halt halt_response"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":994,"method":"route_eval","file":"gems/sinatra-1.4.8/lib/sinatra/base.rb","code":{"991":"","992":"    #
-        Run a route block and throw :halt with the result.","993":"    def route_eval","994":"      throw
-        :halt, yield","995":"    end","996":"","997":"    # If the current request
-        matches pattern and conditions, fill params"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":62,"method":"block
-        (2 levels) in process_destination_path","file":"gems/padrino-core-0.12.2/lib/padrino-core/application/routing.rb","code":{"59":"        (@route.before_filters
-        - settings.filters[:before]).each { |block| instance_eval(\u0026block) }","60":"        @layout
-        = path.route.use_layout if path.route.use_layout","61":"        @route.custom_conditions.each
-        { |block| pass if block.bind(self).call == false }","62":"        halt_response     =
-        catch(:halt) { route_eval { @route.dest[self, @block_params] } }","63":"        @_response_buffer
-        = halt_response.is_a?(Array) ? halt_response.last : halt_response","64":"        successful        =
-        true","65":"        halt halt_response"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":62,"method":"catch","file":"gems/padrino-core-0.12.2/lib/padrino-core/application/routing.rb","code":{"59":"        (@route.before_filters
-        - settings.filters[:before]).each { |block| instance_eval(\u0026block) }","60":"        @layout
-        = path.route.use_layout if path.route.use_layout","61":"        @route.custom_conditions.each
-        { |block| pass if block.bind(self).call == false }","62":"        halt_response     =
-        catch(:halt) { route_eval { @route.dest[self, @block_params] } }","63":"        @_response_buffer
-        = halt_response.is_a?(Array) ? halt_response.last : halt_response","64":"        successful        =
-        true","65":"        halt halt_response"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":62,"method":"block
-        in process_destination_path","file":"gems/padrino-core-0.12.2/lib/padrino-core/application/routing.rb","code":{"59":"        (@route.before_filters
-        - settings.filters[:before]).each { |block| instance_eval(\u0026block) }","60":"        @layout
-        = path.route.use_layout if path.route.use_layout","61":"        @route.custom_conditions.each
-        { |block| pass if block.bind(self).call == false }","62":"        halt_response     =
-        catch(:halt) { route_eval { @route.dest[self, @block_params] } }","63":"        @_response_buffer
-        = halt_response.is_a?(Array) ? halt_response.last : halt_response","64":"        successful        =
-        true","65":"        halt halt_response"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":37,"method":"instance_eval","file":"gems/padrino-core-0.12.2/lib/padrino-core/application/routing.rb","code":{"34":"  def
-        rewrite_path_info(env, request); end","35":"","36":"  def process_destination_path(path,
-        env)","37":"    Thread.current[''padrino.instance''].instance_eval do","38":"      request.route_obj
-        = path.route","39":"      @_response_buffer = nil","40":"      @route    =
-        path.route"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":37,"method":"process_destination_path","file":"gems/padrino-core-0.12.2/lib/padrino-core/application/routing.rb","code":{"34":"  def
-        rewrite_path_info(env, request); end","35":"","36":"  def process_destination_path(path,
-        env)","37":"    Thread.current[''padrino.instance''].instance_eval do","38":"      request.route_obj
-        = path.route","39":"      @_response_buffer = nil","40":"      @route    =
-        path.route"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":77,"method":"block
-        in call","file":"(eval)","code":null,"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":66,"method":"catch","file":"(eval)","code":null,"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":66,"method":"call","file":"(eval)","code":null,"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":288,"method":"raw_call","file":"gems/http_router-0.11.2/lib/http_router.rb","code":{"285":"      @root.call(request,
-        \u0026blk)","286":"      request","287":"    else","288":"      @root.call(request)
-        or no_response(request, env)","289":"    end","290":"  end","291":""},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":1169,"method":"route!","file":"gems/padrino-core-0.12.2/lib/padrino-core/application/routing.rb","code":{"1166":"","1167":"      def
-        route!(base=settings, pass_block=nil)","1168":"        Thread.current[''padrino.instance'']
-        = self","1169":"        if base.compiled_router and match = base.compiled_router.call(@request.env)","1170":"          if
-        match.respond_to?(:each)","1171":"            route_eval do","1172":"              match[1].each
-        { |k,v| response[k] = v }"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":1154,"method":"block
-        in dispatch!","file":"gems/padrino-core-0.12.2/lib/padrino-core/application/routing.rb","code":{"1151":"      def
-        dispatch!","1152":"        invoke do","1153":"          static! if settings.static?
-        \u0026\u0026 (request.get? || request.head?)","1154":"          route!","1155":"        end","1156":"      rescue
-        ::Exception =\u003e boom","1157":"        filter! :before if boom.kind_of?
-        ::Sinatra::NotFound"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":1067,"method":"block
-        in invoke","file":"gems/sinatra-1.4.8/lib/sinatra/base.rb","code":{"1064":"","1065":"    #
-        Run the block with ''throw :halt'' support and apply result to the response.","1066":"    def
-        invoke","1067":"      res = catch(:halt) { yield }","1068":"      res = [res]
-        if Integer === res or String === res","1069":"      if Array === res and Integer
-        === res.first","1070":"        res = res.dup"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":1067,"method":"catch","file":"gems/sinatra-1.4.8/lib/sinatra/base.rb","code":{"1064":"","1065":"    #
-        Run the block with ''throw :halt'' support and apply result to the response.","1066":"    def
-        invoke","1067":"      res = catch(:halt) { yield }","1068":"      res = [res]
-        if Integer === res or String === res","1069":"      if Array === res and Integer
-        === res.first","1070":"        res = res.dup"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":1067,"method":"invoke","file":"gems/sinatra-1.4.8/lib/sinatra/base.rb","code":{"1064":"","1065":"    #
-        Run the block with ''throw :halt'' support and apply result to the response.","1066":"    def
-        invoke","1067":"      res = catch(:halt) { yield }","1068":"      res = [res]
-        if Integer === res or String === res","1069":"      if Array === res and Integer
-        === res.first","1070":"        res = res.dup"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":1152,"method":"dispatch!","file":"gems/padrino-core-0.12.2/lib/padrino-core/application/routing.rb","code":{"1149":"      end","1150":"","1151":"      def
-        dispatch!","1152":"        invoke do","1153":"          static! if settings.static?
-        \u0026\u0026 (request.get? || request.head?)","1154":"          route!","1155":"        end"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":907,"method":"block
-        in call!","file":"gems/sinatra-1.4.8/lib/sinatra/base.rb","code":{"904":"      force_encoding(@params)","905":"","906":"      @response[''Content-Type'']
-        = nil","907":"      invoke { dispatch! }","908":"      invoke { error_block!(response.status)
-        } unless @env[''sinatra.error'']","909":"","910":"      unless @response[''Content-Type'']"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":1067,"method":"block
-        in invoke","file":"gems/sinatra-1.4.8/lib/sinatra/base.rb","code":{"1064":"","1065":"    #
-        Run the block with ''throw :halt'' support and apply result to the response.","1066":"    def
-        invoke","1067":"      res = catch(:halt) { yield }","1068":"      res = [res]
-        if Integer === res or String === res","1069":"      if Array === res and Integer
-        === res.first","1070":"        res = res.dup"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":1067,"method":"catch","file":"gems/sinatra-1.4.8/lib/sinatra/base.rb","code":{"1064":"","1065":"    #
-        Run the block with ''throw :halt'' support and apply result to the response.","1066":"    def
-        invoke","1067":"      res = catch(:halt) { yield }","1068":"      res = [res]
-        if Integer === res or String === res","1069":"      if Array === res and Integer
-        === res.first","1070":"        res = res.dup"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":1067,"method":"invoke","file":"gems/sinatra-1.4.8/lib/sinatra/base.rb","code":{"1064":"","1065":"    #
-        Run the block with ''throw :halt'' support and apply result to the response.","1066":"    def
-        invoke","1067":"      res = catch(:halt) { yield }","1068":"      res = [res]
-        if Integer === res or String === res","1069":"      if Array === res and Integer
-        === res.first","1070":"        res = res.dup"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":907,"method":"call!","file":"gems/sinatra-1.4.8/lib/sinatra/base.rb","code":{"904":"      force_encoding(@params)","905":"","906":"      @response[''Content-Type'']
-        = nil","907":"      invoke { dispatch! }","908":"      invoke { error_block!(response.status)
-        } unless @env[''sinatra.error'']","909":"","910":"      unless @response[''Content-Type'']"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":895,"method":"call","file":"gems/sinatra-1.4.8/lib/sinatra/base.rb","code":{"892":"","893":"    #
-        Rack call interface.","894":"    def call(env)","895":"      dup.call!(env)","896":"    end","897":"","898":"    def
-        call!(env) # :nodoc:"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":49,"method":"call","file":"gems/rack-protection-1.5.3/lib/rack/protection/base.rb","code":{"46":"          instrument
-        env","47":"          result = react env","48":"        end","49":"        result
-        or app.call(env)","50":"      end","51":"","52":"      def react(env)"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":18,"method":"call","file":"gems/rack-protection-1.5.3/lib/rack/protection/xss_header.rb","code":{"15":"      default_options
-        :xss_mode =\u003e :block, :nosniff =\u003e true","16":"","17":"      def call(env)","18":"        status,
-        headers, body = @app.call(env)","19":"        headers[''X-XSS-Protection'']       ||=
-        \"1; mode=#{options[:xss_mode]}\" if html? headers","20":"        headers[''X-Content-Type-Options'']
-        ||= ''nosniff''                       if options[:nosniff]","21":"        [status,
-        headers, body]"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":49,"method":"call","file":"gems/rack-protection-1.5.3/lib/rack/protection/base.rb","code":{"46":"          instrument
-        env","47":"          result = react env","48":"        end","49":"        result
-        or app.call(env)","50":"      end","51":"","52":"      def react(env)"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":49,"method":"call","file":"gems/rack-protection-1.5.3/lib/rack/protection/base.rb","code":{"46":"          instrument
-        env","47":"          result = react env","48":"        end","49":"        result
-        or app.call(env)","50":"      end","51":"","52":"      def react(env)"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":18,"method":"call","file":"gems/rack-protection-1.5.3/lib/rack/protection/json_csrf.rb","code":{"15":"","16":"      def
-        call(env)","17":"        request               = Request.new(env)","18":"        status,
-        headers, body = app.call(env)","19":"","20":"        if has_vector? request,
-        headers","21":"          warn env, \"attack prevented by #{self.class}\""},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":49,"method":"call","file":"gems/rack-protection-1.5.3/lib/rack/protection/base.rb","code":{"46":"          instrument
-        env","47":"          result = react env","48":"        end","49":"        result
-        or app.call(env)","50":"      end","51":"","52":"      def react(env)"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":49,"method":"call","file":"gems/rack-protection-1.5.3/lib/rack/protection/base.rb","code":{"46":"          instrument
-        env","47":"          result = react env","48":"        end","49":"        result
-        or app.call(env)","50":"      end","51":"","52":"      def react(env)"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":31,"method":"call","file":"gems/rack-protection-1.5.3/lib/rack/protection/frame_options.rb","code":{"28":"      end","29":"","30":"      def
-        call(env)","31":"        status, headers, body        = @app.call(env)","32":"        headers[''X-Frame-Options'']
-        ||= frame_options if html? headers","33":"        [status, headers, body]","34":"      end"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":13,"method":"call","file":"gems/rack-1.6.8/lib/rack/head.rb","code":{"10":"  end","11":"","12":"  def
-        call(env)","13":"    status, headers, body = @app.call(env)","14":"","15":"    if
-        env[REQUEST_METHOD] == HEAD","16":"      ["},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":22,"method":"call","file":"gems/rack-1.6.8/lib/rack/methodoverride.rb","code":{"19":"        end","20":"      end","21":"","22":"      @app.call(env)","23":"    end","24":"","25":"    def
-        method_override(env)"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":22,"method":"call","file":"gems/padrino-core-0.12.2/lib/padrino-core/reloader/rack.rb","code":{"19":"          Thread.list.size
-        \u003e 1 ? Thread.exclusive { Padrino.reload! } : Padrino.reload!","20":"          @last
-        = Time.now","21":"        end","22":"        @app.call(env)","23":"      end","24":"    end","25":"  end"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":420,"method":"call","file":"gems/padrino-core-0.12.2/lib/padrino-core/logger.rb","code":{"417":"      def
-        call(env)","418":"        env[''rack.logger''] = Padrino.logger","419":"        began_at
-        = Time.now","420":"        status, header, body = @app.call(env)","421":"        log(env,
-        status, header, began_at) if logger.debug?","422":"        [status, header,
-        body]","423":"      end"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":225,"method":"context","file":"gems/rack-1.6.8/lib/rack/session/abstract/id.rb","code":{"222":"","223":"        def
-        context(env, app=@app)","224":"          prepare_session(env)","225":"          status,
-        headers, body = app.call(env)","226":"          commit_session(env, status,
-        headers, body)","227":"        end","228":""},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":220,"method":"call","file":"gems/rack-1.6.8/lib/rack/session/abstract/id.rb","code":{"217":"        end","218":"","219":"        def
-        call(env)","220":"          context(env)","221":"        end","222":"","223":"        def
-        context(env, app=@app)"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":2013,"method":"call","file":"gems/sinatra-1.4.8/lib/sinatra/base.rb","code":{"2010":"    end","2011":"","2012":"    def
-        call(env)","2013":"      @stack.call(env)","2014":"    end","2015":"","2016":"    def
-        inspect"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":1487,"method":"block
-        in call","file":"gems/sinatra-1.4.8/lib/sinatra/base.rb","code":{"1484":"      end","1485":"","1486":"      def
-        call(env)","1487":"        synchronize { prototype.call(env) }","1488":"      end","1489":"","1490":"      #
-        Like Kernel#caller but excluding certain magic entries and without"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":1787,"method":"synchronize","file":"gems/sinatra-1.4.8/lib/sinatra/base.rb","code":{"1784":"        if
-        lock?","1785":"          @@mutex.synchronize(\u0026block)","1786":"        else","1787":"          yield","1788":"        end","1789":"      end","1790":""},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":1487,"method":"call","file":"gems/sinatra-1.4.8/lib/sinatra/base.rb","code":{"1484":"      end","1485":"","1486":"      def
-        call(env)","1487":"        synchronize { prototype.call(env) }","1488":"      end","1489":"","1490":"      #
-        Like Kernel#caller but excluding certain magic entries and without"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":84,"method":"block
-        in call","file":"gems/padrino-core-0.12.2/lib/padrino-core/router.rb","code":{"81":"","82":"        env[''SCRIPT_NAME'']
-        = script_name + path","83":"        env[''PATH_INFO''] = rest","84":"        last_result
-        = app.call(env)","85":"","86":"        cascade_setting = app.respond_to?(:cascade)
-        ? app.cascade : true","87":"        cascade_statuses = cascade_setting.respond_to?(:include?)
-        ? cascade_setting : Mounter::DEFAULT_CASCADE"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":75,"method":"each","file":"gems/padrino-core-0.12.2/lib/padrino-core/router.rb","code":{"72":"      http_host
-        = env[''HTTP_HOST'']","73":"      last_result = nil","74":"","75":"      @mapping.each
-        do |host, path, match, app|","76":"        next unless host.nil? || http_host
-        =~ host","77":"        next unless path_info =~ match \u0026\u0026 rest =
-        $1","78":"        next unless rest.empty? || rest[0] == ?/"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":75,"method":"call","file":"gems/padrino-core-0.12.2/lib/padrino-core/router.rb","code":{"72":"      http_host
-        = env[''HTTP_HOST'']","73":"      last_result = nil","74":"","75":"      @mapping.each
-        do |host, path, match, app|","76":"        next unless host.nil? || http_host
-        =~ host","77":"        next unless path_info =~ match \u0026\u0026 rest =
-        $1","78":"        next unless rest.empty? || rest[0] == ?/"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":88,"method":"service","file":"gems/rack-1.6.8/lib/rack/handler/webrick.rb","code":{"85":"        end","86":"        env[\"REQUEST_PATH\"]
-        ||= [env[\"SCRIPT_NAME\"], env[PATH_INFO]].join","87":"","88":"        status,
-        headers, body = @app.call(env)","89":"        begin","90":"          res.status
-        = status.to_i","91":"          headers.each { |k, vs|"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":138,"method":"service","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb","code":{"135":"      req.path_info
-        = path_info","136":"      si = servlet.get_instance(self, *options)","137":"      @logger.debug(format(\"%s
-        is invoked.\", si.class.name))","138":"      si.service(req, res)","139":"    end","140":"","141":"    ##"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":94,"method":"run","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb","code":{"91":"            @logger.warn(msg)","92":"            callback.call(req,
-        res)","93":"          end","94":"          server.service(req, res)","95":"        rescue
-        HTTPStatus::EOFError, HTTPStatus::RequestTimeout =\u003e ex","96":"          res.set_error(ex)","97":"        rescue
-        HTTPStatus::Error =\u003e ex"},"macho_uuid":null,"source_control_link":null,"source_control_name":null},{"column_number":null,"in_project":null,"line_number":294,"method":"block
-        in start_thread","file":"/Users/amoinet/.rbenv/versions/2.2.2/lib/ruby/2.2.0/webrick/server.rb","code":{"291":"            raise","292":"          end","293":"          call_callback(:AcceptCallback,
-        sock)","294":"          block ? block.call(sock) : run(sock)","295":"        rescue
-        Errno::ENOTCONN","296":"          @logger.debug \"Errno::ENOTCONN raised\"","297":"        rescue
-        ServerError =\u003e ex"},"macho_uuid":null,"source_control_link":null,"source_control_name":null}]}],"threads":[],"metaData":{"request":{"referer":null},"session":{"csrf":"6baa4072450acdd3cfbb968468124847","session_id":"97833d48752db206ba510e4497dd102fc02c432b6db242633c8e23c97a10e5a8","tracking":{"HTTP_USER_AGENT":"12a00762794c42b4c1ad20036160ad0eb7f7f6db","HTTP_ACCEPT_LANGUAGE":"3aafc5dab3eb0b9a53b22430a9c6325546c8ae04"}}},"customDiagnostics":{},"request":{"clientIp":"127.0.0.1","headers":{"Host":"localhost:3000","Connection":"keep-alive","User-Agent":"Mozilla/5.0
-        (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit/537.36 (KHTML, like Gecko)
-        Chrome/61.0.3163.100 Safari/537.36","Upgrade-Insecure-Requests":"1","Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8","Accept-Encoding":"gzip,
-        deflate, br","Accept-Language":"en-GB,en-US;q=0.8,en;q=0.6","Cookie":"[FILTERED]","Version":"HTTP/1.1"},"httpMethod":"GET","params":{},"url":"http://localhost:3000/crash"},"app":{"releaseStage":"development","type":"rack"},"device":{"hostname":"Alexanders-MacBook-Pro.local"},"user":{"id":"127.0.0.1"},"breadcrumbs":[],"context":"GET
-        /crash","severity":"error","unhandled":true,"derived":{"deploy":null}}'
+      encoding: UTF-8
+      string: '{"id":"BUGSNAG_EVENT_ID","url":"https://api.bugsnag.com/events/BUGSNAG_EVENT_ID","project_url":"https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID","is_full_report":true,"error_id":"BUGSNAG_ERROR_ID","received_at":"2017-12-12T10:58:55.000Z","exceptions":[{"error_class":"RuntimeError","message":"Error","stacktrace":[{"column_number":null,"in_project":null,"line_number":34,"method":"block
+        (2 levels) in \u003cmain\u003e","file":"/Users/amoinet/Desktop/libraries/bugsnag-ruby/test.rb","code":{"31":"      sleep(interval)","32":"      #Bugsnag.session_tracker.create_session","33":"      if
+        Random.rand \u003c error_chance","34":"        Bugsnag.notify RuntimeError.new(\"Error\")","35":"      end","36":"    end","37":"  end"},"macho_uuid":null,"source_control_link":null,"source_control_name":null}]}],"threads":[],"metaData":{"app":{"type":null}},"customDiagnostics":{},"request":{},"app":{"releaseStage":"production"},"device":{"hostname":"Alexanders-MacBook-Pro.local"},"user":{},"breadcrumbs":[],"context":"/Users/amoinet/Desktop/libraries/bugsnag-ruby/test.rb:34","severity":"warning","unhandled":false,"derived":{"deploy":null}}'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 14:20:04 GMT
+  recorded_at: Tue, 12 Dec 2017 11:55:17 GMT
 recorded_with: VCR 2.9.3

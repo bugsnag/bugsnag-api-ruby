@@ -8,13 +8,15 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Bugsnag API Ruby Gem 1.0.3
+      - Bugsnag API Ruby Gem 2.0.1
       Content-Type:
       - application/json
       X-Version:
       - '2'
+      X-Bugsnag-Api:
+      - 'true'
       Authorization:
-      - Basic ***REMOVED***
+      - Basic c3VwcG9ydEBidWdzbmFnLmNvbTpwYXNzd29yZA==
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -24,35 +26,28 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 09 Oct 2017 14:20:10 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"c59f711b08d71e52c0163c7bcb4d92b3"
+      - W/"c98fd98dcd0023bb61ccbf5fccc6bcd0"
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _bugsnag_session_2=MUF1L1Z2RTJSL1ZVWi91T2ZhbVZVYVc2UjR0b3cyd3p1MFkxVjA2K3VhSTBQV0V1UWxRSFZjc2lrNjJuUlQ1azBSRk9HOEMxVWh3NlBNdGhQVCtSMXo4WW5RM0tZT0drM2lLSjlLQ1p2dHZaNnQwTjRWTVVTbUFTc3pYekJMVk9ZM2pFZGlNczM4TlpYWWpReWNXNXdZR2JOdVp6ZFZObkpwZmc5a3libDdFbEl0ekJObEtRdlBjUHVkeHZBdk1OK29leHBhOHpmTnpzN3RWNnRnRXVHQT09LS1XOWQvMjI3QnBpOVVUS2pEcVZGaU93PT0%3D--6d252e81afdea3a7a1d41b525dc76a0c5e02204d;
-        domain=.bugsnag.com; path=/; expires=Tue, 09 Oct 2018 14:20:10 -0000; secure;
-        HttpOnly; SameSite=Lax
+      - _bugsnag_session_2=ZUJURGV4QU9ESXNPWnJ5SHgrYVFzTytyUEZwY3JVOXZmSmkrdFlEQ21EQi8vMXp6SDVjeU5RRzBqTElOT3poN0Y3QkRmeDhXUzB1MlZWKzVJQ01lRWlOeGpNbHZtUytlOWdVNTVOZDlySFRwQkh0RmNTUHQ5Q1lZOHVTdU02bzNMSUVLNlpWUDhabEVrL2hhOU85cGdiS3dxeDREL00xN0hwbkJWZjE1SVpCc3EwdG01aC9oMzFvWjVyVHN6WjZTazRJbmt6cXJFekFjQTRqOFZTVUdDQT09LS1KSHRveVkyNXZDOWl4Rk1GVm9Ya3pRPT0%3D--3e209886b2dbe63243af8fdaec8329da87e1e3a8;
+        path=/; expires=Wed, 12 Dec 2018 11:55:55 -0000; HttpOnly; SameSite=Lax
       X-Request-Id:
-      - 9ea89929-418d-4e6d-820d-95c20a44ea38
+      - e9be5b94-ba4e-4c42-8730-305a2311dd62
       X-Runtime:
-      - '0.337079'
+      - '0.397947'
       Vary:
       - Origin
-      X-Ratelimit-Limit:
-      - '10'
-      X-Ratelimit-Remaining:
-      - '9'
+      X-Rack-Cors:
+      - miss; no-origin
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
-        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
-        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
-        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        connect-src ''self'' https://api.bugsnag.com https://notify.bugsnag.com https://*.stripe.com
+        https://bugsnag.zendesk.com https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com;
+        img-src ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
         script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
         https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
         https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
@@ -66,20 +61,11 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
-      X-Robots-Tag:
-      - noindex, nofollow
-      Strict-Transport-Security:
-      - max-age=31536000
-      Via:
-      - 1.1 google
-      Alt-Svc:
-      - clear
       Transfer-Encoding:
       - chunked
     body:
-      encoding: ASCII-8BIT
-      string: '[{"id":"59db81ef901da000251e91a9","name":"testOrg","slug":"testorg-25","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-10-09T14:04:31.173Z","updated_at":"2017-10-09T14:04:31.273Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-25/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"59db81ec901da000251e91a5","name":"updated_name","slug":"updated-name-3","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-10-09T14:04:28.940Z","updated_at":"2017-10-09T14:04:30.519Z","auto_upgrade":false,"upgrade_url":"https://api.bugsnag.com/settings/updated-name-3/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"59db81eac636d2001d8afaf7","name":"testOrg","slug":"testorg-23","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-10-09T14:04:26.670Z","updated_at":"2017-10-09T14:04:26.777Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-23/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"59db4ef5c1951b0026d56df0","name":"testOrg","slug":"testorg-21","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-10-09T10:27:01.516Z","updated_at":"2017-10-09T10:27:01.726Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-21/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"59b01602d0e0b8001972b960","name":"testOrg","slug":"testorg-20","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-09-06T15:36:34.900Z","updated_at":"2017-09-06T15:36:35.086Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-20/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"59b015fcd0e0b80023727ae7","name":"updated_name","slug":"updated-name-2","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-09-06T15:36:28.639Z","updated_at":"2017-09-06T15:36:31.296Z","auto_upgrade":false,"upgrade_url":"https://api.bugsnag.com/settings/updated-name-2/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"59b015f9d0e0b8001972b95c","name":"testOrg","slug":"testorg-17","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-09-06T15:36:25.865Z","updated_at":"2017-09-06T15:36:26.180Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-17/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"59afc173d0e0b8001e7223c2","name":"updated_name","slug":"updated-name-1","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-09-06T09:35:47.328Z","updated_at":"2017-09-06T09:35:48.964Z","auto_upgrade":false,"upgrade_url":"https://api.bugsnag.com/settings/updated-name-1/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"59afc171d0e0b8001972206b","name":"testOrg","slug":"testorg-15","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-09-06T09:35:45.095Z","updated_at":"2017-09-06T09:35:45.203Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-15/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"59afc16f40ab4d0027e9f94b","name":"testOrg","slug":"testorg-14","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-09-06T09:35:43.927Z","updated_at":"2017-09-06T09:35:44.056Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-14/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"59afc16ed0e0b80019722067","name":"testOrg","slug":"testorg-13","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-09-06T09:35:42.717Z","updated_at":"2017-09-06T09:35:42.835Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-13/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"59afc143bf058b0023562c19","name":"testOrg","slug":"testorg-12","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-09-06T09:34:59.556Z","updated_at":"2017-09-06T09:34:59.682Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-12/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"59afb2f6d0e0b8001e71e05b","name":"testOrg","slug":"testorg-11","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-09-06T08:33:58.435Z","updated_at":"2017-09-06T08:33:58.547Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-11/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"59afb2f4d0e0b8002371ca5a","name":"updated_name","slug":"updated-name","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-09-06T08:33:56.722Z","updated_at":"2017-09-06T08:33:57.886Z","auto_upgrade":false,"upgrade_url":"https://api.bugsnag.com/settings/updated-name/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"59afb2f1d0e0b8001e71e057","name":"testOrg","slug":"testorg-8","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-09-06T08:33:53.599Z","updated_at":"2017-09-06T08:33:53.723Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-8/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"BUGSNAG_ORG_ID","name":"testOrg","slug":"testorg-6","creator":{"id":"59844ed2a2ebdd0022a938d3","name":"Alexander
-        Moinet","email":"alex@bugsnag.com"},"created_at":"2017-09-04T12:42:33.824Z","updated_at":"2017-10-05T15:18:35.100Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-6/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["alex@bugsnag.com"]}]'
+      encoding: UTF-8
+      string: '[{"id":"5a2fc306d1befa003981d5ad","name":"testOrg","slug":"testorg-11","creator":{"id":"5a1589f0d1befa47553ffd5f","name":"Bugsnag","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-12-12T11:52:38.451Z","updated_at":"2017-12-12T11:52:38.541Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-11/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","can_start_pro_trial":false,"pro_trial_ends_at":null,"billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"5a2fc305d1befa003981d5a9","name":"updated_name","slug":"updated-name-2","creator":{"id":"5a1589f0d1befa47553ffd5f","name":"Bugsnag","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-12-12T11:52:37.340Z","updated_at":"2017-12-12T11:52:38.042Z","auto_upgrade":false,"upgrade_url":"https://api.bugsnag.com/settings/updated-name-2/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","can_start_pro_trial":false,"pro_trial_ends_at":null,"billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"5a2fc304d1befa003981d5a5","name":"testOrg","slug":"testorg-9","creator":{"id":"5a1589f0d1befa47553ffd5f","name":"Bugsnag","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-12-12T11:52:36.052Z","updated_at":"2017-12-12T11:52:36.164Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-9/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","can_start_pro_trial":false,"pro_trial_ends_at":null,"billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"5a2fbf17d1befa003981d590","name":"updated_name","slug":"updated-name-1","creator":{"id":"5a1589f0d1befa47553ffd5f","name":"Bugsnag","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-12-12T11:35:51.033Z","updated_at":"2017-12-12T11:35:51.775Z","auto_upgrade":false,"upgrade_url":"https://api.bugsnag.com/settings/updated-name-1/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","can_start_pro_trial":false,"pro_trial_ends_at":null,"billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"5a2fbf14d1befa003981d586","name":"testOrg","slug":"testorg-5","creator":{"id":"5a1589f0d1befa47553ffd5f","name":"Bugsnag","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-12-12T11:35:48.676Z","updated_at":"2017-12-12T11:35:48.791Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-5/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","can_start_pro_trial":false,"pro_trial_ends_at":null,"billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"5a2fbf14d1befa002881d58e","name":"testOrg","slug":"testorg-4","creator":{"id":"5a1589f0d1befa47553ffd5f","name":"Bugsnag","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-12-12T11:35:48.066Z","updated_at":"2017-12-12T11:35:48.156Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-4/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","can_start_pro_trial":false,"pro_trial_ends_at":null,"billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"5a2fbe9fd1befa002881d58a","name":"testOrg","slug":"testorg-3","creator":{"id":"5a1589f0d1befa47553ffd5f","name":"Bugsnag","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-12-12T11:33:51.517Z","updated_at":"2017-12-12T11:33:51.614Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-3/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","can_start_pro_trial":false,"pro_trial_ends_at":null,"billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"5a2fbe9cd1befa002881d580","name":"updated_name","slug":"updated-name","creator":{"id":"5a1589f0d1befa47553ffd5f","name":"Bugsnag","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-12-12T11:33:48.661Z","updated_at":"2017-12-12T11:33:49.703Z","auto_upgrade":false,"upgrade_url":"https://api.bugsnag.com/settings/updated-name/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","can_start_pro_trial":false,"pro_trial_ends_at":null,"billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"5a2fbe9bd1befa003981d582","name":"testOrg","slug":"testorg","creator":{"id":"5a1589f0d1befa47553ffd5f","name":"Bugsnag","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-12-12T11:33:47.784Z","updated_at":"2017-12-12T11:33:47.952Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","can_start_pro_trial":false,"pro_trial_ends_at":null,"billing_emails":["BUGSNAG_USER_EMAIL"]},{"id":"BUGSNAG_ORG_ID","name":"Bugsnag","slug":"bugsnag","creator":{"id":"5a1589f0d1befa47553ffd5f","name":"Bugsnag","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-11-22T14:30:08.966Z","updated_at":"2017-12-12T11:36:38.140Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/bugsnag/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","can_start_pro_trial":false,"pro_trial_ends_at":null,"billing_emails":["BUGSNAG_USER_EMAIL"]}]'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 14:20:09 GMT
+  recorded_at: Tue, 12 Dec 2017 11:55:44 GMT
 recorded_with: VCR 2.9.3
