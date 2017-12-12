@@ -8,11 +8,13 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Bugsnag API Ruby Gem 1.0.3
+      - Bugsnag API Ruby Gem 2.0.1
       Content-Type:
       - application/json
       X-Version:
       - '2'
+      X-Bugsnag-Api:
+      - 'true'
       Authorization:
       - token BUGSNAG_AUTH_TOKEN
       Accept-Encoding:
@@ -24,31 +26,25 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 09 Oct 2017 14:25:25 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"25244a6e4ea84611ad4ce330decc9ab8"
+      - W/"ae5a149929c6f170984acca5b019ff3a"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 60e28bba-890e-4d2d-8768-dc7b4683b165
+      - 7f6f7ef9-3136-4b64-80ba-df908569a836
       X-Runtime:
-      - '0.229886'
+      - '0.298566'
       Vary:
       - Origin
-      X-Ratelimit-Limit:
-      - '10'
-      X-Ratelimit-Remaining:
-      - '8'
+      X-Rack-Cors:
+      - miss; no-origin
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
-        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
-        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
-        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        connect-src ''self'' https://api.bugsnag.com https://notify.bugsnag.com https://*.stripe.com
+        https://bugsnag.zendesk.com https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com;
+        img-src ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
         script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
         https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
         https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
@@ -62,20 +58,11 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
-      X-Robots-Tag:
-      - noindex, nofollow
-      Strict-Transport-Security:
-      - max-age=31536000
-      Via:
-      - 1.1 google
-      Alt-Svc:
-      - clear
       Transfer-Encoding:
       - chunked
     body:
-      encoding: ASCII-8BIT
-      string: '[{"id":"BUGSNAG_ORG_ID","name":"testOrg","slug":"testorg-6","creator":{"id":"59844ed2a2ebdd0022a938d3","name":"Alexander
-        Moinet","email":"alex@bugsnag.com"},"created_at":"2017-09-04T12:42:33.824Z","updated_at":"2017-10-05T15:18:35.100Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-6/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["alex@bugsnag.com"]}]'
+      encoding: UTF-8
+      string: '[{"id":"BUGSNAG_ORG_ID","name":"Bugsnag","slug":"bugsnag","creator":{"id":"5a1589f0d1befa47553ffd5f","name":"Bugsnag","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-11-22T14:30:08.966Z","updated_at":"2017-12-12T11:36:38.140Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/bugsnag/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","can_start_pro_trial":false,"pro_trial_ends_at":null,"billing_emails":["BUGSNAG_USER_EMAIL"]}]'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 14:25:24 GMT
+  recorded_at: Tue, 12 Dec 2017 11:55:44 GMT
 recorded_with: VCR 2.9.3

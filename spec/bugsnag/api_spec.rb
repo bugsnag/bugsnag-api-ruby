@@ -1,3 +1,5 @@
+require "spec_helper"
+
 describe Bugsnag::Api do
   before do
     Bugsnag::Api.reset!

@@ -8,11 +8,13 @@ http_interactions:
       string: '{"message":"message"}'
     headers:
       User-Agent:
-      - Bugsnag API Ruby Gem 1.0.3
+      - Bugsnag API Ruby Gem 2.0.1
       Content-Type:
       - application/json
       X-Version:
       - '2'
+      X-Bugsnag-Api:
+      - 'true'
       Authorization:
       - token BUGSNAG_AUTH_TOKEN
       Accept-Encoding:
@@ -24,35 +26,27 @@ http_interactions:
       code: 201
       message: Created
     headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 09 Oct 2017 14:23:17 GMT
+      Location:
+      - https://api.bugsnag.com/comments/5a2fc39bd1befa003981d5c0
       Content-Type:
       - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Location:
-      - https://api.bugsnag.com/comments/59db8655901da000251e93bb
       Etag:
-      - W/"55202f7fc2a2819fe15e3dbd75f74f18"
+      - W/"b84a9d3934d1eba2cff0252234149c26"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - 9a413b03-d187-42fc-99fe-299021483ee6
+      - bcc65e0e-9f01-4e0b-9089-1aa1c4748159
       X-Runtime:
-      - '0.301918'
+      - '0.390049'
       Vary:
       - Origin
-      X-Ratelimit-Limit:
-      - '10'
-      X-Ratelimit-Remaining:
-      - '3'
+      X-Rack-Cors:
+      - miss; no-origin
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
-        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
-        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
-        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        connect-src ''self'' https://api.bugsnag.com https://notify.bugsnag.com https://*.stripe.com
+        https://bugsnag.zendesk.com https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com;
+        img-src ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
         script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
         https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
         https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
@@ -66,32 +60,28 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
-      X-Robots-Tag:
-      - noindex, nofollow
-      Strict-Transport-Security:
-      - max-age=31536000
-      Via:
-      - 1.1 google
-      Alt-Svc:
-      - clear
+      Transfer-Encoding:
+      - chunked
     body:
       encoding: UTF-8
-      string: '{"id":"59db8655901da000251e93bb","message":"message","created_at":"2017-10-09T14:23:17.000Z","collaborator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"password_updated_on":"2017-09-05T09:04:10.936Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/59ae67b68a0558001a351bcb/projects","heroku":false,"recovery_codes_remaining":0}}'
+      string: '{"id":"5a2fc39bd1befa003981d5c0","message":"message","created_at":"2017-12-12T11:55:07.000Z","collaborator":{"id":"5a1589f0d1befa47553ffd5f","name":"Bugsnag","email":"BUGSNAG_USER_EMAIL","two_factor_enabled":false,"two_factor_enabled_on":null,"BUGSNAG_PASSWORD_updated_on":"2017-12-06T16:40:04.011Z","show_time_in_utc":true,"projects_url":"https://api.bugsnag.com/users/5a1589f0d1befa47553ffd5f/projects","heroku":false,"recovery_codes_remaining":0}}'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 14:23:16 GMT
+  recorded_at: Tue, 12 Dec 2017 11:54:56 GMT
 - request:
     method: get
-    uri: https://api.bugsnag.com/comments/59db8655901da000251e93bb
+    uri: https://api.bugsnag.com/comments/5a2fc39bd1befa003981d5c0
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Bugsnag API Ruby Gem 1.0.3
+      - Bugsnag API Ruby Gem 2.0.1
       Content-Type:
       - application/json
       X-Version:
       - '2'
+      X-Bugsnag-Api:
+      - 'true'
       Authorization:
       - token BUGSNAG_AUTH_TOKEN
       Accept-Encoding:
@@ -103,31 +93,25 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 09 Oct 2017 14:23:17 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"b73360ee8c7437614487b331880c2394"
+      - W/"9394de93d9d8fe007ab97f2df6714c4e"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - c5e1f239-04fb-4d15-87ac-7dd979f6977b
+      - '084f7542-22ea-435f-9ae2-b9454056ef02'
       X-Runtime:
-      - '0.299950'
+      - '0.594008'
       Vary:
       - Origin
-      X-Ratelimit-Limit:
-      - '10'
-      X-Ratelimit-Remaining:
-      - '2'
+      X-Rack-Cors:
+      - miss; no-origin
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
-        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
-        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
-        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        connect-src ''self'' https://api.bugsnag.com https://notify.bugsnag.com https://*.stripe.com
+        https://bugsnag.zendesk.com https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com;
+        img-src ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
         script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
         https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
         https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
@@ -141,19 +125,11 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
-      X-Robots-Tag:
-      - noindex, nofollow
-      Strict-Transport-Security:
-      - max-age=31536000
-      Via:
-      - 1.1 google
-      Alt-Svc:
-      - clear
       Transfer-Encoding:
       - chunked
     body:
-      encoding: ASCII-8BIT
-      string: '{"id":"59db8655901da000251e93bb","message":"message","created_at":"2017-10-09T14:23:17.000Z","user":{"id":"59ae67b68a0558001a351bcb","email":"BUGSNAG_USER_EMAIL","name":"AlexTestsM","url":"https://api.bugsnag.com/users/59ae67b68a0558001a351bcb","projects_url":"https://api.bugsnag.com/users/59ae67b68a0558001a351bcb/projects"},"url":"https://api.bugsnag.com/comments/59db8655901da000251e93bb"}'
+      encoding: UTF-8
+      string: '{"id":"5a2fc39bd1befa003981d5c0","message":"message","created_at":"2017-12-12T11:55:07.000Z","user":{"id":"5a1589f0d1befa47553ffd5f","email":"BUGSNAG_USER_EMAIL","name":"Bugsnag","url":"https://api.bugsnag.com/users/5a1589f0d1befa47553ffd5f","projects_url":"https://api.bugsnag.com/users/5a1589f0d1befa47553ffd5f/projects"},"url":"https://api.bugsnag.com/comments/5a2fc39bd1befa003981d5c0"}'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 14:23:16 GMT
+  recorded_at: Tue, 12 Dec 2017 11:54:56 GMT
 recorded_with: VCR 2.9.3
