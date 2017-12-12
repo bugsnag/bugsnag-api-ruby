@@ -8,13 +8,15 @@ http_interactions:
       string: '{"name":"testOrg"}'
     headers:
       User-Agent:
-      - Bugsnag API Ruby Gem 1.0.3
+      - Bugsnag API Ruby Gem 2.0.1
       Content-Type:
       - application/json
       X-Version:
       - '2'
+      X-Bugsnag-Api:
+      - 'true'
       Authorization:
-      - Basic YWxleCt0ZXN0QGJ1Z3NuYWcuY29tOkNvc21vcG9saXRhblBlYXNlbnQ=
+      - Basic c3VwcG9ydEBidWdzbmFnLmNvbTpwYXNzd29yZA==
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -24,35 +26,28 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 09 Oct 2017 14:20:14 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"3f464d130e63840630bbb4521e74b7f1"
+      - W/"867f8f8f0d6fbcfa38d9c11d3a027875"
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _bugsnag_session_2=VEUvWHU0dVdUYmpra2Exdjh1K3owOFNWY3BxdUlzRjY4cER0RWo4cFNRR3RaSmdGdlZyd2kwSHBReHZ5bysxcUVLQkVvTU5yTkJiNUxVSE9ESng0RnRoVERmSDdUQUxvTE1VbHFtZ3pGdGFWWUFQUElybVUwR1o4c0Jmemt6Y0hkaGkwMWRDRWNLWEJ2QjNHdnFWdXpPd0M1K3BXazd4bExLUVJ5clJqaFZuTkUyODYxaGpQK2Z1a3lPbkRldVJ2UUowVDQweExZUWdiRWkrbjd5ZEk2QT09LS1qZk8zVDdDb1lXOHBrTlF2a09qajJ3PT0%3D--4948f914359e75c8a82ea5dcb4eea1dc774b2add;
-        domain=.bugsnag.com; path=/; expires=Tue, 09 Oct 2018 14:20:14 -0000; secure;
-        HttpOnly; SameSite=Lax
+      - _bugsnag_session_2=QkVaREh6ckR0NUZMeDJGVnJCa2JCZWt4SXJhQk5WVGdzL1hlUTN6ZjBWQk1qc2h2bStFYU9YRisvNklEa0lEcCt6MkQ5eEgwSmhHY1ZJOEJDY3VLaXU4YkEvUWtWbk83WVQ4NDhKYythbExkNkNKQ21wYW5ickFESUhmYlI2TmYyenZyZ1prWStka2RxbXlJZkk5aWVmekxGYnpEZUhONWdnS2xxSXVTcjR3dEZBSWlwc2lnd0dlQ2VUNzh4bzRybXczM0ZwZ0VIUE5TT3dOcXBRR3JKZz09LS02aGd2Q3NtTTlod1BiajVzTGNqTDBRPT0%3D--6a987dea0bf51b8d2a46b49c8d732d7ece5b5147;
+        path=/; expires=Wed, 12 Dec 2018 11:52:36 -0000; HttpOnly; SameSite=Lax
       X-Request-Id:
-      - ba378990-54b2-462c-8d17-4b30c87b0563
+      - 9ce59338-0963-4022-b95f-fd6f926b141d
       X-Runtime:
-      - '1.166667'
+      - '1.001746'
       Vary:
       - Origin
-      X-Ratelimit-Limit:
-      - '10'
-      X-Ratelimit-Remaining:
-      - '5'
+      X-Rack-Cors:
+      - miss; no-origin
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
-        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
-        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
-        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        connect-src ''self'' https://api.bugsnag.com https://notify.bugsnag.com https://*.stripe.com
+        https://bugsnag.zendesk.com https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com;
+        img-src ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
         script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
         https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
         https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
@@ -66,36 +61,30 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
-      X-Robots-Tag:
-      - noindex, nofollow
-      Strict-Transport-Security:
-      - max-age=31536000
-      Via:
-      - 1.1 google
-      Alt-Svc:
-      - clear
       Transfer-Encoding:
       - chunked
     body:
-      encoding: ASCII-8BIT
-      string: '{"id":"59db859ec1951b0026d5a31c","name":"testOrg","slug":"testorg-27","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-10-09T14:20:14.089Z","updated_at":"2017-10-09T14:20:14.187Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-27/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]}'
+      encoding: UTF-8
+      string: '{"id":"5a2fc304d1befa003981d5a5","name":"testOrg","slug":"testorg-9","creator":{"id":"5a1589f0d1befa47553ffd5f","name":"Bugsnag","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-12-12T11:52:36.052Z","updated_at":"2017-12-12T11:52:36.164Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-9/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","can_start_pro_trial":false,"pro_trial_ends_at":null,"billing_emails":["BUGSNAG_USER_EMAIL"]}'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 14:20:14 GMT
+  recorded_at: Tue, 12 Dec 2017 11:52:25 GMT
 - request:
     method: get
-    uri: https://api.bugsnag.com/organizations/59db859ec1951b0026d5a31c
+    uri: https://api.bugsnag.com/organizations/5a2fc304d1befa003981d5a5
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Bugsnag API Ruby Gem 1.0.3
+      - Bugsnag API Ruby Gem 2.0.1
       Content-Type:
       - application/json
       X-Version:
       - '2'
+      X-Bugsnag-Api:
+      - 'true'
       Authorization:
-      - Basic YWxleCt0ZXN0QGJ1Z3NuYWcuY29tOkNvc21vcG9saXRhblBlYXNlbnQ=
+      - Basic c3VwcG9ydEBidWdzbmFnLmNvbTpwYXNzd29yZA==
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -105,35 +94,28 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 09 Oct 2017 14:20:15 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"3f464d130e63840630bbb4521e74b7f1"
+      - W/"867f8f8f0d6fbcfa38d9c11d3a027875"
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _bugsnag_session_2=VXBEMnRuOGpFdTAzL0JLUnp5TVF0L1JCT2k0YmEybjJqdk12QkhyU3F2cDBWUUFVZkthWnpGRXNYQi9la0RRYW9TZHVhUk80MGFLdDNWb3dpOG53NDM3RStCS01FV2krK3J4US9jK0Q2QW5sWHViMkRDMzZWb2R5aGtrNFZsbnQ4Rmw4TWo3Vnh1VTBtelU1NVZuWXFYNnpWTWpCWnJIc3NtOERCUjVXandWVzNxZE9pN2FXbXJaaXlVOVZScFJlamVjNmxienB3dENYREZFUWRNZ3pzUT09LS1OUW9lTFc2YXowK1ZaOTByUkVNRUxnPT0%3D--d8acc37630fc8955d1e230f2c02bc52796090b51;
-        domain=.bugsnag.com; path=/; expires=Tue, 09 Oct 2018 14:20:15 -0000; secure;
-        HttpOnly; SameSite=Lax
+      - _bugsnag_session_2=aU1BaTlDUnBtRTNMaWtnQnpYK1FEZEo0dTR3N0V1WElEOHVudTJzUHEzSkZ0S3NLNFlOSmRhbEVSZlZuaFpJU3BseFQ2TTJqUVoxdzNCckZjZG5ndmdGR0hQMWdaMmJ6TmJiWTViME5CNXBiQng4eDBKUEdKV1NkSGl5K2hUa3RkcThUN01JNEdLTDNvVFJQKzY0eWtZTDVpYkFzS3hleVpRR2ZvaEZYYVpweml4a005eWpaZFpuUTgrZHVpeTJ3VFEwUEF3TE5uNldSd0hQb1h3YmJiUT09LS1walZCNG1PRGdIeFZIeDFCTXZOWWtnPT0%3D--a6f0a8fd19fe93972da8f4e19212f5e88599979a;
+        path=/; expires=Wed, 12 Dec 2018 11:52:36 -0000; HttpOnly; SameSite=Lax
       X-Request-Id:
-      - 54bdd096-ce64-405f-babc-9f612c33ecec
+      - 93ccdbcf-20a9-4b69-81bc-2d2e824addb5
       X-Runtime:
-      - '0.286369'
+      - '0.386262'
       Vary:
       - Origin
-      X-Ratelimit-Limit:
-      - '10'
-      X-Ratelimit-Remaining:
-      - '4'
+      X-Rack-Cors:
+      - miss; no-origin
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
-        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
-        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
-        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        connect-src ''self'' https://api.bugsnag.com https://notify.bugsnag.com https://*.stripe.com
+        https://bugsnag.zendesk.com https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com;
+        img-src ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
         script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
         https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
         https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
@@ -147,19 +129,11 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
-      X-Robots-Tag:
-      - noindex, nofollow
-      Strict-Transport-Security:
-      - max-age=31536000
-      Via:
-      - 1.1 google
-      Alt-Svc:
-      - clear
       Transfer-Encoding:
       - chunked
     body:
-      encoding: ASCII-8BIT
-      string: '{"id":"59db859ec1951b0026d5a31c","name":"testOrg","slug":"testorg-27","creator":{"id":"59ae67b68a0558001a351bcb","name":"AlexTestsM","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-10-09T14:20:14.089Z","updated_at":"2017-10-09T14:20:14.187Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-27/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","billing_emails":["BUGSNAG_USER_EMAIL"]}'
+      encoding: UTF-8
+      string: '{"id":"5a2fc304d1befa003981d5a5","name":"testOrg","slug":"testorg-9","creator":{"id":"5a1589f0d1befa47553ffd5f","name":"Bugsnag","email":"BUGSNAG_USER_EMAIL"},"created_at":"2017-12-12T11:52:36.052Z","updated_at":"2017-12-12T11:52:36.164Z","auto_upgrade":true,"upgrade_url":"https://api.bugsnag.com/settings/testorg-9/plans-billing?plansBilling%5Bstep%5D=collaborators-and-events","can_start_pro_trial":false,"pro_trial_ends_at":null,"billing_emails":["BUGSNAG_USER_EMAIL"]}'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 14:20:14 GMT
+  recorded_at: Tue, 12 Dec 2017 11:52:25 GMT
 recorded_with: VCR 2.9.3

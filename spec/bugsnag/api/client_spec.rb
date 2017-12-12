@@ -1,3 +1,4 @@
+require "spec_helper"
 require "json"
 
 describe Bugsnag::Api::Client do
@@ -45,7 +46,7 @@ describe Bugsnag::Api::Client do
 
     it "handles query params", :vcr do
       Bugsnag::Api.get bugsnag_url("/"), :foo => "bar"
-      assert_requested :get, "https://api.bugsnag.com?foo=bar"
+      assert_requested :get, bugsnag_url("?foo=bar")
     end
 
     it "handles headers" do
@@ -82,19 +83,28 @@ describe Bugsnag::Api::Client do
   end
 
   context "error handling" do
+
+    before do
+      VCR.turn_off!
+    end
+
+    after do
+      VCR.turn_on!
+    end
+
     it "raises on 404" do
       stub_get('/booya').to_return(:status => 404)
-      expect { Bugsnag::Api.get('/booya') }.to raise_error(Bugsnag::Api::NotFound)
+      expect { Bugsnag::Api.get(bugsnag_url('/booya')) }.to raise_error(Bugsnag::Api::NotFound)
     end
 
     it "raises on 429" do
       stub_get('/test').to_return(:status => 429)
-      expect { Bugsnag::Api.get('/test') }.to raise_error(Bugsnag::Api::RateLimitExceeded)
+      expect { Bugsnag::Api.get(bugsnag_url('/test')) }.to raise_error(Bugsnag::Api::RateLimitExceeded)
     end
 
     it "raises on 500" do
       stub_get('/boom').to_return(:status => 500)
-      expect { Bugsnag::Api.get('/boom') }.to raise_error(Bugsnag::Api::InternalServerError)
+      expect { Bugsnag::Api.get(bugsnag_url('/boom')) }.to raise_error(Bugsnag::Api::InternalServerError)
     end
 
     it "includes an error" do
@@ -106,7 +116,7 @@ describe Bugsnag::Api::Client do
         },
         :body => {:error => "Comments must contain a message"}.to_json
       begin
-        Bugsnag::Api.get('/boom')
+        Bugsnag::Api.get(bugsnag_url('/boom'))
       rescue Bugsnag::Api::UnprocessableEntity => e
         expect(e.message).to include("Error: Comments must contain a message")
       end
@@ -119,7 +129,7 @@ describe Bugsnag::Api::Client do
           :content_type => "application/json",
         },
         :body => {:message => "I'm a teapot"}.to_json
-      expect { Bugsnag::Api.get('/user') }.to raise_error(Bugsnag::Api::ClientError)
+      expect { Bugsnag::Api.get(bugsnag_url('/user')) }.to raise_error(Bugsnag::Api::ClientError)
     end
 
     it "raises on unknown server errors" do
@@ -129,7 +139,7 @@ describe Bugsnag::Api::Client do
           :content_type => "application/json",
         },
         :body => {:message => "Bandwidth exceeded"}.to_json
-      expect { Bugsnag::Api.get('/user') }.to raise_error(Bugsnag::Api::ServerError)
+      expect { Bugsnag::Api.get(bugsnag_url('/user')) }.to raise_error(Bugsnag::Api::ServerError)
     end
   end
 end
