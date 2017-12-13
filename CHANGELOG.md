@@ -1,6 +1,14 @@
 Changelog
 =========
 
+## 2.0.1 (15 Nov 2017)
+
+### Fixes
+
+* Adds `X-Bugsnag-Api` header so that on-prem clients may use this tool
+    | [tremlab](https://github.com/tremlab)
+    | [#14](https://github.com/bugsnag/bugsnag-api-ruby/pull/14)
+
 ## 2.0.0 (10 Oct 2017)
 
 This release changes the gem to access v2 of the [Bugsnag data-access API](https://docs.bugsnag.com/api/data-access/), with full API documentation found [here](http://docs.bugsnagapiv2.apiary.io/).

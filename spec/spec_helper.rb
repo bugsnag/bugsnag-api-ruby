@@ -28,7 +28,7 @@ VCR.configure do |c|
     :match_requests_on => [:method, :path]
   }
 
-  c.filter_sensitive_data("https://api.bugsnag.com") { Bugsnag::Api.configuration.endpoint }
+  c.filter_sensitive_data("https://api.bugsnag.com") { test_bugsnag_endpoint }
   c.filter_sensitive_data("api.bugsnag.com") { URI.parse(Bugsnag::Api.configuration.endpoint).host }
   c.filter_sensitive_data("BUGSNAG_AUTH_TOKEN") { test_bugsnag_auth_token }
   c.filter_sensitive_data("BUGSNAG_LOGIN") { CGI::escape(test_bugsnag_email) }
@@ -66,11 +66,11 @@ def basic_auth_client
 end 
 
 def bugsnag_url(path)
-  URI.join(Bugsnag::Api.configuration.endpoint, path).to_s
+  URI.join(test_bugsnag_endpoint, path).to_s
 end
 
 def basic_bugsnag_url(path, options = {})
-  url = File.join(Bugsnag::Api.configuration.endpoint, path)
+  url = File.join(test_bugsnag_endpoint, path)
   uri = Addressable::URI.parse(url)
 
   uri.user = options.fetch(:login, test_bugsnag_email)

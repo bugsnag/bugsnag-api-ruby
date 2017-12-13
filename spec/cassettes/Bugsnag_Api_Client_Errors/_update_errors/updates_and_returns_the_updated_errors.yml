@@ -8,11 +8,13 @@ http_interactions:
       string: '{"severity":"warn","operation":"fix"}'
     headers:
       User-Agent:
-      - Bugsnag API Ruby Gem 1.0.3
+      - Bugsnag API Ruby Gem 2.0.1
       Content-Type:
       - application/json
       X-Version:
       - '2'
+      X-Bugsnag-Api:
+      - 'true'
       Authorization:
       - token BUGSNAG_AUTH_TOKEN
       Accept-Encoding:
@@ -24,31 +26,25 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Server:
-      - nginx
-      Date:
-      - Mon, 09 Oct 2017 14:19:57 GMT
       Content-Type:
       - application/json; charset=utf-8
       Etag:
-      - W/"e6cc93de28b5cf22c1c149382ee16d61"
+      - W/"36be5c4a9dd391021b17f66a1c1562a8"
       Cache-Control:
       - max-age=0, private, must-revalidate
       X-Request-Id:
-      - bb20172a-9970-4255-a412-dc332cf14665
+      - 606b44ed-1aef-4fb0-9657-593cd1e7586b
       X-Runtime:
-      - '0.232163'
+      - '0.461700'
       Vary:
       - Origin
-      X-Ratelimit-Limit:
-      - '10'
-      X-Ratelimit-Remaining:
-      - '4'
+      X-Rack-Cors:
+      - miss; no-origin
       Content-Security-Policy:
       - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net;
-        connect-src ''self'' https://api.bugsnag.com https://*.stripe.com https://bugsnag.zendesk.com
-        https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com; img-src
-        ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
+        connect-src ''self'' https://api.bugsnag.com https://notify.bugsnag.com https://*.stripe.com
+        https://bugsnag.zendesk.com https://api.lever.co; font-src ''self'' https://maxcdn.bootstrapcdn.com;
+        img-src ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com;
         script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
         https://maxcdn.bootstrapcdn.com https://code.jquery.com https://assets.zendesk.com
         https://cdn.headwayapp.co; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com'
@@ -62,19 +58,11 @@ http_interactions:
       - none
       X-Xss-Protection:
       - 1; mode=block
-      X-Robots-Tag:
-      - noindex, nofollow
-      Strict-Transport-Security:
-      - max-age=31536000
-      Via:
-      - 1.1 google
-      Alt-Svc:
-      - clear
       Transfer-Encoding:
       - chunked
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: '{"operation":"fix","BUGSNAG_ERROR_ID":{"assigned_collaborator_id":null,"created_issue":{},"reopen_rules":null,"status":"fixed"}}'
     http_version: 
-  recorded_at: Mon, 09 Oct 2017 14:19:56 GMT
+  recorded_at: Tue, 12 Dec 2017 11:55:03 GMT
 recorded_with: VCR 2.9.3

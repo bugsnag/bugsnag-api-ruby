@@ -161,6 +161,7 @@ module Bugsnag
         @agent ||= Sawyer::Agent.new(configuration.endpoint, sawyer_options) do |http|
           http.headers[:content_type] = "application/json"
           http.headers[:'X-Version'] = "2"
+          http.headers[:'X-Bugsnag-Api'] = "true"
           http.headers[:user_agent] = configuration.user_agent
 
           if basic_authenticated?
