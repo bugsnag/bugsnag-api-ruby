@@ -27,5 +27,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "faker", RUBY_VERSION <= '2.0.0' ? '1.3.0' : '>1.7.3'
   spec.add_development_dependency "vcr", "~> 2.9"
   spec.add_development_dependency "json"
-  spec.add_development_dependency "rubocop", RUBY_VERSION <= '2.1.0' ? '0.49.1': '~>0.52.1'
+  spec.add_development_dependency "rubocop", RUBY_VERSION <= '2.1.0' ? '0.41.2': '~>0.52.1'
 end
