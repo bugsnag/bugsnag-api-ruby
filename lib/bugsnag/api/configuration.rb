@@ -45,7 +45,7 @@ module Bugsnag
 
       # Load configuration from hash
       def load(options = {})
-        options.each {|k,v| self.send("#{k}=", v) if self.respond_to?("#{k}=") && !v.nil?}
+        options.each { |k,v| self.send("#{k}=", v) if self.respond_to?("#{k}=") && !v.nil?}
       end
     end
   end
