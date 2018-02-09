@@ -44,7 +44,7 @@ module Bugsnag
 
         # Delete a Comment
         #
-        # @return 
+        # @return
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/comments/delete-a-comment
         def delete_comment(id, options = {})
           boolean_from_response :delete, "comments/#{id}", options
