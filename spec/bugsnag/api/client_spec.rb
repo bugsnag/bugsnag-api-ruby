@@ -82,6 +82,58 @@ describe Bugsnag::Api::Client do
     end
   end
 
+  describe ".deep_merge" do
+    it "returns a merged hash" do
+      client = Bugsnag::Api::Client.new(:auth_token => "example")
+      lhs = {
+        :foo => "foo"
+      }
+      rhs = {
+        :bar => "bar"
+      }
+      merged = client.deep_merge(lhs, rhs)
+      expect(merged).to_not eq(lhs)
+      expect(merged).to_not eq(rhs)
+      expect(merged).to eq({
+        :foo => "foo",
+        :bar => "bar"
+      })
+    end
+
+    it "favors rhs over lhs" do
+      client = Bugsnag::Api::Client.new(:auth_token => "example")
+      lhs = {
+        :foo => "foo"
+      }
+      rhs = {
+        :foo => "bar"
+      }
+      merged = client.deep_merge(lhs, rhs)
+      expect(merged).to eq({:foo => "bar"})
+    end
+
+    it "recursively merges hashes" do
+      client = Bugsnag::Api::Client.new(:auth_token => "example")
+      lhs = {
+        :foo => {
+          :bar => "bar"
+        }
+      }
+      rhs = {
+        :foo => {
+          :foobar => "foobar"
+        }
+      }
+      merged = client.deep_merge(lhs, rhs)
+      expect(merged).to eq(
+        {:foo => {
+          :bar => "bar",
+          :foobar => "foobar"
+        }
+      })
+    end
+  end
+
   context "error handling" do
 
     before do
