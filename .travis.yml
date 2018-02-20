@@ -7,11 +7,14 @@ rvm:
 - 1.9.3
 - jruby-19mode
 
-before_install:
-- echo YOLO
-
 install:
 - bundle install --with "$GEMSETS"
+
+jobs:
+  include:
+    - stage: test
+      rvm: 2.4.1
+      script: bundle exec rubocop lib/
 
 script:
 - bundle exec rake spec
