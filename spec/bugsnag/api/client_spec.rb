@@ -94,8 +94,10 @@ describe Bugsnag::Api::Client do
       merged = client.deep_merge(lhs, rhs)
       expect(merged).to_not eq(lhs)
       expect(merged).to_not eq(rhs)
-      expect(merged).to include(:foo => "foo")
-      expect(merged).to include(:bar => "bar")
+      expect(merged).to eq({
+        :foo => "foo",
+        :bar => "bar"
+      })
     end
 
     it "favors rhs over lhs" do
@@ -107,7 +109,7 @@ describe Bugsnag::Api::Client do
         :foo => "bar"
       }
       merged = client.deep_merge(lhs, rhs)
-      expect(merged).to include(:foo => "bar")
+      expect(merged).to eq({:foo => "bar"})
     end
 
     it "recursively merges hashes" do
@@ -123,9 +125,12 @@ describe Bugsnag::Api::Client do
         }
       }
       merged = client.deep_merge(lhs, rhs)
-      expect(merged).to include(:foo)
-      expect(merged[:foo]).to include(:bar => "bar")
-      expect(merged[:foo]).to include(:foobar => "foobar")
+      expect(merged).to eq(
+        {:foo => {
+          :bar => "bar",
+          :foobar => "foobar"
+        }
+      })
     end
   end
 
