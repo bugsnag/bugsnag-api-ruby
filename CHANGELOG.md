@@ -1,6 +1,13 @@
 Changelog
 =========
 
+## 2.0.2 (21 Feb 2018)
+
+### Fixes
+
+* Fixes issue with custom query parameters being overridden
+    | [#13](https://github.com/bugsnag/bugsnag-api-ruby/pull/13)
+
 ## 2.0.1 (15 Nov 2017)
 
 ### Fixes
