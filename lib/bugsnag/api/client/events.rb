@@ -16,7 +16,7 @@ module Bugsnag
 
         # Delete an Event
         #
-        # @return 
+        # @return
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/events/delete-an-event
         def delete_event(project_id, id, options = {})
           boolean_from_response :delete, "projects/#{project_id}/events/#{id}", options
@@ -57,4 +57,3 @@ module Bugsnag
     end
   end
 end
-  

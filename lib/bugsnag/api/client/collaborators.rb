@@ -19,7 +19,7 @@ module Bugsnag
         # @argument project_id [String] ID of project to get collaborators from (conflicts with org_id)
         # @argument org_id [String] ID of organization to get collaborators from (conflicts with project_id)
         #
-        # @option per_page [Number] Amount of results per-page             
+        # @option per_page [Number] Amount of results per-page
         # @return [Array<Sawyer::Resource>] List of Collaborators
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/collaborators/list-collaborators
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/collaborators/list-collaborators-on-a-project
@@ -84,4 +84,3 @@ module Bugsnag
     end
   end
 end
-  
