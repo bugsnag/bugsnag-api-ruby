@@ -26,7 +26,7 @@ module Bugsnag
         #
         # @option filters [Object] An optional filter object, see http://docs.bugsnagapiv2.apiary.io/#introduction/filtering
         # @option sort [String] Sorting method
-        # @option base [String] Only Events occuring before this time will be used 
+        # @option base [String] Only Events occuring before this time will be used
         # @return [Array<Sawyer::Resource>] List of values for the Pivots requested
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/pivots/list-values-of-a-pivot-on-an-error
         def pivot_values(project_id, ef_display_id, error_id=nil, options = {})
@@ -40,4 +40,3 @@ module Bugsnag
     end
   end
 end
-  
