@@ -8,6 +8,8 @@ module Bugsnag
       module Errors
         # List the Errors on a Project
         #
+        # @argument id [String] optional ID of error to retrieve
+        #
         # @option base [String] Only Error Events occuring before this time will be returned
         # @option sort [String] Which field to sort by, one of: last_seen, first_seen, users, events, unsorted
         # @option direction [String] Which direction to sort the result by, one of: asc, desc
@@ -15,16 +17,14 @@ module Bugsnag
         # @return [Array<Sawyer::Resource>] List of Project Errors
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/list-the-errors-on-a-project
         def errors(project_id, id=nil, options = {})
-          paginate "projects/#{project_id}/errors", options
+          if id.nil?
+            paginate "projects/#{project_id}/errors", options
+          else
+            get "projects/#{project_id}/errors/#{id}", options
+          end
         end
 
-        # View an Error
-        #
-        # @return [Sawyer::Resource] Requested Error
-        # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/view-an-error
-        def error(project_id, id, options = {})
-          get "projects/#{project_id}/errors/#{id}", options
-        end
+        alias error errors
 
         # Update an Error
         #
@@ -55,7 +55,7 @@ module Bugsnag
         # @argument error_id [String] ID of error to delete (conflicts with project_id)
         # @argument project_id [String] Id of project to delete all errors from (conflicts with error_id)
         #
-        # @return 
+        # @return
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/errors/delete-an-error
         def delete_errors(project_id, error_id=nil, options = {})
           if !error_id.nil?
@@ -68,4 +68,3 @@ module Bugsnag
     end
   end
 end
-  
