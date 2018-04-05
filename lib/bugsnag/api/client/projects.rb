@@ -42,7 +42,7 @@ module Bugsnag
 
         # Regenerate a Project's notifier API key
         #
-        # @return 
+        # @return
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/projects/projects/regenerate-a-project's-notifier-api-key
         def regenerate_api_key(id, options = {})
           delete "projects/#{id}/api_key", options
@@ -50,7 +50,7 @@ module Bugsnag
 
         # Delete a Project
         #
-        # @return 
+        # @return
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/organizations/delete-an-organization
         def delete_project(id, options = {})
           boolean_from_response :delete, "projects/#{id}", options
@@ -59,4 +59,3 @@ module Bugsnag
     end
   end
 end
-  

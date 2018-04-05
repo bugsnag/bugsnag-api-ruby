@@ -39,4 +39,3 @@ module Bugsnag
     end
   end
 end
-  

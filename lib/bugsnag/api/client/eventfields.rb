@@ -38,7 +38,7 @@ module Bugsnag
 
         # Delete a custom Event Field
         #
-        # @return 
+        # @return
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/projects/event-fields/delete-a-custom-event-field
         def delete_event_field(project_id, display_id, options = {})
           boolean_from_resposne :delete, "project/#{project_id}/event_fields/#{display_id}", options
@@ -47,4 +47,3 @@ module Bugsnag
     end
   end
 end
-  
