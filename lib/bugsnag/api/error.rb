@@ -3,7 +3,7 @@ module Bugsnag
     # Custom error class for rescuing from all Bugsnag API errors
     class Error < StandardError
 
-      # Returns the appropriate Bugnsag::Api::Error subclass based
+      # Returns the appropriate Bugsnag::Api::Error subclass based
       # on status and response message
       #
       # @param [Hash] response HTTP response
