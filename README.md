@@ -321,6 +321,16 @@ Bugsnag::Api.pivots("project-id")
 Bugsnag::Api.pivot_values("project-id", "display id")
 ```
 
+### Trends
+
+```ruby
+# list an error's trends in 5 buckets
+Bugsnag::Api.trends_buckets("project-id", 5, "error-id")
+
+# list a project's trends by resolution
+Bugsnag::Api.trends_resolution("project-id", "2h")
+```
+
 ## Advanced Configuration
 
 ### Endpoint
