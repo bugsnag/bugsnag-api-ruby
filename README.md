@@ -236,7 +236,7 @@ Bugsnag::Api.delete_comment("comment-id")
 
 ```ruby
 # List project errors
-errors = Bugsnag::Api.errors("project-id", "project-id")
+errors = Bugsnag::Api.errors("project-id", nil)
 
 # Get a single error
 error = Bugsnag::Api.error("project-id", "error-id")
