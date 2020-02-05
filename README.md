@@ -186,7 +186,7 @@ documentation](http://www.rubydoc.info/gems/bugsnag-api/Bugsnag/Api/Client)
 orgs = Bugsnag::Api.organizations
 
 # Get a single organization
-org = Bugsnag::Api.organizations("organization-id")
+org = Bugsnag::Api.organization("organization-id")
 ```
 
 ### Collaborators
