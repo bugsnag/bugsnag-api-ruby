@@ -20,6 +20,7 @@ This library borrows heavily from the code and philosophies of the fantastic [Oc
   - [Accessing Related Resources](#accessing-related-resources)
   - [Authentication](#authentication)
   - [Pagination](#pagination)
+  - [Filtering](#filtering)
   - [Accessing HTTP responses](#accessing-http-responses)
 - [API Methods](#api-methods)
   - [Organizations](#organizations)
