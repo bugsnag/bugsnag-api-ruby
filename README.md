@@ -265,6 +265,12 @@ Bugsnag::Api.delete_comment("comment-id")
 # List project errors
 errors = Bugsnag::Api.errors("project-id", nil)
 
+# List errors with a filter (see Filtering section for more information)
+# Returns errors that match `EXC_BAD_INSTRUCTION`, this could be from the error class, message, context, or stack trace.
+errors = Bugsnag::Api.errors("project-id", nil, direction:"desc", filters: {
+  "search": [{ "type":"eq", "value":"EXC_BAD_INSTRUCTION" }]
+})
+
 # Get a single error
 error = Bugsnag::Api.error("project-id", "error-id")
 
@@ -287,6 +293,15 @@ events = Bugsnag::Api.events("project-id")
 
 # List error events
 events = Bugsnag::Api.error_events("project-id", "error-id")
+
+# List error events with a filter (see Filtering section for more information)
+# Returns events with
+#   class `EXC_BAD_INSTRUCTION` OR `EXC_BAD_ACCESS`
+#   AND where the device is jailbroken
+events = Bugsnag::Api.events(PROJECT_ID, direction:"desc", filters: {
+  "event.class": [{ "type":"eq", "value":"EXC_BAD_INSTRUCTION" }, { "type":"eq", "value":"EXC_BAD_ACCESS"  }],
+  "device.jailbroken": [{ "type":"eq", "value":"false"}]
+})
 
 # Get the latest event
 event = Bugsnag::Api.latest_event("project-id", "error-id")
