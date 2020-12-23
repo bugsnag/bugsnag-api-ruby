@@ -295,7 +295,7 @@ events = Bugsnag::Api.events("project-id")
 # List error events
 events = Bugsnag::Api.error_events("project-id", "error-id")
 
-# List error events with a filter (see Filtering section for more information)
+# List events with a filter (see Filtering section for more information)
 # Returns events with
 #   class `EXC_BAD_INSTRUCTION` OR `EXC_BAD_ACCESS`
 #   AND where the device is jailbroken
