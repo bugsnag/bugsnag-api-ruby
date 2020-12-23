@@ -162,6 +162,33 @@ until last_response.rels[:next].nil?
 end
 ```
 
+### Filtering
+
+Events and Errors can be filtered to return a subset of data. Any of the filters usable in the Bugsnag dashoard can be used in this API. The filter object is a hash of Event Field keys containing an array of filter values. Each filter value has a `type` and a `value` to filter on. The type determines the type of comparison that will be performed.
+
+| `type` | Description | Multiple value combination logic |
+|-|-|-|
+| `eq` | Filter for items that 'match' the value. Some fields require an exact match and some support substring matching. | OR |
+| `ne` | Filter for items that don't match the value. | AND |
+
+:warning: Note that the Event Field `search` can not be used more than once in a call.
+
+You can see the filterable fields for a project using the following snippet, after setting the `project-id` value.
+
+```ruby
+fields = Bugsnag::Api.event_fields("project-id")
+
+puts "List of the searchable fields for this project:"
+fields.each_with_index do |field,idx|
+  puts "  [#{idx}] #{field.display_id}"
+end
+# => List of the searchable fields for this project:
+# =>   [0] event
+# =>   [1] error
+# =>   [2] search
+# =>   [3] user.id
+# => ...
+```
 
 ### Accessing HTTP responses
 
