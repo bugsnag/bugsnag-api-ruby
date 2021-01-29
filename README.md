@@ -20,6 +20,7 @@ This library borrows heavily from the code and philosophies of the fantastic [Oc
   - [Accessing Related Resources](#accessing-related-resources)
   - [Authentication](#authentication)
   - [Pagination](#pagination)
+  - [Filtering](#filtering)
   - [Accessing HTTP responses](#accessing-http-responses)
 - [API Methods](#api-methods)
   - [Organizations](#organizations)
@@ -162,6 +163,33 @@ until last_response.rels[:next].nil?
 end
 ```
 
+### Filtering
+
+Events and Errors can be filtered to return a subset of data. Any of the filters usable in the Bugsnag dashoard can be used in this API. The filter object is a hash of Event Field keys containing an array of filter values. Each filter value has a `type` and a `value` to filter on. The type determines the type of comparison that will be performed.
+
+| `type` | Description | Multiple value combination logic |
+|-|-|-|
+| `eq` | Filter for items that 'match' the value. Some fields require an exact match and some support substring matching. | OR |
+| `ne` | Filter for items that don't match the value. | AND |
+
+:warning: Note that the Event Field `search` can not be used more than once in a call.
+
+You can see the filterable fields for a project using the following snippet, after setting the `project-id` value.
+
+```ruby
+fields = Bugsnag::Api.event_fields("project-id")
+
+puts "List of the searchable fields for this project:"
+fields.each_with_index do |field,idx|
+  puts "  [#{idx}] #{field.display_id}"
+end
+# => List of the searchable fields for this project:
+# =>   [0] event
+# =>   [1] error
+# =>   [2] search
+# =>   [3] user.id
+# => ...
+```
 
 ### Accessing HTTP responses
 
@@ -238,6 +266,12 @@ Bugsnag::Api.delete_comment("comment-id")
 # List project errors
 errors = Bugsnag::Api.errors("project-id", nil)
 
+# List errors with a filter (see Filtering section for more information)
+# Returns errors that match `EXC_BAD_INSTRUCTION`, this could be from the error class, message, context, or stack trace.
+errors = Bugsnag::Api.errors("project-id", nil, direction:"desc", filters: {
+  "search": [{ "type":"eq", "value":"EXC_BAD_INSTRUCTION" }]
+})
+
 # Get a single error
 error = Bugsnag::Api.error("project-id", "error-id")
 
@@ -260,6 +294,15 @@ events = Bugsnag::Api.events("project-id")
 
 # List error events
 events = Bugsnag::Api.error_events("project-id", "error-id")
+
+# List events with a filter (see Filtering section for more information)
+# Returns events with
+#   class `EXC_BAD_INSTRUCTION` OR `EXC_BAD_ACCESS`
+#   AND where the device is jailbroken
+events = Bugsnag::Api.events(PROJECT_ID, direction:"desc", filters: {
+  "event.class": [{ "type":"eq", "value":"EXC_BAD_INSTRUCTION" }, { "type":"eq", "value":"EXC_BAD_ACCESS"  }],
+  "device.jailbroken": [{ "type":"eq", "value":"false"}]
+})
 
 # Get the latest event
 event = Bugsnag::Api.latest_event("project-id", "error-id")
