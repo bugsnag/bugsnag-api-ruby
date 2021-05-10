@@ -26,7 +26,7 @@ If you're a member of the core team, follow these instructions for releasing bug
 ### Every time
 
 * Update `CHANGELOG.md`
-* Update the version number in `bugsnag-api.gemspec`
+* Update the version number in [`lib/bugsnag/api/version.rb`](./lib/bugsnag/api/version.rb)
 * Update `README.md` if necessary with changes to the interface or configuration
 * Commit/push your changes
 * Release to rubygems
