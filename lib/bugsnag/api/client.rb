@@ -185,7 +185,7 @@ module Bugsnag
           end
         end
 
-        @last_response = response = agent.call(method, URI.escape(path.to_s), data, options)
+        @last_response = response = agent.call(method, path.to_s, data, options)
         response.data
       end
 
