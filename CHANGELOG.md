@@ -1,6 +1,18 @@
 Changelog
 =========
 
+## 2.0.3 (11 May 2021)
+
+### Fixes
+
+* Fix error handling middleware compatibility with Faraday v1.2.0 and above
+    | [askreet](https://github.com/askreet)
+    | [#30](https://github.com/bugsnag/bugsnag-api-ruby/pull/30)
+
+* Remove call to deprecated `URI.escape`
+    | [askreet](https://github.com/askreet)
+    | [#28](https://github.com/bugsnag/bugsnag-api-ruby/pull/28)
+
 ## 2.0.2 (21 Feb 2018)
 
 ### Fixes
