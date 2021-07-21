@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/releases
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 2.0.3
+      Content-Type:
+      - application/json
+      X-Version:
+      - '2'
+      X-Bugsnag-Api:
+      - 'true'
+      Authorization:
+      - token BUGSNAG_AUTH_TOKEN
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 21 Jul 2021 10:16:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '30'
+      X-Ratelimit-Remaining:
+      - '29'
+      X-Total-Count:
+      - '18'
+      Link:
+      - <https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/releases?offset=5>; rel="next"
+      Etag:
+      - W/"ed1f3093157525e1d0e3de94b66fb361"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 6106538c-08af-46f6-8750-22cb613f89c5
+      X-Runtime:
+      - '0.585272'
+      Vary:
+      - Origin
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Content-Security-Policy:
+      - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net https://*.youtube.com
+        https://www.google.com https://www.recaptcha.net; connect-src ''self'' https://api.bugsnag.com
+        https://notify.bugsnag.com https://sessions.bugsnag.com https://*.stripe.com
+        https://bugsnag.zendesk.com https://ekr.zdassets.com https://api.lever.co;
+        font-src ''self'' https://maxcdn.bootstrapcdn.com https://d2wy8f7a9ursnm.cloudfront.net;
+        img-src ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com
+        https://d2wy8f7a9ursnm.cloudfront.net https://px.ads.linkedin.com; object-src
+        ''self''; script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
+        https://maxcdn.bootstrapcdn.com https://code.jquery.com https://static.zdassets.com
+        https://ekr.zdassets.com https://cdn.headwayapp.co https://www.recaptcha.net
+        https://www.gstatic.com; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com
+        https://d2wy8f7a9ursnm.cloudfront.net'
+      X-Robots-Tag:
+      - noindex, nofollow
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":"BUGSNAG_RELEASE_ID","project_id":"BUGSNAG_PROJECT_ID","release_group_id":"BUGSNAG_RELEASE_GROUP_ID","release_time":"2021-07-08T14:26:55+00:00","release_source":"event","app_version":"1.2.3","app_version_code":"","app_bundle_version":"","build_label":"1.2.3","builder_name":"","build_tool":"","errors_introduced_count":1,"errors_seen_count":1,"sessions_count_in_last_24h":0,"total_sessions_count":0,"unhandled_sessions_count":0,"accumulative_daily_users_seen":0,"accumulative_daily_users_with_unhandled":0,"metadata":{},"release_stage":{"name":"production"}},{"id":"60a236a0c024ebcf749e8611","project_id":"BUGSNAG_PROJECT_ID","release_group_id":"60a236a0373c863538dc968a","release_time":"2021-05-17T09:25:52+00:00","release_source":"session","app_version":"12.0.6","app_version_code":"","app_bundle_version":"","build_label":"12.0.6","builder_name":"","build_tool":"","errors_introduced_count":2,"errors_seen_count":2,"sessions_count_in_last_24h":0,"total_sessions_count":1,"unhandled_sessions_count":1,"accumulative_daily_users_seen":1,"accumulative_daily_users_with_unhandled":1,"metadata":{},"release_stage":{"name":"development"}},{"id":"60a2356cc024ebcf7495230a","project_id":"BUGSNAG_PROJECT_ID","release_group_id":"6092ad2dc57ea33c2c797029","release_time":"2021-05-17T09:20:44+00:00","release_source":"session","app_version":"2.0.0","app_version_code":"","app_bundle_version":"","build_label":"2.0.0","builder_name":"","build_tool":"","errors_introduced_count":3,"errors_seen_count":8,"sessions_count_in_last_24h":0,"total_sessions_count":3,"unhandled_sessions_count":2,"accumulative_daily_users_seen":1,"accumulative_daily_users_with_unhandled":1,"metadata":{},"release_stage":{"name":"production"}},{"id":"60953ed4470751c2620dac65","project_id":"BUGSNAG_PROJECT_ID","release_group_id":"6092b4edc57ea33c2c79707d","release_time":"2021-05-07T13:21:24+00:00","release_source":"session","app_version":"1.0.0","app_version_code":"","app_bundle_version":"","build_label":"1.0.0","builder_name":"","build_tool":"","errors_introduced_count":8,"errors_seen_count":25,"sessions_count_in_last_24h":0,"total_sessions_count":29,"unhandled_sessions_count":11,"accumulative_daily_users_seen":4,"accumulative_daily_users_with_unhandled":4,"metadata":{},"release_stage":{"name":"production"}},{"id":"60953c5c470751c262f347f1","project_id":"BUGSNAG_PROJECT_ID","release_group_id":"60953c5cc57ea33c2c7980f7","release_time":"2021-05-07T13:10:52+00:00","release_source":"session","app_version":"1.0.0-bbbb","app_version_code":"","app_bundle_version":"","build_label":"1.0.0-bbbb","builder_name":"","build_tool":"","errors_introduced_count":7,"errors_seen_count":11,"sessions_count_in_last_24h":0,"total_sessions_count":17,"unhandled_sessions_count":7,"accumulative_daily_users_seen":3,"accumulative_daily_users_with_unhandled":3,"metadata":{},"release_stage":{"name":"production"}}]'
+    http_version: 
+  recorded_at: Wed, 21 Jul 2021 10:16:11 GMT
+recorded_with: VCR 2.9.3
