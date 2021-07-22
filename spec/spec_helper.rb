@@ -39,7 +39,8 @@ VCR.configure do |c|
   c.filter_sensitive_data("BUGSNAG_COLLABORATOR_EMAIL") { test_bugsnag_collaborator }
   c.filter_sensitive_data("BUGSNAG_ERROR_ID") { test_bugsnag_error_id }
   c.filter_sensitive_data("BUGSNAG_EVENT_ID") { test_bugsnag_event_id }
-  
+  c.filter_sensitive_data("BUGSNAG_RELEASE_ID") { test_bugsnag_release_id }
+  c.filter_sensitive_data("BUGSNAG_RELEASE_GROUP_ID") { test_bugsnag_release_group_id }
 end
 
 def auth_token_client
@@ -121,4 +122,12 @@ end
 
 def test_bugsnag_collaborator
   ENV["BUGSNAG_TEST_COLLABORATOR_EMAIL"] || "BUGSNAG_COLLABORATOR_EMAIL"
+end
+
+def test_bugsnag_release_id
+  ENV["BUGSNAG_TEST_RELEASE_ID"] || "BUGSNAG_RELEASE_ID"
+end
+
+def test_bugsnag_release_group_id
+  ENV["BUGSNAG_TEST_RELEASE_GROUP_ID"] || "BUGSNAG_RELEASE_GROUP_ID"
 end

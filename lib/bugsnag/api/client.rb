@@ -10,6 +10,8 @@ require "bugsnag/api/client/events"
 require "bugsnag/api/client/pivots"
 require "bugsnag/api/client/trends"
 require "bugsnag/api/client/comments"
+require "bugsnag/api/client/stability"
+require "bugsnag/api/client/releases"
 
 module Bugsnag
   module Api
@@ -28,6 +30,8 @@ module Bugsnag
       include Bugsnag::Api::Client::Pivots
       include Bugsnag::Api::Client::Trends
       include Bugsnag::Api::Client::Comments
+      include Bugsnag::Api::Client::Stability
+      include Bugsnag::Api::Client::Releases
 
       # Header keys that can be passed in options hash to {#get},{#head}
       CONVENIENCE_HEADERS = Set.new([:accept, :content_type])

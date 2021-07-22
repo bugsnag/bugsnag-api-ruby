@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/stability_trend
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 2.0.3
+      Content-Type:
+      - application/json
+      X-Version:
+      - '2'
+      X-Bugsnag-Api:
+      - 'true'
+      Authorization:
+      - token BUGSNAG_AUTH_TOKEN
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 20 Jul 2021 15:18:48 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '30'
+      X-Ratelimit-Remaining:
+      - '28'
+      Etag:
+      - W/"e187a5d89e7c6769b1733ac6f27b40c2"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 29002730-cc73-43bf-8e19-00d56b1fa14c
+      X-Runtime:
+      - '0.076007'
+      Vary:
+      - Origin
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Content-Security-Policy:
+      - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net https://*.youtube.com
+        https://www.google.com https://www.recaptcha.net; connect-src ''self'' https://api.bugsnag.com
+        https://notify.bugsnag.com https://sessions.bugsnag.com https://*.stripe.com
+        https://bugsnag.zendesk.com https://ekr.zdassets.com https://api.lever.co;
+        font-src ''self'' https://maxcdn.bootstrapcdn.com https://d2wy8f7a9ursnm.cloudfront.net;
+        img-src ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com
+        https://d2wy8f7a9ursnm.cloudfront.net https://px.ads.linkedin.com; object-src
+        ''self''; script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
+        https://maxcdn.bootstrapcdn.com https://code.jquery.com https://static.zdassets.com
+        https://ekr.zdassets.com https://cdn.headwayapp.co https://www.recaptcha.net
+        https://www.gstatic.com; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com
+        https://d2wy8f7a9ursnm.cloudfront.net'
+      X-Robots-Tag:
+      - noindex, nofollow
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"project_id":"BUGSNAG_PROJECT_ID","release_stage_name":"development","timeline_points":[{"bucket_start":"2021-06-21T00:00:00.000Z","bucket_end":"2021-06-22T00:00:00.000Z","total_sessions_count":25,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-06-22T00:00:00.000Z","bucket_end":"2021-06-23T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-06-23T00:00:00.000Z","bucket_end":"2021-06-24T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-06-24T00:00:00.000Z","bucket_end":"2021-06-25T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-06-25T00:00:00.000Z","bucket_end":"2021-06-26T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-06-26T00:00:00.000Z","bucket_end":"2021-06-27T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-06-27T00:00:00.000Z","bucket_end":"2021-06-28T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-06-28T00:00:00.000Z","bucket_end":"2021-06-29T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-06-29T00:00:00.000Z","bucket_end":"2021-06-30T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-06-30T00:00:00.000Z","bucket_end":"2021-07-01T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-01T00:00:00.000Z","bucket_end":"2021-07-02T00:00:00.000Z","total_sessions_count":5,"unhandled_sessions_count":3,"unhandled_rate":0.6,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-02T00:00:00.000Z","bucket_end":"2021-07-03T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-03T00:00:00.000Z","bucket_end":"2021-07-04T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-04T00:00:00.000Z","bucket_end":"2021-07-05T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-05T00:00:00.000Z","bucket_end":"2021-07-06T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-06T00:00:00.000Z","bucket_end":"2021-07-07T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-07T00:00:00.000Z","bucket_end":"2021-07-08T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-08T00:00:00.000Z","bucket_end":"2021-07-09T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-09T00:00:00.000Z","bucket_end":"2021-07-10T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-10T00:00:00.000Z","bucket_end":"2021-07-11T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-11T00:00:00.000Z","bucket_end":"2021-07-12T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-12T00:00:00.000Z","bucket_end":"2021-07-13T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-13T00:00:00.000Z","bucket_end":"2021-07-14T00:00:00.000Z","total_sessions_count":4,"unhandled_sessions_count":2,"unhandled_rate":0.5,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-14T00:00:00.000Z","bucket_end":"2021-07-15T00:00:00.000Z","total_sessions_count":26,"unhandled_sessions_count":2,"unhandled_rate":0.07692307692307693,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-15T00:00:00.000Z","bucket_end":"2021-07-16T00:00:00.000Z","total_sessions_count":149,"unhandled_sessions_count":3,"unhandled_rate":0.020134228187919462,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-16T00:00:00.000Z","bucket_end":"2021-07-17T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-17T00:00:00.000Z","bucket_end":"2021-07-18T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-18T00:00:00.000Z","bucket_end":"2021-07-19T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-19T00:00:00.000Z","bucket_end":"2021-07-20T00:00:00.000Z","total_sessions_count":0,"unhandled_sessions_count":0,"unhandled_rate":0.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0},{"bucket_start":"2021-07-20T00:00:00.000Z","bucket_end":"2021-07-21T00:00:00.000Z","total_sessions_count":16,"unhandled_sessions_count":20,"unhandled_rate":1.0,"users_seen":0,"users_with_unhandled":0,"unhandled_user_rate":0.0}]}'
+    http_version: 
+  recorded_at: Tue, 20 Jul 2021 15:18:48 GMT
+recorded_with: VCR 2.9.3

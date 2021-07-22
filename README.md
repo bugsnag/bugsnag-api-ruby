@@ -32,6 +32,8 @@ This library borrows heavily from the code and philosophies of the fantastic [Oc
   - [Pivots](#pivots)
   - [Projects](#projects)
   - [Trends](#trends)
+  - [Stability](#stability)
+  - [Releases](#releases)
 - [Advanced Configuration](#advanced-configuration)
 
 
@@ -372,6 +374,26 @@ Bugsnag::Api.trends_buckets("project-id", 5, "error-id")
 
 # list a project's trends by resolution
 Bugsnag::Api.trends_resolution("project-id", "2h")
+```
+
+### Stability
+
+```ruby
+# view a project's stability trend
+Bugsnag::Api.stability_trend("project-id")
+```
+
+### Releases
+
+```ruby
+# list the releases in a project
+Bugsnag::Api.releases("project-id")
+
+# view a single release
+Bugsnag::Api.release("project-id", "release-id")
+
+# list the releases in a release group
+Bugsnag::Api.releases_in_group("release-group-id")
 ```
 
 ## Advanced Configuration

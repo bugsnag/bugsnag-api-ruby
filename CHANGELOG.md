@@ -1,6 +1,13 @@
 Changelog
 =========
 
+## TBD
+
+### Enhancements
+
+* Add stability and release endpoints
+    |  [#34](https://github.com/bugsnag/bugsnag-api-ruby/pull/34)
+
 ## 2.0.3 (11 May 2021)
 
 ### Fixes

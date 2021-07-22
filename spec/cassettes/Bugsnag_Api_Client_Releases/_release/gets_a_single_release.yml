@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.bugsnag.com/projects/BUGSNAG_PROJECT_ID/releases/BUGSNAG_RELEASE_ID
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Bugsnag API Ruby Gem 2.0.3
+      Content-Type:
+      - application/json
+      X-Version:
+      - '2'
+      X-Bugsnag-Api:
+      - 'true'
+      Authorization:
+      - token BUGSNAG_AUTH_TOKEN
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Wed, 21 Jul 2021 11:03:45 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Limit:
+      - '30'
+      X-Ratelimit-Remaining:
+      - '29'
+      Etag:
+      - W/"9de5aed70023ff924dce3a5b17003ae5"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - bbaad3d3-c3f4-4f9b-b8d5-9878502e2540
+      X-Runtime:
+      - '0.510790'
+      Vary:
+      - Origin
+      X-Frame-Options:
+      - DENY
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Content-Security-Policy:
+      - 'default-src ''self''; child-src https://*.stripe.com headway-widget.net https://*.youtube.com
+        https://www.google.com https://www.recaptcha.net; connect-src ''self'' https://api.bugsnag.com
+        https://notify.bugsnag.com https://sessions.bugsnag.com https://*.stripe.com
+        https://bugsnag.zendesk.com https://ekr.zdassets.com https://api.lever.co;
+        font-src ''self'' https://maxcdn.bootstrapcdn.com https://d2wy8f7a9ursnm.cloudfront.net;
+        img-src ''self'' data: https://notify.bugsnag.com https://*.stripe.com https://maxcdn.bootstrapcdn.com
+        https://d2wy8f7a9ursnm.cloudfront.net https://px.ads.linkedin.com; object-src
+        ''self''; script-src ''self'' https://d2wy8f7a9ursnm.cloudfront.net https://*.stripe.com
+        https://maxcdn.bootstrapcdn.com https://code.jquery.com https://static.zdassets.com
+        https://ekr.zdassets.com https://cdn.headwayapp.co https://www.recaptcha.net
+        https://www.gstatic.com; style-src ''self'' ''unsafe-inline'' https://maxcdn.bootstrapcdn.com
+        https://d2wy8f7a9ursnm.cloudfront.net'
+      X-Robots-Tag:
+      - noindex, nofollow
+      Strict-Transport-Security:
+      - max-age=31536000
+      Via:
+      - 1.1 google
+      Alt-Svc:
+      - clear
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: '{"id":"BUGSNAG_RELEASE_ID","project_id":"BUGSNAG_PROJECT_ID","release_group_id":"BUGSNAG_RELEASE_GROUP_ID","release_time":"2021-07-08T14:26:55+00:00","release_source":"event","app_version":"1.2.3","app_version_code":"","app_bundle_version":"","build_label":"1.2.3","builder_name":"","build_tool":"","errors_introduced_count":1,"errors_seen_count":1,"sessions_count_in_last_24h":0,"total_sessions_count":0,"unhandled_sessions_count":0,"accumulative_daily_users_seen":0,"accumulative_daily_users_with_unhandled":0,"metadata":{},"release_stage":{"name":"production"}}'
+    http_version: 
+  recorded_at: Wed, 21 Jul 2021 11:03:45 GMT
+recorded_with: VCR 2.9.3
