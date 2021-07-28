@@ -1,7 +1,7 @@
 Changelog
 =========
 
-## TBD
+## 2.1.0 (28 July 2021)
 
 ### Enhancements
 
