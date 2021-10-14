@@ -43,7 +43,7 @@ VCR.configure do |c|
   end
 
   c.default_cassette_options = {
-    :record => ENV['TRAVIS'] ? :none : :once,
+    :record => ENV['CI'] ? :none : :once,
     :match_requests_on => [:method, :path, header_matcher]
   }
 
