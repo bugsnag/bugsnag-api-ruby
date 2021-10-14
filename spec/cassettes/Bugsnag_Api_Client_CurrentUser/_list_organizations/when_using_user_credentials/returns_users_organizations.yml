@@ -16,7 +16,7 @@ http_interactions:
       X-Bugsnag-Api:
       - 'true'
       Authorization:
-      - Basic c3VwcG9ydEBidWdzbmFnLmNvbTpwYXNzd29yZA==
+      - Basic QlVHU05BR19VU0VSX0VNQUlMOkJVR1NOQUdfUEFTU1dPUkQ=
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
