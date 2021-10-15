@@ -39,7 +39,6 @@ Gem::Specification.new do |spec|
   end
 
   if RUBY_VERSION < "2.0.0"
-    spec.add_development_dependency "json", "< 2.0.0"
     spec.add_development_dependency "webmock", "2.3.2"
     spec.add_development_dependency "addressable", "2.3.6"
 
@@ -49,9 +48,16 @@ Gem::Specification.new do |spec|
     # parser is used by rubocop
     spec.add_development_dependency "parser", "< 2.5.0"
   else
-    spec.add_development_dependency "json"
     spec.add_development_dependency "webmock", "> 2.3.2"
     spec.add_development_dependency "addressable", "> 2.3.6"
+  end
+
+  if RUBY_VERSION < "2.0.0"
+    spec.add_development_dependency "json", "< 2.0.0"
+  elsif RUBY_VERSION < "2.3.0"
+    spec.add_development_dependency "json", "< 2.6.0"
+  else
+    spec.add_development_dependency "json"
   end
 
   # public_suffix is used by addressable & sawyer

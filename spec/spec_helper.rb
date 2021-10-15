@@ -23,9 +23,28 @@ VCR.configure do |c|
   c.cassette_library_dir = "spec/cassettes"
   c.hook_into :webmock
   c.configure_rspec_metadata!
+
+  USER_AGENT_REGEX = /\ABugsnag API Ruby Gem \d+\.\d+\.\d+\z/
+  HEADERS_SET_BY_BUGSNAG = ["Content-Type", "X-Version", "X-Bugsnag-Api", "Authorization"]
+
+  user_agent_valid = lambda do |values|
+    return false if values.length != 1
+
+    values.first.match(USER_AGENT_REGEX)
+  end
+
+  header_matcher = lambda do |request_a, request_b|
+    return false unless user_agent_valid.(request_a.headers["User-Agent"])
+    return false unless user_agent_valid.(request_b.headers["User-Agent"])
+
+    HEADERS_SET_BY_BUGSNAG.all? do |header|
+      request_a.headers[header] == request_b.headers[header]
+    end
+  end
+
   c.default_cassette_options = {
-    :record => ENV['TRAVIS'] ? :none : :once,
-    :match_requests_on => [:method, :path]
+    :record => ENV['CI'] ? :none : :once,
+    :match_requests_on => [:method, :path, header_matcher]
   }
 
   c.filter_sensitive_data("https://api.bugsnag.com") { test_bugsnag_endpoint }
