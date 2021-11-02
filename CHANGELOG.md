@@ -1,7 +1,9 @@
 Changelog
 =========
 
-## TBD
+## 2.1.1 (2 November 2021)
+
+### Fixes
 
 * Fix Faraday deprecation warning
     | [sambostock](https://github.com/sambostock)
