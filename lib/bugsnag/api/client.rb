@@ -13,6 +13,8 @@ require "bugsnag/api/client/comments"
 require "bugsnag/api/client/stability"
 require "bugsnag/api/client/releases"
 
+require "base64"
+
 module Bugsnag
   module Api
 
@@ -169,9 +171,11 @@ module Bugsnag
           http.headers[:user_agent] = configuration.user_agent
 
           if basic_authenticated?
-            http.basic_auth configuration.email, configuration.password
+            credentials = Base64.strict_encode64("#{configuration.email}:#{configuration.password}")
+
+            http.headers[:Authorization] = "Basic #{credentials}"
           elsif token_authenticated?
-            http.authorization "token", configuration.auth_token
+            http.headers[:Authorization] = "token #{configuration.auth_token}"
           end
         end
       end

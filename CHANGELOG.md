@@ -1,6 +1,12 @@
 Changelog
 =========
 
+## TBD
+
+* Fix Faraday deprecation warning
+    | [sambostock](https://github.com/sambostock)
+    | [#36](https://github.com/bugsnag/bugsnag-api-ruby/pull/36)
+
 ## 2.1.0 (28 July 2021)
 
 ### Enhancements
