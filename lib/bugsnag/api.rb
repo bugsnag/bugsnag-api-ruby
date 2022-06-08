@@ -20,7 +20,10 @@ module Bugsnag
         client.configuration
       end
 
-      # Get the static API client
+      # Get the static API client. Note that using the static API
+      # client may not work as expected in a multithreaded environment
+      # (e.g. when using the {#paginate} or {#last_response} instance
+      # methods)
       #
       # @return [Bugsnag::Api::Client] API client
       def client
