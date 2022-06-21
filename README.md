@@ -1,6 +1,5 @@
 Bugsnag API Toolkit for Ruby
 ============================
-![Build status](https://travis-ci.org/bugsnag/bugsnag-api-ruby.svg?branch=master)
 
 The library allows for quick read/write access to the [Bugsnag Data Access API](https://docs.bugsnag.com/api/data-access/) from your Ruby applications. You can use this library to build your own applications which leverage data found in your Bugsnag dashboard.
 
