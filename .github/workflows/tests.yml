@@ -8,7 +8,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby-version: ['2.1', '2.2', '2.3', '2.4', '2.5', '2.6', '2.7', '3.0']
+        ruby-version: ['2.6', '2.7', '3.0', '3.1']
 
     steps:
       - uses: actions/checkout@v2
@@ -34,20 +34,3 @@ jobs:
           bundler-cache: true
 
       - run: bundle exec rubocop lib/
-
-  # Ruby 1.9 and 2.0 aren't supported by setup-ruby so we have to use Docker instead
-  legacy:
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        ruby-version: ['1.9', '2.0']
-
-    container: ruby:${{ matrix.ruby-version }}
-
-    steps:
-      - uses: actions/checkout@v2
-
-      - run: bundle install
-
-      - run: bundle exec rake spec
