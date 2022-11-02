@@ -9,6 +9,9 @@ Changelog
     | [ilvez](https://github.com/ilvez)
     | [#43](https://github.com/bugsnag/bugsnag-api-ruby/pull/43)
 
+* Require Ruby 2.6+
+    | [#44](https://github.com/bugsnag/bugsnag-api-ruby/pull/44)
+
 ## 2.1.1 (2 November 2021)
 
 ### Fixes
