@@ -1,6 +1,14 @@
 Changelog
 =========
 
+## 3.0.0 (TBD)
+
+### Enhancements
+
+* Update required Sawyer version to `~> 0.9.2`
+    | [ilvez](https://github.com/ilvez)
+    | [#43](https://github.com/bugsnag/bugsnag-api-ruby/pull/43)
+
 ## 2.1.1 (2 November 2021)
 
 ### Fixes
