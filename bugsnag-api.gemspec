@@ -31,7 +31,7 @@ Gem::Specification.new do |spec|
     # crack is used by webmock
     spec.add_development_dependency "crack", "< 0.4.5"
   else
-    spec.add_dependency "sawyer", '~> 0.8.1'
+    spec.add_dependency "sawyer", '~> 0.9.2'
 
     spec.add_development_dependency "rake"
     spec.add_development_dependency "rubocop", "~> 0.52.1"

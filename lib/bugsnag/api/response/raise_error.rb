@@ -8,7 +8,7 @@ module Bugsnag
 
       # This class raises an Bugsnag-flavored exception based
       # HTTP status codes returned by the API
-      class RaiseError < Faraday::Response::Middleware
+      class RaiseError < Faraday::Response::RaiseError
         def on_complete(response)
           if error = Bugsnag::Api::Error.from_response(response)
             raise error
