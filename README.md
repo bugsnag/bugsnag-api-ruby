@@ -3,7 +3,7 @@ Bugsnag API Toolkit for Ruby
 
 The library allows for quick read/write access to the [Bugsnag Data Access API](https://docs.bugsnag.com/api/data-access/) from your Ruby applications. You can use this library to build your own applications which leverage data found in your Bugsnag dashboard.
 
-Version 2.x (current) of this gem corresponds to v2 of the Data Access API, while [1.x](https://github.com/bugsnag/bugsnag-api-ruby/tree/v1.0.3) uses the (deprecated) v1 of the Data Access API.
+Version 3.x (current) and 2.x of this gem corresponds to v2 of the Data Access API, while [1.x](https://github.com/bugsnag/bugsnag-api-ruby/tree/v1.0.3) uses the (deprecated) v1 of the Data Access API.
 
 If you are looking to automatically detect crashes in your Ruby apps, you should take a look at the [Bugsnag Ruby Detection Library](https://docs.bugsnag.com/platforms/ruby) instead.
 
