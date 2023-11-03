@@ -7,30 +7,28 @@ module Bugsnag
       # on status and response message
       #
       # @param [Hash] response HTTP response
-      # @return [Octokit::Error]
+      # @return [Bugsnag::Api::Error]
       def self.from_response(response)
-        status  = response[:status].to_i
-        body    = response[:body].to_s
-        headers = response[:response_headers]
+        status = response[:status].to_i
 
-        if klass =  case status
-                    when 400      then Bugsnag::Api::BadRequest
-                    when 401      then Bugsnag::Api::Unauthorized
-                    when 403      then Bugsnag::Api::Forbidden
-                    when 404      then Bugsnag::Api::NotFound
-                    when 405      then Bugsnag::Api::MethodNotAllowed
-                    when 406      then Bugsnag::Api::NotAcceptable
-                    when 409      then Bugsnag::Api::Conflict
-                    when 415      then Bugsnag::Api::UnsupportedMediaType
-                    when 422      then Bugsnag::Api::UnprocessableEntity
-                    when 429      then Bugsnag::Api::RateLimitExceeded
-                    when 400..499 then Bugsnag::Api::ClientError
-                    when 500      then Bugsnag::Api::InternalServerError
-                    when 501      then Bugsnag::Api::NotImplemented
-                    when 502      then Bugsnag::Api::BadGateway
-                    when 503      then Bugsnag::Api::ServiceUnavailable
-                    when 500..599 then Bugsnag::Api::ServerError
-                    end
+        if klass = case status
+                   when 400      then Bugsnag::Api::BadRequest
+                   when 401      then Bugsnag::Api::Unauthorized
+                   when 403      then Bugsnag::Api::Forbidden
+                   when 404      then Bugsnag::Api::NotFound
+                   when 405      then Bugsnag::Api::MethodNotAllowed
+                   when 406      then Bugsnag::Api::NotAcceptable
+                   when 409      then Bugsnag::Api::Conflict
+                   when 415      then Bugsnag::Api::UnsupportedMediaType
+                   when 422      then Bugsnag::Api::UnprocessableEntity
+                   when 429      then Bugsnag::Api::RateLimitExceeded
+                   when 400..499 then Bugsnag::Api::ClientError
+                   when 500      then Bugsnag::Api::InternalServerError
+                   when 501      then Bugsnag::Api::NotImplemented
+                   when 502      then Bugsnag::Api::BadGateway
+                   when 503      then Bugsnag::Api::ServiceUnavailable
+                   when 500..599 then Bugsnag::Api::ServerError
+                   end
           klass.new(response)
         end
       end
@@ -59,7 +57,9 @@ module Bugsnag
       end
 
       def response_error
-        "Error: #{data[:error]}" if data.is_a?(Hash) && data[:error]
+        return nil unless data.is_a?(Hash)
+        return "Error: #{data[:error]}" if data[:error]
+        "Errors: #{data[:errors]}" if data[:errors]
       end
 
       def build_error_message
