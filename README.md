@@ -166,7 +166,7 @@ end
 
 ### Filtering
 
-Events and Errors can be filtered to return a subset of data. Any of the filters usable in the Bugsnag dashoard can be used in this API. The filter object is a hash of Event Field keys containing an array of filter values. Each filter value has a `type` and a `value` to filter on. The type determines the type of comparison that will be performed.
+Events and Errors can be filtered to return a subset of data. Any of the filters usable in the Bugsnag dashboard can be used in this API. The filter object is a hash of Event Field keys containing an array of filter values. Each filter value has a `type` and a `value` to filter on. The type determines the type of comparison that will be performed.
 
 | `type` | Description | Multiple value combination logic |
 |-|-|-|
