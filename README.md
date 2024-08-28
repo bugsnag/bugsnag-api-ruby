@@ -117,7 +117,7 @@ account.rels[:upgrade].href
 Resources returned by Bugsnag API methods contain not only data but hypermedia link relations:
 
 ```ruby
-project = Bugsnag::Api.projects("organization-id")
+project = Bugsnag::Api.projects("organization-id").first
 
 # Get the users rel, returned from the API as users_url in the resource
 project.rels[:errors].href
