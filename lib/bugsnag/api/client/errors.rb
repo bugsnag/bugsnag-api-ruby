@@ -42,7 +42,7 @@ module Bugsnag
           when String
             patch "projects/#{project_id}/errors/#{ids}", options.merge({:operation => operation})
           when Array
-            defaults = {:operation => operation, :query => {:error_ids => ids.join(' ')}}
+            defaults = {:operation => operation, :query => {:error_ids => ids}}
             merged_opts = deep_merge(defaults, options)
             patch "projects/#{project_id}/errors", merged_opts
           else
