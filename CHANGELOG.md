@@ -1,6 +1,13 @@
 Changelog
 =========
 
+## 3.0.1 (14 January 2025)
+
+### Fixes
+
+* Fix issue with update several errors at once
+    | [#52](https://github.com/bugsnag/bugsnag-api-ruby/pull/52)
+
 ## 3.0.0 (3 November 2022)
 
 ### Enhancements
