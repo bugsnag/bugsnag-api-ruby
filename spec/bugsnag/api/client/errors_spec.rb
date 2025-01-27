@@ -42,11 +42,11 @@ describe Bugsnag::Api::Client::Errors do
     end
     
     it "updates and returns the updated errors" do
-      errors = @client.update_errors @project_id, [@error_id], "fix", {:severity => "warn"}
+      errors = @client.update_errors @project_id, [@error_id, @error_id], "fix", {:severity => "warn"}
       expect(errors.operation).to_not be_nil
       expect(errors[@error_id].status).to eq("fixed")
 
-      assert_requested :patch, bugsnag_url("/projects/#{@project_id}/errors?error_ids=#{@error_id}")
+      assert_requested :patch, bugsnag_url("/projects/#{@project_id}/errors?error_ids[]=#{@error_id}&error_ids[]=#{@error_id}")
     end
   end
 
