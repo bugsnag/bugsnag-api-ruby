@@ -54,7 +54,7 @@ module Bugsnag
 
         # Update a Collaborator's permissions
         #
-        # @option project_ids [Array<String>] Ids in the organziation the user should have access to
+        # @option project_ids [Array<String>] Ids in the organization the user should have access to
         # @option admin [Boolean]  Whether to give admin permissions. Admins have access to all projects
         # @return [Sawyer::Resource] Collaborator details
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/organizations/collaborators/update-a-collaborator's-permissions

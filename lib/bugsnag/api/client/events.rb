@@ -24,7 +24,7 @@ module Bugsnag
 
         # List the Events on an Error
         #
-        # @option base [String] Only Error Events occuring before this time will be returned
+        # @option base [String] Only Error Events occurring before this time will be returned
         # @option sort [String] Which field to sort the results by, one of: last_seen, first_seen, users, events
         # @option direction [String] Which direction to sort the results by, one of: asc, desc
         # @option filters [Object] An optional filter object, see http://docs.bugsnagapiv2.apiary.io/#introduction/filtering
@@ -44,7 +44,7 @@ module Bugsnag
 
         # List the Events on a Project
         #
-        # @option base [String] Only Project Events occuring before this time will be returned
+        # @option base [String] Only Project Events occurring before this time will be returned
         # @option sort [String] Which field to sort the results by, one of: last_seen, first_seen, users, events
         # @option direction [String] Which direction to sort the results by, one of: asc, desc
         # @option filters [Object] An optional filter object, see http://docs.bugsnagapiv2.apiary.io/#introduction/filtering

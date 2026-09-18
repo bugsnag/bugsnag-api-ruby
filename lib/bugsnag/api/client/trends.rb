@@ -2,7 +2,7 @@ module Bugsnag
   module Api
     class Client
 
-      # Methods for the Pivots API
+      # Methods for the Trends API
       #
       # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/trends
       module Trends

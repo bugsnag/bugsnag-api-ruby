@@ -18,7 +18,7 @@ module Bugsnag
           paginate "projects/#{project_id}/errors/#{error_id}/comments", options
         end
 
-        # View an Comment
+        # View a Comment
         #
         # @return [Sawyer::Resource] Requested Comment
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/errors/comments/view-a-comment

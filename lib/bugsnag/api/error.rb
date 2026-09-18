@@ -97,7 +97,7 @@ module Bugsnag
     # Raised when Bugsnag returns a 409 HTTP status code
     class Conflict < ClientError; end
 
-    # Raised when Bugsnag returns a 414 HTTP status code
+    # Raised when Bugsnag returns a 415 HTTP status code
     class UnsupportedMediaType < ClientError; end
 
     # Raised when Bugsnag returns a 422 HTTP status code

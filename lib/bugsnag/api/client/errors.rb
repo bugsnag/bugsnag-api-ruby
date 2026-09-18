@@ -10,7 +10,7 @@ module Bugsnag
         #
         # @argument id [String] optional ID of error to retrieve
         #
-        # @option base [String] Only Error Events occuring before this time will be returned
+        # @option base [String] Only Error Events occurring before this time will be returned
         # @option sort [String] Which field to sort by, one of: last_seen, first_seen, users, events, unsorted
         # @option direction [String] Which direction to sort the result by, one of: asc, desc
         # @option filters [Filters] An optional filters object, see http://docs.bugsnagapiv2.apiary.io/#introduction/filtering
@@ -31,7 +31,7 @@ module Bugsnag
         # @argument ids [(Array<String>/String)] An Id, or array of Ids to update
         #
         # @option severity [String] The Error's new severity. One of: info, warning, error
-        # @option assigned_collaborator_id [String] THe collaborator to assign to the Error
+        # @option assigned_collaborator_id [String] The collaborator to assign to the Error
         # @option issue_url [String] Updates to link to an existing 3rd party issue
         # @option issue_title [String] Updates the issues title
         # @option reopen_rules [Object] Snooze rules for automatically reopening the Error
