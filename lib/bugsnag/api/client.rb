@@ -98,7 +98,7 @@ module Bugsnag
       #
       # @param url [String] The path, relative to {#endpoint}
       # @param options [Hash] Query and header params for request
-      # @param block [Block] Block to perform the data concatination of the
+      # @param block [Block] Block to perform the data concatenation of the
       #   multiple requests. The block is called with two parameters, the first
       #   contains the contents of the requests so far and the second parameter
       #   contains the latest response.

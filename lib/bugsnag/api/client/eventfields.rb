@@ -8,7 +8,7 @@ module Bugsnag
       module EventFields
         # List the Event Fields for a Project
         #
-        # @option per_page []Number] Number of results required per page
+        # @option per_page [Number] Number of results required per page
         # @return [Array<Sawyer::Resource>] List of event fields
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/projects/event-fields/list-the-event-fields-for-a-project
         def event_fields(project_id, options = {})
@@ -33,7 +33,7 @@ module Bugsnag
         # @return [Sawyer::Resource] Updated Event Field
         # @see http://docs.bugsnagapiv2.apiary.io/#reference/projects/event-fields/update-a-custom-event-field
         def update_event_field(project_id, display_id, path, options = {})
-          patch "projects/#{id}/event_fields/#{display_id}", options.merge({:display_id => display_id, :path => path})
+          patch "projects/#{project_id}/event_fields/#{display_id}", options.merge({:display_id => display_id, :path => path})
         end
 
         # Delete a custom Event Field
